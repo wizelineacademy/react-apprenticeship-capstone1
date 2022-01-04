@@ -13,6 +13,7 @@ function useAuth() {
   return context;
 }
 
+// eslint-disable-next-line react/prop-types
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
 
