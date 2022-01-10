@@ -1,1 +1,1 @@
-export {default} from './VideoList.component'
+export { default } from './VideoList.component';

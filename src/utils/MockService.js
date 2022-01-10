@@ -1,10 +1,9 @@
-import mockData from "../mocks/youtube-videos-mock.json"
+import mockData from '../mocks/youtube-videos-mock.json';
 
 const MockService = {
-     GetMock() {
-       return mockData
-    }
-}
-
+  GetMock() {
+    return mockData;
+  },
+};
 
 export { MockService };
