@@ -41,6 +41,15 @@ function App() {
             <Route exact path="/login">
               <LoginPage />
             </Route>
+            <Route exact path="/favorites">
+              <div> fovorites </div>
+            </Route>
+            <Route exact path="/details">
+              <div> details video </div>
+            </Route>
+            <Route exact path="/fav-details">
+              <div> details of fav video </div>
+            </Route>
             <Private exact path="/secret">
               <SecretPage />
             </Private>
