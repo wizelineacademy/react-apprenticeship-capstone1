@@ -1,5 +1,5 @@
 function random(limit) {
-  return Math.floor(Math.random() * limit);
+  return Math.floor(Math.random() * limit)
 }
 
-export { random };
+export { random }

@@ -26,12 +26,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.separator::before {
-  content: '•';
-  color: white;
-  padding: 0.4rem;
-}
-
 a {
   text-decoration: none;
   font-weight: bold;

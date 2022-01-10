@@ -1,17 +1,17 @@
-import React from 'react';
-import { useHistory } from 'react-router';
+import React from 'react'
+import { useHistory } from 'react-router'
 
-import { useAuth } from '../../providers/Auth';
-import './Login.styles.css';
+import { useAuth } from '../../providers/Auth'
+import './Login.styles.css'
 
 function LoginPage() {
-  const { login } = useAuth();
-  const history = useHistory();
+  const { login } = useAuth()
+  const history = useHistory()
 
   function authenticate(event) {
-    event.preventDefault();
-    login();
-    history.push('/secret');
+    event.preventDefault()
+    login()
+    history.push('/secret')
   }
 
   return (
@@ -33,7 +33,7 @@ function LoginPage() {
         <button type="submit">login</button>
       </form>
     </section>
-  );
+  )
 }
 
-export default LoginPage;
+export default LoginPage

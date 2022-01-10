@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SecretPage() {
   return (
@@ -18,7 +18,7 @@ function SecretPage() {
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       />
     </section>
-  );
+  )
 }
 
-export default SecretPage;
+export default SecretPage

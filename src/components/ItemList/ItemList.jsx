@@ -5,7 +5,7 @@ function ItemList({ items }) {
   return (
     <ListContainer>
       {items.map((item) => (
-        <Card>
+        <Card key={item.id}>
           <img
             className="cover-image"
             alt="preview"
