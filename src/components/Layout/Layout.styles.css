@@ -1,9 +1,7 @@
-.container {
+.container-layout{
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -3rem;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+ padding-left: 0 !important;
 }
