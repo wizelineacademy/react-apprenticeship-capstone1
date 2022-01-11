@@ -13,7 +13,6 @@ const Sidebar = () => {
     logout();
     history.push('/');
   };
-
   return (
     <>
       <SidebarContainer>
