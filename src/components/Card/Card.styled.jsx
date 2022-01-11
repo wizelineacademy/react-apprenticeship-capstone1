@@ -6,9 +6,12 @@ export const StyledCard = styled.div`
   margin: 18px;
   display: flex;
   align-items: center;
-  background-color: #f2edeb;
+  background-color: #eefbfc;
   height: 170px;
-
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    margin: 8px;
+    height: 190px;
+  }
   p {
     font-size: 12px;
     margin-right: 5px;
@@ -16,6 +19,9 @@ export const StyledCard = styled.div`
   }
   h4 {
     margin: 10px;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      font-size: 12px;
+    }
   }
   img {
     margin: 0 8px;

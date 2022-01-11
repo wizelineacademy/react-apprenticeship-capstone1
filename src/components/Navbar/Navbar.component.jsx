@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledNavbar } from '../Styles/Navbar.styled';
-import Buttom from '../Buttom/Buttom.component';
+import { StyledNavbar } from './Navbar.styled';
+import Button from '../Button/Button.component';
 
 function Navbar() {
   return (
@@ -15,7 +15,7 @@ function Navbar() {
         </h1>
       </div>
       <div>
-        <Buttom>Dark Theme</Buttom>
+        <Button>Dark Theme</Button>
         <img src="../../profile.svg" alt="profile img" />
       </div>
     </StyledNavbar>

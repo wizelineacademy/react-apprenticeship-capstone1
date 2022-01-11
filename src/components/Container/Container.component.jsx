@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledContainer } from '../Styles/Container.styled';
+import { StyledContainer } from './Container.styled';
 
 import Card from '../Card/Card.component';
 import data from '../../data.json';

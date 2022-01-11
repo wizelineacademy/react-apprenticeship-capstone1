@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledCard } from '../Styles/Card.styled';
+import { StyledCard } from '../Card/Card.styled';
 
 const timePublished = function get_time_diff(datetime) {
   var milisec_diff = Math.abs(new Date() - new Date(datetime)),
