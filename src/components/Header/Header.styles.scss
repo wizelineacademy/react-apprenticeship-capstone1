@@ -1,0 +1,38 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 6px 24px;
+    width: auto;
+    height: 60px;
+    background-color: $primary;
+    color: $white;
+    z-index: 5;
+
+    @include drop-shadow;
+}
+
+.header__search-bar-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+.header__search-bar {
+    flex-grow: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+
+.header__search-bar--grow {
+    flex-grow: 1;
+}
+
+.header__icon_button {
+    color: $white;
+}

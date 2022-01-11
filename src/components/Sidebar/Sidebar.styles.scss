@@ -1,0 +1,66 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.sidebar {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0px 0px;
+    left: 0px;
+    top: 0px;
+    width: 250px;
+    height: 100vh;
+    background-color: $white;
+    box-sizing: border-box;
+    border-right: 1px solid $border;
+    z-index: 3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 48px;
+}
+
+.sidebar__tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 226px;
+    height: 48px;
+    color: $primary;
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+.sidebar__tab--selected {
+    background-color: $primary;
+    color: $white;
+}
+
+.sidebar__link {
+    justify-content: center;
+    color: $gray;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sidebar__user-info-container {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 180px;
+    width: 250px;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.sidebar__avatar-image {
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+}

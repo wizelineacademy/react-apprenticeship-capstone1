@@ -1,0 +1,63 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 12px;
+    background-color: $light-white;
+    border-radius: 6px;
+}
+
+.search-container__form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    height: 48px;
+}
+
+.search-container__input {
+    flex-grow: 1;
+    height: 48px;
+    background-color: transparent;
+    border: transparent;
+    outline: transparent;
+    color: $white;
+    font-size: 1.2em;
+    font-family: Dosis, sans-serif;
+    padding: 0px;
+    margin: 0px;
+
+    &::placeholder{
+        color: $white;
+        opacity: 1;
+        font-size: 1.2em;
+        font-family: Dosis, sans-serif;
+        margin: 0px;
+    }
+
+    &::-ms-input-placeholder{
+        color: $white;
+        font-size: 1.2em;
+        font-family: Dosis, sans-serif;
+        margin: 0px;
+    }
+
+    &::-ms-input-placeholder {
+        color: $white;
+        font-size: 1.2em;
+        font-family: Dosis, sans-serif;
+        margin: 0px;
+    }
+}
+
+.search-container__input:active {
+    border: transparent;
+    outline: transparent;
+}
+
+.search-container__button {
+    color: $white;
+}
