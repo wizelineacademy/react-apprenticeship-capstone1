@@ -32,7 +32,7 @@ function App() {
 
   const theme = {
     tablet: '768px',
-    mobile: '468px',
+    mobile: '414px',
   };
 
   return (
