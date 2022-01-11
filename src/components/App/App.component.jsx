@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import LoginPage from '../../pages/Login';
+import FavoritesPage from '../../pages/Fvorites/Favorites.page';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
@@ -42,7 +43,7 @@ function App() {
               <LoginPage />
             </Route>
             <Route exact path="/favorites">
-              <div> fovorites </div>
+              <FavoritesPage />
             </Route>
             <Route exact path="/details">
               <div> details video </div>
