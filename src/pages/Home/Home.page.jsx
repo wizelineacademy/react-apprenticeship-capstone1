@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar.component';
 import Container from '../../components/Container/Container.component';
 import { useAuth } from '../../providers/Auth';
-import { StyledHome } from './Home.styles.js';
+import { StyledHome } from './Home.styles';
 //import { ThemeProvider } from 'styled-components';
 
 function HomePage() {
