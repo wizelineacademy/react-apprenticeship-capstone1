@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar.component';
 import Container from '../../components/Container/Container.component';
 import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import { StyledHome } from './Home.styles.js';
 //import { ThemeProvider } from 'styled-components';
 
 function HomePage() {
@@ -18,7 +18,7 @@ function HomePage() {
   }
 
   return (
-    <section className="homepage" ref={sectionRef}>
+    <StyledHome className="homepage" ref={sectionRef}>
       <Navbar></Navbar>
       <Container></Container>
       {authenticated ? (
@@ -35,7 +35,7 @@ function HomePage() {
       ) : (
         <Link to="/login">let me in →</Link>
       )}
-    </section>
+    </StyledHome>
   );
 }
 
