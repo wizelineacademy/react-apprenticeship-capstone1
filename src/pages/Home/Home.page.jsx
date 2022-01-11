@@ -18,7 +18,7 @@ function HomePage() {
   const deAuthenticate = (event) => {
     event.preventDefault();
     logout();
-    history.push('/');
+    history.push('/login');
   };
 
   return (

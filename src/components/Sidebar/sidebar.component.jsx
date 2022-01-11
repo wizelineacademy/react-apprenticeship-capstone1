@@ -3,15 +3,17 @@ import { useAuth } from '../../providers/Auth';
 import { Link, useHistory } from 'react-router-dom';
 
 import { SidebarContainer, SidebarList } from './sidebar.styles';
+// import useLogOut from '../../utils/hooks/useLogout';
 
 const Sidebar = () => {
+  //   const { deAuthenticate } = useLogOut();
   const history = useHistory();
   const { logout } = useAuth();
 
   const deAuthenticate = (event) => {
     event.preventDefault();
     logout();
-    history.push('/');
+    history.push('/login');
   };
   return (
     <>

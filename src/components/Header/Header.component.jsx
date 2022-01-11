@@ -16,7 +16,7 @@ const Header = ({ title, handleMenu, deAuthenticate, authenticated }) => {
       <Title>{title}</Title>
       <SeachBar placeholder="Search a video" />
       {authenticated ? (
-        <Link to="/" onClick={deAuthenticate}>
+        <Link to="/login" onClick={deAuthenticate}>
           log out
         </Link>
       ) : (
