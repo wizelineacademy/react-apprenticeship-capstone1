@@ -12,6 +12,7 @@ import {
   Information,
   Comments,
 } from '../Details/Details.styles';
+import RecomendedCard from '../../components/RecommendedCard/Recommendedcard.component';
 
 const DetailsPage = () => {
   const { authenticated } = useAuth();
@@ -36,7 +37,14 @@ const DetailsPage = () => {
               <Information>information</Information>
               <Comments>comments</Comments>
             </VideoContainer>
-            <ListVideosContainer>recommended videos here</ListVideosContainer>
+            <ListVideosContainer>
+              {Array.from({ length: 20 }, () => (
+                <RecomendedCard
+                  title="title of recommended video"
+                  videoContent=""
+                />
+              ))}
+            </ListVideosContainer>
           </DetailsContainer>
         ) : (
           <Link to="/login">details videos, log here</Link>

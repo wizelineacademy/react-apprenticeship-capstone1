@@ -28,11 +28,11 @@ const ListVideosContainer = styled.ul`
   flex-wrap: wrap;
   background: linear-gradient(
     184deg,
-    rgba(236, 112, 176, 0.6881127450980392) 3%,
+    rgba(190, 112, 236, 0.5032387955182073) 3%,
     rgba(255, 255, 255, 1) 36%,
     rgba(240, 253, 255, 1) 56%,
     rgba(229, 251, 255, 1) 70%,
-    rgba(0, 212, 255, 0.5788690476190477) 100%
+    rgba(0, 212, 255, 0.30155812324929976) 100%
   );
   padding: 8px;
   margin: 12px;
