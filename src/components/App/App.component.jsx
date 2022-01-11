@@ -15,10 +15,10 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </AuthProvider>
     </BrowserRouter>
   );

@@ -4,7 +4,7 @@ import './Home.styles.scss';
 import Header from '@components/Header';
 //import SideBar from '@components/Sidebar';
 
-function HomePage(props) {
+function HomePage() {
   return (
     <section>
       <Header />
