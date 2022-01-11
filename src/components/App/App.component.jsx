@@ -10,6 +10,7 @@ import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Fortune from '../Fortune';
 import Layout from '../Layout';
+import DetailsPage from '../../pages/Details/Details.page';
 import { random } from '../../utils/fns';
 
 function App() {
@@ -45,8 +46,8 @@ function App() {
             <Route exact path="/favorites">
               <FavoritesPage />
             </Route>
-            <Route exact path="/details">
-              <div> details video </div>
+            <Route exact path="/details/:id">
+              <DetailsPage />
             </Route>
             <Route exact path="/fav-details">
               <div> details of fav video </div>

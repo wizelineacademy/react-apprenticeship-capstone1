@@ -8,11 +8,10 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background: white;
-  border-radius: 10px;
   justify-content: space-around;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  margin: 4px;
+  margin: 16px 8px;
 `;
 const VideoContainer = styled.div`
   width: 100%;
@@ -25,12 +24,14 @@ const Title = styled.p`
   font-size: 16px;
   color: #41b3a3;
   font-weight: 600;
+  padding: 4px;
 `;
 
 const Subtitle = styled.p`
   font-family: 'Quicksand', sans-serif;
   font-size: 12px;
   color: #e64398;
+  padding: 4px;
 `;
 
 export { CardContainer, Subtitle, Title, VideoContainer };

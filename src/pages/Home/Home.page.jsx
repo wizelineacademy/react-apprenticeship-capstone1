@@ -17,6 +17,10 @@ function HomePage() {
     setSidebarState(!sidebarState);
   };
 
+  const handleDetails = (id) => {
+    history.push(`/details/${id}`);
+  };
+
   const deAuthenticate = (event) => {
     event.preventDefault();
     logout();
@@ -34,30 +38,13 @@ function HomePage() {
       <section className="homepage" ref={sectionRef}>
         {authenticated ? (
           <CardsContainer>
-            <Card
-              title="title video here"
-              subtitle="here we will see the main information about the video"
-            />
-             <Card
-              title="title video here"
-              subtitle="here we will see the main information about the video"
-            />
-             <Card
-              title="title video here"
-              subtitle="here we will see the main information about the video"
-            />
-             <Card
-              title="title video here"
-              subtitle="here we will see the main information about the video"
-            />
-             <Card
-              title="title video here"
-              subtitle="here we will see the main information about the video"
-            />
-             <Card
-              title="title video here"
-              subtitle="here we will see the main information about the video"
-            />
+            {Array.from({ length: 12 }, (_, index) => (
+              <Card
+                handleDetails={() => handleDetails(index + 1)}
+                title={`title video number ${index + 1} here`}
+                subtitle="here we will see the main information about the video"
+              />
+            ))}
           </CardsContainer>
         ) : (
           <Link to="/login">let me in →</Link>

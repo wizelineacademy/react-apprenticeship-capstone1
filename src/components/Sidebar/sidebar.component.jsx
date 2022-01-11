@@ -20,10 +20,13 @@ const Sidebar = () => {
       <SidebarContainer>
         <SidebarList>
           <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
             <Link to="/favorites">Favorites</Link>
           </li>
           <li>
-            <Link to="/" onClick={deAuthenticate}>
+            <Link to="/login" onClick={deAuthenticate}>
               log out
             </Link>
           </li>
