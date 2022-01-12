@@ -1,28 +1,51 @@
 // Components
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import axios from 'axios'
 import { HomeContainer, HomeSubheader } from './Home.styled'
 import ItemList from '../../components/ItemList'
 
-// Utils
-/* import { useAuth } from '../../providers/Auth' */
+import { GlobalContext } from '../../providers/Global/Global.provider'
 
-// MockData
-import data from '../../utils/MockData.json'
+const Key = 'AIzaSyD-7zEJzuJBi-0Dm2exCgOihSx0NklLcgM'
+
+const axiosCliente = axios.create({
+  baseURL: 'https://www.googleapis.com/youtube/v3/',
+  params: {
+    part: 'snippet',
+    maxResults: 15,
+    key: Key,
+    type: 'video',
+  },
+})
 
 function HomePage() {
-  console.log(data)
-  /*  const { authenticated, logout } = useAuth() */
+  const [youtubeItems, setYoutubeItems] = useState([])
+  const [loading, setLoading] = useState(false)
 
-  /*  function deAuthenticate(event) {
-    event.preventDefault()
-    logout()
-    history.push('/')
-  } */
+  const { searchParam } = useContext(GlobalContext)
 
-  return (
+  useEffect(() => {
+    const fecthAPI = async () => {
+      try {
+        setLoading(true)
+        const response = await axiosCliente.get(`/search?q=${searchParam}`)
+        console.log(response.data.items)
+        setYoutubeItems(response.data.items)
+        setLoading(false)
+      } catch (error) {
+        console.log(error)
+        setLoading(false)
+      }
+    }
+    fecthAPI()
+  }, [searchParam])
+
+  return loading ? (
+    '..Loading'
+  ) : (
     <HomeContainer>
       <HomeSubheader>Welcome to Wize Tube!</HomeSubheader>
-      <ItemList items={data.items} />
+      <ItemList items={youtubeItems} />
     </HomeContainer>
   )
 }
