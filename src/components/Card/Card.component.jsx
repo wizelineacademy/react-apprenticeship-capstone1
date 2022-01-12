@@ -1,14 +1,6 @@
 import React from 'react';
 import { StyledCard } from '../Card/Card.styled';
-
-const timePublished = function get_time_diff(datetime) {
-  var milisec_diff = Math.abs(new Date() - new Date(datetime)),
-    days = (milisec_diff / 3600e3 / 24) | 0,
-    respvalue = '';
-  if (days) respvalue += days + ' days ago.';
-
-  return respvalue;
-};
+import { timePublished } from '../../utils/timePublished';
 
 function Card({ title, description, image, data }) {
   return (
