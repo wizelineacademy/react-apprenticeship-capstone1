@@ -9,15 +9,7 @@ function VideoGrid(props) {
     <div className="video-grid__container">
       <div className={'video-grid ' + props.className}>
         {props.items.map((item) => (
-          <VideoCard
-            key={item.id}
-            image={item.image}
-            liked={item.liked}
-            title={item.title}
-            views={item.views}
-            time={item.time}
-            onClick={() => {}}
-          />
+          <VideoCard key={item.id.videoId} item={item} onClick={() => {}} />
         ))}
       </div>
       {props.loadMore ? (

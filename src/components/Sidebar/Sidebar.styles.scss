@@ -60,10 +60,10 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    height: 180px;
     width: 250px;
+    height: auto;
+    padding: 12px 0px;
     white-space: nowrap;
-    overflow-x: hidden;
 }
 
 .sidebar__avatar-image {

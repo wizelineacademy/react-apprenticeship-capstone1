@@ -1,28 +1,48 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import moment from 'moment';
+import he from 'he';
 
 import './VideoCard.styles.scss';
-import image from './pexels-amina-filkins-5414061.jpeg';
 
-function VideoCard(props) {
-  return (
-    <div className={'video-card ' + props.className} onClick={props.onClick}>
-      <img
-        src={props.image ? props.image : image}
-        alt="video&#39;s image"
-        className="video-card__image"
-      />
-      <div className="video-card__info">
+/*
         <div className="video-card__title-row">
-          <h3>{props.title}</h3>
+          <h4 className="video-card__title">{video.snippet.title}</h4>
           <FontAwesomeIcon
             icon={[props.liked ? 'fas' : 'far', 'heart']}
             className="video-card__liked-icon"
           />
         </div>
         <h5>
-          {props.views} - {props.time}
+          {moment(new Date(video.snippet.publishTime)).fromNow()}
         </h5>
+*/
+
+function VideoCard(props) {
+  const video = props.item;
+
+  return (
+    <div className={'video-card ' + props.className} onClick={props.onClick}>
+      <img
+        src={
+          video.snippet.thumbnails.medium.url
+            ? video.snippet.thumbnails.medium.url
+            : null
+        }
+        alt="video&#39;s image"
+        className="video-card__image"
+      />
+      <div className="video-card__info">
+        <div className="video-card__title-column">
+          <h4 className="video-card__title">
+            {he.decode(video.snippet.title)}
+          </h4>
+          <h5>{moment(new Date(video.snippet.publishTime)).fromNow()}</h5>
+        </div>
+        <FontAwesomeIcon
+          icon={[props.liked ? 'fas' : 'far', 'heart']}
+          className="video-card__like-icon"
+        />
       </div>
     </div>
   );
@@ -30,11 +50,7 @@ function VideoCard(props) {
 
 VideoCard.defaultProps = {
   className: '',
-  image: null,
-  liked: false,
-  title: 'Video title',
-  views: '4.2M views',
-  time: '3 years ago',
+  item: {},
   onClick: null,
 };
 

@@ -4,8 +4,11 @@
 .video-grid {
     width: 100%;
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
-    row-gap: 24px;
+    column-gap: 2vw;
+    row-gap: 2vw;
+    grid-auto-rows: 216px;
 
     &__load-more-row {
         display: flex;
