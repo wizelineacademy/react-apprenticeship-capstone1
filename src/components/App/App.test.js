@@ -5,5 +5,5 @@ import '@testing-library/react';
 import App from './App.component';
 
 test('renders content', () => {
-  render(<App></App>);
+  render(<App />);
 });

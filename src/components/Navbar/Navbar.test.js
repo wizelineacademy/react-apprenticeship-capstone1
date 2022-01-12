@@ -5,5 +5,5 @@ import '@testing-library/react';
 import Navbar from './Navbar.component';
 
 test('renders content', () => {
-  render(<Navbar></Navbar>);
+  render(<Navbar />);
 });

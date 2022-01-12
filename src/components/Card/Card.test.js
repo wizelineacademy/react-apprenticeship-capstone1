@@ -5,5 +5,5 @@ import '@testing-library/react';
 import Card from './Card.component';
 
 test('renders content', () => {
-  render(<Card></Card>);
+  render(<Card />);
 });

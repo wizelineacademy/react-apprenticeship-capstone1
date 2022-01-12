@@ -5,6 +5,6 @@ import '@testing-library/react';
 import Button from './Button.component';
 
 test('renders content', () => {
-  const component = render(<Button></Button>);
+  const component = render(<Button />);
   component.getByText('Dark Mode');
 });

@@ -5,5 +5,5 @@ import '@testing-library/react';
 import Container from './Container.component';
 
 test('renders content', () => {
-  render(<Container></Container>);
+  render(<Container />);
 });
