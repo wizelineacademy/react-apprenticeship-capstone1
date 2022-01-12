@@ -1,0 +1,11 @@
+ PASS  src/utils/timePublished.test.js
+ PASS  src/components/Card/Card.test.js
+ PASS  src/components/Button/Button.test.js
+ PASS  src/components/Navbar/Navbar.test.js
+ PASS  src/components/Container/Container.test.js
+ PASS  src/components/App/App.test.js
+
+Test Suites: 6 passed, 6 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        1.496s
