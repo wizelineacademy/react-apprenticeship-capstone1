@@ -1,5 +1,5 @@
 import React from 'react'
-import { screen, render, queryAllByText } from '@testing-library/react'
+import { screen, render } from '@testing-library/react'
 import data from '../../../utils/MockData.json'
 import ItemList from '../ItemList'
 

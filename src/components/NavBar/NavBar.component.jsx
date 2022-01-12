@@ -9,7 +9,6 @@ import {
   Button,
 } from 'react-bootstrap'
 import { NavContainer, ItemsNavContainer } from './NavBar.styled'
-import { Link } from 'react-router-dom'
 
 /* // Utils
 import { useAuth } from '../../providers/Auth' */
