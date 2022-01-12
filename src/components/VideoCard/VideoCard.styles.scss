@@ -9,9 +9,10 @@
     align-items: flex-start;
     background-color: $white;
     border-radius: 6px;
-    border: 1px solid $light-border;
     cursor: pointer;
-    @include drop-shadow;
+
+    //border: 1px solid $light-border;
+    //@include drop-shadow;
 
     &__image {
         width: 264px;
@@ -22,18 +23,20 @@
     }
 
     &__info {
-        width: calc(100% - 24px);
+        width: calc(264px - 24px);
         height: auto;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         gap: 6px;
-        max-width: calc(100% - 38px);
         padding: 6px 12px 12px;
+
+        border-radius: 0px 0px 6px 6px;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
     }
 
     &__title-column {
-        width: 100%;
+        width: calc(264px - 24px - 16px - 6px);
         height: calc(216px - 150px);
         display: flex;
         flex-direction: column;
@@ -41,14 +44,14 @@
     }
 
     &__title{
+        width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 100%;
-        max-height: calc(216px - 150px - 24px);
     }
 
     &__like-icon {
+        padding-top: 0.25em;
         color: $gray;
     }
 }
