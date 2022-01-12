@@ -10,15 +10,6 @@ import ItemList from '../../components/ItemList'
 import data from '../../utils/MockData.json'
 
 function HomePage() {
-  console.log(data)
-  /*  const { authenticated, logout } = useAuth() */
-
-  /*  function deAuthenticate(event) {
-    event.preventDefault()
-    logout()
-    history.push('/')
-  } */
-
   return (
     <HomeContainer>
       <HomeSubheader>Welcome to Wize Tube!</HomeSubheader>

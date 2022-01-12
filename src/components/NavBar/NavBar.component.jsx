@@ -34,9 +34,7 @@ function NavBar() {
                 Search
               </Button>
             </Form>
-            <Link disabled to={'/home'}>
-              Login
-            </Link>
+            <a href={'/home'}>Login</a>
           </ItemsNavContainer>
 
           <Navbar.Offcanvas
