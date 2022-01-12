@@ -1,0 +1,40 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.input-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6px 12px;
+    min-width: 220px;
+    height: 48px;
+    border: 1px solid $light-border;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+
+    &--focus {
+        border: transparent;
+        box-shadow: 0 0 3px 2px $border;
+    }
+}
+
+.input-component__label {
+    text-align: left;
+    width: calc(100% - 6px);
+}
+
+.input-component__input {
+    width: calc(100% - 6px);
+    background-color: transparent;
+    border: transparent;
+    font-size: 1rem;
+    font-family: Dosis, sans-serif;
+    margin: 0;
+
+    &:focus {
+        border: transparent;
+        outline: transparent;
+    }
+}

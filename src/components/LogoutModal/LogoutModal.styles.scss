@@ -1,0 +1,30 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.logout-modal {
+    position: absolute;
+    left: calc(calc(100vw - 300px) / 2);
+    top: 200px;
+    z-index: 9;
+
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 12px;
+    background-color: $white;
+    border: 1px solid $light-border;
+    text-align: center;
+    border-radius: 6px;
+    @include drop-shadow;
+
+    &__buttons-row {
+        min-width: calc(300px - 12px);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import { AUTH_STORAGE_KEY } from '../../utils/constants';
 import { storage } from '../../utils/storage';
@@ -11,6 +12,12 @@ function useAuth() {
     throw new Error(`Can't use "useAuth" without an AuthProvider!`);
   }
   return context;
+}
+
+function RequireAuth({ children }) {
+  const { authenticated } = useAuth();
+
+  return authenticated === true ? children : <Navigate to="/" replace />;
 }
 
 // eslint-disable-next-line react/prop-types
@@ -41,5 +48,5 @@ function AuthProvider({ children }) {
   );
 }
 
-export { useAuth };
+export { useAuth, RequireAuth };
 export default AuthProvider;

@@ -1,0 +1,28 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.video-info {
+    max-width: 308px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    &__title-row {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__liked-icon {
+        color: $primary;
+        cursor: pointer;
+    }
+
+    &__description {
+        padding-top: 12px;
+    }
+}

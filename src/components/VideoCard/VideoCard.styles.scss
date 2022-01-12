@@ -1,0 +1,45 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.video-card {
+    width: 216px;
+    height: 216px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $white;
+    border-radius: 12px;
+    border: 1px solid $light-border;
+    cursor: pointer;
+    @include drop-shadow;
+
+    &__image {
+        width: 216px;
+        height: 144px;
+        border-radius: 12px 12px 0px 0px;
+        background-color: $black;
+        object-fit: cover;
+    }
+
+    &__info {
+        width: calc(100% - 24px);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6px 12px 12px;
+    }
+
+    &__title-row {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__liked-icon {
+        color: $primary;
+    }
+}

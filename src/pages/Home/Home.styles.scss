@@ -1,3 +1,9 @@
 @import '@style/variables';
 @import '@style/mixins';
 
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}

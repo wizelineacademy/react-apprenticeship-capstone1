@@ -4,7 +4,11 @@ import './IconButton.styles.scss';
 
 function IconButton(props) {
   return (
-    <button type="button" className={'icon-button ' + props.className}>
+    <button
+      type="button"
+      className={'icon-button ' + props.className}
+      onClick={props.onClick}
+    >
       {props.icon}
     </button>
   );

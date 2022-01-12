@@ -1,13 +1,12 @@
 import React from 'react';
 
 import './Home.styles.scss';
-import Header from '@components/Header';
-//import SideBar from '@components/Sidebar';
+import VideoGrid from '@components/VideoGrid';
 
 function HomePage() {
   return (
-    <section>
-      <Header />
+    <section className="home">
+      <VideoGrid items={[]} />
     </section>
   );
 }

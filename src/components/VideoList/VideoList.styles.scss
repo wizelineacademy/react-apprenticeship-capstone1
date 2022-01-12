@@ -1,0 +1,48 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 308px;
+
+    &__breadcrumb {
+        width: 100%;
+    }
+
+    &__load-more-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.video-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding: 0px;
+    width: 308px;
+    height: 120px;
+    cursor: pointer;
+
+    &__image {
+        width: 150px;
+        height: 120px;
+        background-color: $black;
+        object-fit: cover;
+        border-radius: 6px 0px 0px 6px;
+    }
+
+    &__info {
+        width: auto;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

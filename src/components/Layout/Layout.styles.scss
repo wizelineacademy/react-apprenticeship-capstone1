@@ -1,0 +1,13 @@
+@import '@style/variables';
+@import '@style/mixins';
+
+.layout__content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.layout__content {
+    width: 100%;
+    height: 100vw;
+}
