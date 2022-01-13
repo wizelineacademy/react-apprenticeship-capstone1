@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { useAuth } from '../../providers/Auth';
 import Header from '../../components/Header/Header.component';
@@ -17,10 +17,14 @@ import RecomendedCard from '../../components/RecommendedCard/Recommendedcard.com
 const DetailsPage = () => {
   const { authenticated } = useAuth();
   const [sidebarState, setSidebarState] = useState(false);
+  const { id } = useParams();
+
+  console.log('id video', id);
 
   const handleOpenMenu = () => {
     setSidebarState(!sidebarState);
   };
+  const videoSrc = `https://www.youtube.com/embed/${id}`
   return (
     <div style={{ position: 'relative' }}>
       <Header
@@ -33,7 +37,9 @@ const DetailsPage = () => {
         {authenticated ? (
           <DetailsContainer>
             <VideoContainer>
-              <Video />
+              <Video>
+                <iframe src={videoSrc} title="Video player" />
+              </Video>
               <Information>information</Information>
               <Comments>comments</Comments>
             </VideoContainer>

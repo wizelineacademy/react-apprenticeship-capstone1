@@ -7,7 +7,7 @@ const DetailsContainer = styled.div`
   min-height: 100vh;
 `;
 const VideoContainer = styled.div`
-  width: 75%;
+  width: 60%;
   display: flex;
   height: auto;
   min-height: 100vh;
@@ -16,11 +16,15 @@ const VideoContainer = styled.div`
 const Video = styled.div`
   width: calc(100% - 32px);
   margin: 12px;
-  height: 450px;
+  height: 550px;
   background: gray;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const ListVideosContainer = styled.ul`
-  width: 25%;
+  width: 40%;
   display: flex;
   height: auto;
   min-height: 100%;

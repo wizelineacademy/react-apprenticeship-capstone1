@@ -7,7 +7,6 @@ const CardContainer = styled.div`
   height: auto;
   align-items: center;
   background: white;
-  justify-content: space-around;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   margin: 16px;
   border-radius: 10px;

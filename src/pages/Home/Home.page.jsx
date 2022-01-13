@@ -15,15 +15,23 @@ function HomePage() {
   const [serchedValue, setSearchedValue] = useState('');
   const [serchedData, setSearchedData] = useState({});
   const history = useHistory();
-  const { fetchData, response, error, isLoading } = useFetch();
+  const { fetchData, response, isLoading } = useFetch();
 
   useEffect(() => {
-    if (response && response.items) {
-      setSearchedData(response.items);
-    } else {
-      setSearchedData([]);
-    }
-  }, [response]);
+    const getResponse = () => {
+      try {
+        if (isLoading) return <p>is loaaaadiiiing.....</p>;
+        if (response && response.items) {
+          setSearchedData(response.items);
+        } else {
+          setSearchedData([]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getResponse();
+  }, [response, isLoading]);
 
   const handleSearch = async (event) => {
     event.preventDefault();
