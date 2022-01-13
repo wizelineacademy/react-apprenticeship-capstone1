@@ -26,7 +26,8 @@ const Description = styled.div`
 `;
 
 const VideoThumbnail = styled.img`
-  height: 15vh;
+  height: 150px;
+  object-fit: cover;
 `;
 
 const CustomCard = styled.div`
@@ -46,9 +47,9 @@ const CustomCard = styled.div`
 function VideoList({ videos }) {
   return (
     <Row>
-      {videos.map((video, indx) => {
+      {videos.map((video) => {
         return (
-          <Col key={indx} xs={12} sm={6} md={3} className="card-container">
+          <Col key={video.id.videoId} xs={12} sm={6} md={3} className="card-container">
             <CustomCard>
               <VideoThumbnail
                 src={video.snippet.thumbnails.medium.url}

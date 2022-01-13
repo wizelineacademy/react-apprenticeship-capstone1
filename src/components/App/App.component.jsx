@@ -7,8 +7,8 @@ import HomeView from '../../pages/HomeView';
 function App() {
   return (
     <Layout>
-      <Header></Header>
-      <HomeView></HomeView>
+      <Header/>
+      <HomeView/>
     </Layout>
   );
 }
