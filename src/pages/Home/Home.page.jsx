@@ -18,14 +18,25 @@ function HomePage() {
   const { fetchData, response, isLoading } = useFetch();
 
   useEffect(() => {
+    const getRandomVideos = () => {
+      fetchData('', 12);
+      try {
+        if (isLoading) return <p>is loaaaadiiiing....</p>;
+        if (response && response.items) setSearchedData(response.items)
+        else setSearchedData([]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getRandomVideos();
+  }, []);
+
+  useEffect(() => {
     const getResponse = () => {
       try {
         if (isLoading) return <p>is loaaaadiiiing.....</p>;
-        if (response && response.items) {
-          setSearchedData(response.items);
-        } else {
-          setSearchedData([]);
-        }
+        if (response && response.items) setSearchedData(response.items)
+        else setSearchedData([]);
       } catch (error) {
         console.log(error);
       }
