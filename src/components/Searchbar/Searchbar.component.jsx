@@ -3,11 +3,7 @@ import React from 'react';
 import { SearchbarInput } from './Searchbar.styled';
 
 const Searchbar = () => {
-  return (
-    <React.Fragment>
-      <SearchbarInput type="search" placeholder="Search something..." />
-    </React.Fragment>
-  );
+  return <SearchbarInput type="search" placeholder="Search something..." />;
 };
 
 export default Searchbar;

@@ -1,25 +1,16 @@
 import React from 'react';
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import VideoCard from '../VideoCard';
 import { VideosContainerStyled } from './VideosContainer.styled';
+import useFetchYoutubeVideos from '../../hooks/useFetchYoutubeVideos';
+import usePopulateVideoCards from '../../hooks/usePopulateVideoCards';
 
-const VideosContainer = ({ videos }) => {
+const VideosContainer = () => {
+  const videosList = useFetchYoutubeVideos({ queryString: 'wizeline' });
+  const videoCards = usePopulateVideoCards(videosList);
+
   return (
     <VideosContainerStyled data-testid="videos-container-component">
-      {videos.items ? (
-        videos.items.map((video) => {
-          return (
-            <VideoCard
-              imgsrc={video.snippet.thumbnails.medium.url}
-              title={video.snippet.title}
-              description={video.snippet.description}
-              key={video.id.videoId}
-            />
-          );
-        })
-      ) : (
-        <></>
-      )}
+      {videoCards}
     </VideosContainerStyled>
   );
 };
