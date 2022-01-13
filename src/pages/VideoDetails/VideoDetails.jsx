@@ -7,7 +7,7 @@ function VideoDetails() {
   const { search } = useLocation()
   const videoParams = new URLSearchParams(search)
 
-  const Key = 'AIzaSyD-7zEJzuJBi-0Dm2exCgOihSx0NklLcgM'
+  const Key = 'AIzaSyATm1VJjxvNeMUh4il_02veDJPMmvZC4rg'
   const axiosCliente = axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3/',
     params: {
@@ -21,10 +21,12 @@ function VideoDetails() {
   useEffect(() => {
     const fecthAPI = async () => {
       try {
-        const response = await axiosCliente.get(
-          `/search?relatedToVideoId=${videoid}`
+        const videoDetails = await axiosCliente.get(`/search?q=${videoid}`)
+        const relatedVideos = await axiosCliente.get(
+          `/search?q=${videoid}&&relatedToVideoId=${videoid}`
         )
-        console.log(response.data.items)
+        console.log(relatedVideos.data.items)
+        console.log(videoDetails.data.items)
       } catch (error) {
         console.log(error)
       }
@@ -35,7 +37,6 @@ function VideoDetails() {
 
   return (
     <div>
-      DEtellaes
       <iframe
         width="853"
         height="480"

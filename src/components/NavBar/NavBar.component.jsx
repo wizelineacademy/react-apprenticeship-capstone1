@@ -9,7 +9,7 @@ import {
   Button,
 } from 'react-bootstrap'
 import { NavContainer, ItemsNavContainer } from './NavBar.styled'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 /* // Utils
 import { useAuth } from '../../providers/Auth' */
@@ -17,11 +17,12 @@ import { GlobalContext } from '../../providers/Global/Global.provider'
 
 function NavBar() {
   const [params, setParams] = useState('wizeline')
-  const { searchParam, onSubmitSearch } = useContext(GlobalContext)
+  const { onSubmitSearch } = useContext(GlobalContext)
+  const history = useHistory()
 
-  const onSubmit = () => {
-    console.log(params)
-    localStorage.setItem('searchParams', params)
+  const onSubmit = (e) => {
+    e.preventDefault()
+    history.push('./')
     onSubmitSearch(params)
   }
 
@@ -39,14 +40,15 @@ function NavBar() {
                 aria-label="Search"
                 value={params}
                 onChange={(e) => setParams(e.target.value)}
+                onKeyPress={(e) => {
+                  e.key === 'Enter' && e.preventDefault()
+                }}
               />
               <Button onClick={onSubmit} variant="outline-success">
                 Search
               </Button>
             </Form>
-            <Link disabled to={'/home'}>
-              Login
-            </Link>
+            <a href={'/home'}>Login</a>
           </ItemsNavContainer>
 
           <Navbar.Offcanvas

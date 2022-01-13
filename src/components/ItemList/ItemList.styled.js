@@ -25,7 +25,19 @@ export const Card = styled.div`
     height: 10rem;
   }
   .infose-ction {
-    padding: 1rem 1rem;
+    padding: 1rem 0.5rem;
     height: 16rem;
+    max-width:18rem;
+    
+  }
+
+  .card-title {
+    font-size:1.3rem;
+  }
+
+  .card-paragraph {
+    text-align: left;
+    font-size:0.8rem;
+    
   }
 `
