@@ -8,6 +8,8 @@ import {
 } from '../CustomElements/CustomElement.component';
 import './VideoList.styles.css';
 
+
+
 function VideoList(props) {
   const handleClick = (video) => {
     props.handleSelectVideo(video);

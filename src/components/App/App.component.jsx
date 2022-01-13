@@ -6,12 +6,14 @@ import AppState from '../../context/useAppState';
 
 function App() {
   return (
+
     <AppState>
       <Layout>
         <Header />
         <HomeView />
       </Layout>
     </AppState>
+
   );
 }
 
