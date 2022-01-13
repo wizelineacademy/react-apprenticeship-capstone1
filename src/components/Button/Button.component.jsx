@@ -5,6 +5,7 @@ import './Button.styles.scss';
 function Button(props) {
   return (
     <button
+      data-testid={props.testId}
       className={'button ' + props.className}
       type={props.type}
       onClick={props.onClick}
@@ -15,6 +16,7 @@ function Button(props) {
 }
 
 Button.defaultProps = {
+  testId: 'button',
   className: '',
   text: '',
   onClick: null,

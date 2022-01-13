@@ -1,28 +1,26 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import IconButton from '../IconButton.component.jsx';
+import IconButton from '@components/IconButton';
 
-const mockedClickableFunction = jest.fn();
+const onClick = jest.fn();
 
-describe('Testing IconButton...', () => {
+describe('IconButton...', () => {
+  beforeEach(() => {
+    render(<IconButton icon={<i>icon</i>} onClick={onClick} />);
+  });
+
   it('should render', () => {
-    render(<IconButton icon={<i>icon</i>} />);
-
     let element = screen.getByTestId('icon-button');
     expect(element).toBeInTheDocument();
   });
 
-  it('should react when is clicked', () => {
-    render(<IconButton icon={<i>icon</i>} onClick={mockedClickableFunction} />);
-
-    let element = screen.getByTestId('icon-button');
-    fireEvent.click(element);
-    expect(mockedClickableFunction).toBeCalled();
-  });
-
   it('should be visible', () => {
-    render(<IconButton icon={<i>icon</i>} />);
-
     let element = screen.getByTestId('icon-button');
     expect(element).toBeVisible();
+  });
+
+  it('should react when is clicked', () => {
+    let element = screen.getByTestId('icon-button');
+    fireEvent.click(element);
+    expect(onClick).toBeCalled();
   });
 });

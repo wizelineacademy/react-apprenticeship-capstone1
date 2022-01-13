@@ -12,14 +12,16 @@ function Header(props) {
   let [searchBarFocus, onSearchBarFocusChange] = useState(false);
 
   return (
-    <section className={'header ' + props.className}>
+    <section data-testid={props["data-testid"]} className={'header ' + props.className}>
       <IconButton
+        data-testid="header__sidebar-button"
         icon={<FontAwesomeIcon icon={['fas', 'bars']} size="2x" />}
         className="header__icon_button"
         onClick={() => props.setIsSideBarOpen((prevState) => !prevState)}
       />
       <div className={'header__search-bar-container'}>
         <Searchbar
+          data-testid="header__searchbar"
           className={
             searchBarFocus
               ? 'header__search-bar header__search-bar--grow'
@@ -28,14 +30,20 @@ function Header(props) {
           onFocusChange={onSearchBarFocusChange}
         />
       </div>
-      <IconButton icon={<WizelineIcon />} onClick={() => navigate('/')} />
+      <IconButton
+        data-testid="header__home-button"
+        icon={<WizelineIcon />} 
+        onClick={props.onHomeButtonClick} 
+      />
     </section>
   );
 }
 
 Header.defaultProps = {
+  "data-testid": 'header',
   className: '',
   setIsSideBarOpen: () => {},
+  onHomeButtonClick: () => navigate('/')
 };
 
 export default Header;

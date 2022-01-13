@@ -11,6 +11,7 @@ function useAuth() {
   if (!context) {
     throw new Error(`Can't use "useAuth" without an AuthProvider!`);
   }
+
   return context;
 }
 
@@ -21,12 +22,12 @@ function RequireAuth({ children }) {
 }
 
 // eslint-disable-next-line react/prop-types
-function AuthProvider({ children }) {
-  const [authenticated, setAuthenticated] = useState(false);
+function AuthProvider({ children, defaultAuthenticated }) {
+  const [authenticated, setAuthenticated] = useState(!!defaultAuthenticated);
 
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
-    const isAuthenticated = Boolean(lastAuthState);
+    const isAuthenticated = Boolean(lastAuthState === null ? defaultAuthenticated : lastAuthState);
 
     setAuthenticated(isAuthenticated);
   }, []);
