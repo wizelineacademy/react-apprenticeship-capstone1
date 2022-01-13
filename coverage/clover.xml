@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1642029127950" clover="3.2.0">
+  <project timestamp="1642029127950" name="All files">
+    <metrics statements="45" coveredstatements="37" conditionals="6" coveredconditionals="3" methods="15" coveredmethods="10" elements="66" coveredelements="50" complexity="0" loc="45" ncloc="45" packages="13" files="25" classes="25"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/index.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.App">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="App.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/App/App.component.jsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/App/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.BurgerMenu">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="BurgerMenu.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/BurgerMenu/BurgerMenu.component.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/BurgerMenu/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.DarkModeToggle">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="DarkModeToggle.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/DarkModeToggle/DarkModeToggle.component.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/DarkModeToggle/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.Header">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Header.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Header/Header.component.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Header/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.Heading">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Heading.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Heading/Heading.component.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Heading/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.LoginAvatar">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="LoginAvatar.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/LoginAvatar/LoginAvatar.component.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/LoginAvatar/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.MainContainer">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="MainContainer.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/MainContainer/MainContainer.component.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/MainContainer/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.Private">
+      <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Private.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Private/Private.component.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Private/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.Searchbar">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Searchbar.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Searchbar/Searchbar.component.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/Searchbar/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.VideoCard">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="VideoCard.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/VideoCard/VideoCard.component.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/VideoCard/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.VideosContainer">
+      <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <file name="VideosContainer.component.jsx" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/VideosContainer/VideosContainer.component.jsx">
+        <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/components/VideosContainer/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="constants.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/utils/constants.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+      <file name="fns.js" path="/Users/alma.alatorre/Documents/Apprenticeship/react-apprenticeship-capstone1/src/utils/fns.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
