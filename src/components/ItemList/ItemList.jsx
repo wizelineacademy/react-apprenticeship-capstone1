@@ -13,7 +13,7 @@ function ItemList({ items }) {
   return (
     <ListContainer>
       {items.map((item) => (
-        <Card key={item.id} onClick={() => onClickCard(item.id.videoId)}>
+        <Card key={item.etag} onClick={() => onClickCard(item.id.videoId)}>
           <img
             className="cover-image"
             alt="preview"

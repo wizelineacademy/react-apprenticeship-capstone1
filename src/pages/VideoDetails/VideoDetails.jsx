@@ -1,51 +1,42 @@
+// Modules
 import React, { useEffect, useState, useContext } from 'react'
-import axios from 'axios'
-import { useParams, useLocation } from 'react-router-dom'
+import axiosClient from '../../utils/axiosClient'
+import { useParams } from 'react-router-dom'
+import VideoComponent from '../../components/VideoComponent/VideoComponent'
 
 function VideoDetails() {
+  // videoId param to search the video
   const { videoid } = useParams()
-  const { search } = useLocation()
-  const videoParams = new URLSearchParams(search)
 
-  const Key = 'AIzaSyATm1VJjxvNeMUh4il_02veDJPMmvZC4rg'
-  const axiosCliente = axios.create({
-    baseURL: 'https://www.googleapis.com/youtube/v3/',
-    params: {
-      part: 'snippet',
-      maxResults: 15,
-      key: Key,
-      type: 'video',
-    },
-  })
+  const [videoDetailed, setVideoDetailed] = useState(null)
+  const [relatedVideos, setRelatedVideos] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fecthAPI = async () => {
       try {
-        const videoDetails = await axiosCliente.get(`/search?q=${videoid}`)
-        const relatedVideos = await axiosCliente.get(
-          `/search?q=${videoid}&&relatedToVideoId=${videoid}`
+        setLoading(true)
+        const videoDetails = await axiosClient.get(`/search?q=${videoid}`)
+        const relatedVideos = await axiosClient.get(
+          `/search?relatedToVideoId=${videoid}`
         )
-        console.log(relatedVideos.data.items)
-        console.log(videoDetails.data.items)
+        setRelatedVideos(relatedVideos.data.items)
+        setVideoDetailed(videoDetails.data.items[0])
+        setLoading(false)
       } catch (error) {
         console.log(error)
+        setLoading(false)
       }
     }
     fecthAPI()
   }, [])
   console.log(videoid)
 
-  return (
+  return loading || !videoDetailed ? (
+    '..Loading'
+  ) : (
     <div>
-      <iframe
-        width="853"
-        height="480"
-        src={`https://www.youtube.com/embed/${videoid}`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Embedded youtube"
-      />
+      <VideoComponent video={videoDetailed} />
     </div>
   )
 }
