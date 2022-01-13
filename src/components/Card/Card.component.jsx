@@ -1,11 +1,19 @@
 import React from 'react';
 
-import { CardContainer, Subtitle, Title, VideoContainer } from './Card.styles';
+import {
+  CardContainer,
+  Subtitle,
+  Title,
+  VideoContainer,
+  VideoImage,
+} from './Card.styles';
 
-const Card = ({ title, subtitle, handleDetails }) => {
+const Card = ({ title, subtitle, handleDetails, videoImage }) => {
   return (
     <CardContainer onClick={handleDetails}>
-      <VideoContainer>video here</VideoContainer>
+      <VideoContainer>
+        <VideoImage src={videoImage} />
+      </VideoContainer>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
     </CardContainer>

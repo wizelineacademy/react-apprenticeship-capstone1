@@ -7,14 +7,25 @@ import { MunuButton } from '../Sidebar/sidebar.styles';
 
 import { ReactSVG } from 'react-svg';
 
-const Header = ({ title, handleMenu, deAuthenticate, authenticated }) => {
+const Header = ({
+  title,
+  handleMenu,
+  deAuthenticate,
+  authenticated,
+  handleSearch,
+  inputValue,
+}) => {
   return (
     <Container>
       <MunuButton onClick={handleMenu}>
         <ReactSVG src="./images/menu-pink.svg" />
       </MunuButton>
       <Title>{title}</Title>
-      <SeachBar placeholder="Search a video" />
+      <SeachBar
+        inputValue={inputValue}
+        placeholder="Search a video"
+        handleSearch={handleSearch}
+      />
       {authenticated ? (
         <Link to="/login" onClick={deAuthenticate}>
           log out

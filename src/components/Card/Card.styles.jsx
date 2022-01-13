@@ -19,6 +19,12 @@ const VideoContainer = styled.div`
   background: lightgray;
 `;
 
+const VideoImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+`;
+
 const Title = styled.p`
   font-family: 'Julius Sans One', sans-serif;
   font-size: 16px;
@@ -34,4 +40,5 @@ const Subtitle = styled.p`
   padding: 4px;
 `;
 
-export { CardContainer, Subtitle, Title, VideoContainer };
+
+export { CardContainer, Subtitle, Title, VideoContainer, VideoImage };
