@@ -49,7 +49,13 @@ function VideoList({ videos }) {
     <Row>
       {videos.map((video) => {
         return (
-          <Col key={video.id.videoId} xs={12} sm={6} md={3} className="card-container">
+          <Col
+            key={video.id.videoId}
+            xs={12}
+            sm={6}
+            md={3}
+            className="card-container"
+          >
             <CustomCard>
               <VideoThumbnail
                 src={video.snippet.thumbnails.medium.url}
