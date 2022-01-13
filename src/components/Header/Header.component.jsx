@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import './Header.styles.css';
 import { Container, Form, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
+import appContext from '../../context/appContext';
 
 const HeaderButton = styled.button`
   background-color: #1c1c1c;
@@ -12,6 +13,28 @@ const HeaderButton = styled.button`
 `;
 
 function Header() {
+  const [searchValue, setSearchValue] = useState('');
+  const thisContext = useContext(appContext);
+  const [switchValue, setSwitchValue] = useState(false);
+
+  const { searchTerm, setSearchTerm, toggleStyles } = thisContext;
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleSwitch = () => {
+    setSwitchValue(!switchValue);
+    toggleStyles(!switchValue);
+  };
+
+  const handleKeyPress = (target) => {
+    if (target.charCode === 13) {
+      if (searchTerm !== searchValue) {
+        setSearchTerm(searchValue);
+      }
+    }
+  };
   return (
     <div className="header">
       <Container className="form-search">
@@ -23,6 +46,9 @@ function Header() {
                   type="text"
                   data-testid="header-input-search"
                   placeholder="..."
+                  value={searchValue}
+                  onChange={(e) => handleChange(e)}
+                  onKeyPress={(e) => handleKeyPress(e)}
                 />
               </Form.Group>
             </Form>
@@ -34,6 +60,8 @@ function Header() {
                 id="custom-switch"
                 data-testid="header-input-switch"
                 label="Toggle Style"
+                checked={switchValue}
+                onChange={handleSwitch}
                 style={{ float: 'right' }}
               />
             </Form>

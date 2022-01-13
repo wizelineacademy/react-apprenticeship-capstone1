@@ -1,25 +1,58 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Col } from 'react-bootstrap';
-import { MockService } from '../../utils/MockService';
 import VideoList from '../../components/VideoList';
-import styled from 'styled-components';
+import VideoDetailsView from '../VideoDetailsView';
+import useYoutubeSearch from '../../utils/hooks/useYoutubeSearch';
+import appContext from '../../context/appContext';
 
-const HeadingH2 = styled.h2`
-  text-align: center;
-  margin: auto;
-`;
 function HomeView() {
-  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState({});
+  const [performSearch, setPerformSearch] = useState(true);
+  const thisContext = useContext(appContext);
+
+  const { styles, videos, setVideos, searchTerm } = thisContext;
+
+  const [displayVideo, setDisplayVideo] = useState(false);
+
   useEffect(() => {
-    let { items } = MockService.GetMock();
-    setVideos(items);
-  }, [videos]);
+    const getVideos = () => {
+      if (performSearch) {
+        setDisplayVideo(false);
+        setPerformSearch(false);
+      }
+    };
+    getVideos();
+  }, [performSearch]);
+
+  useYoutubeSearch(searchTerm, setVideos, setDisplayVideo);
+
+  const handleSelectVideo = (video) => {
+    setSelectedVideo(video);
+    setDisplayVideo(true);
+  };
+
+  const handleDisplay = () => {
+    setDisplayVideo(false);
+  };
 
   return (
-    <Container>
-      <Col xs={12} md={12}></Col>
-      <HeadingH2>Welcome</HeadingH2>
-      {videos.length !== 0 ? <VideoList videos={videos}></VideoList> : null}
+    <Container style={{ paddingBottom: '5%' }}>
+      <Col xs={12} sm={12} md={12}>
+        {displayVideo ? (
+          <VideoDetailsView
+            selectedVideo={selectedVideo}
+            handleDisplay={handleDisplay}
+            handleSelectVideo={handleSelectVideo}
+            styles={styles}
+          ></VideoDetailsView>
+        ) : (
+          <VideoList
+            videos={videos}
+            handleSelectVideo={handleSelectVideo}
+            styles={styles}
+          ></VideoList>
+        )}
+      </Col>
     </Container>
   );
 }
