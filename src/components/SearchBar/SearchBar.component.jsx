@@ -6,7 +6,10 @@ import IconButton from '@components/IconButton';
 
 function SearchBar(props) {
   return (
-    <div data-testid={props["data-testid"]} className={'search-container ' + props.className}>
+    <div
+      data-testid={props['data-testid']}
+      className={'search-container ' + props.className}
+    >
       <form action="" className="search-container__form">
         <input
           type="text"
@@ -26,7 +29,7 @@ function SearchBar(props) {
 }
 
 SearchBar.defaultProps = {
-  "data-testid": 'searchbar',
+  'data-testid': 'searchbar',
   className: '',
   onFocusChange: null,
 };

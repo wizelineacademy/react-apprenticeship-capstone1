@@ -14,23 +14,23 @@ describe('BreadCrumb...', () => {
         </AuthProvider>
       );
     });
-  
+
     it('should render', () => {
       let element = screen.getByTestId('breadcrumb');
       expect(element).toBeInTheDocument();
     });
 
     it('should be visible', () => {
-        let element = screen.getByTestId('breadcrumb');
-        expect(element).toBeVisible();
+      let element = screen.getByTestId('breadcrumb');
+      expect(element).toBeVisible();
     });
 
     it('When related element is clicked onSelectChange should return "related"', () => {
-        let element = screen.getByText(/related/i);
-        fireEvent.click(element);
-        expect(onSelectedChange).toHaveBeenLastCalledWith('related');
+      let element = screen.getByText(/related/i);
+      fireEvent.click(element);
+      expect(onSelectedChange).toHaveBeenLastCalledWith('related');
     });
-  })
+  });
 
   describe('when not authenticated', () => {
     beforeEach(() => {
@@ -42,8 +42,7 @@ describe('BreadCrumb...', () => {
     });
 
     it('When favorites element is clicked onSelectChange should return "favorites"', () => {
-      expect(screen.queryByText(/favorites/i)).not.toBeInTheDocument()
+      expect(screen.queryByText(/favorites/i)).not.toBeInTheDocument();
     });
-  })
+  });
 });
-  

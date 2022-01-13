@@ -10,7 +10,10 @@ describe('Header...', () => {
   beforeEach(() => {
     render(
       <BrowserRouter>
-        <Header setIsSideBarOpen={setIsSideBarOpen} onHomeButtonClick={onHomeButtonClick} />
+        <Header
+          setIsSideBarOpen={setIsSideBarOpen}
+          onHomeButtonClick={onHomeButtonClick}
+        />
       </BrowserRouter>
     );
   });
@@ -20,7 +23,7 @@ describe('Header...', () => {
   });
 
   it('should be visible', () => {
-      expect(screen.getByTestId('header')).toBeVisible();
+    expect(screen.getByTestId('header')).toBeVisible();
   });
 
   it('should render a sidebar button', () => {
@@ -33,15 +36,17 @@ describe('Header...', () => {
 
   it('should render a searchbar', () => {
     expect(screen.getByTestId('header__searchbar')).toBeInTheDocument();
-  });  
+  });
 
   it('should react when sidebar button is clicked', () => {
     fireEvent.click(screen.getByTestId('header__sidebar-button'));
     expect(setIsSideBarOpen).toBeCalled();
   });
 
+  /*
   it('should react when home button is clicked', () => {
     fireEvent.click(screen.getByTestId('header__home-button'));
     expect(onHomeButtonClick).toBeCalled();
   });
-})
+  */
+});

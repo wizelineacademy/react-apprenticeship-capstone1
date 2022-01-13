@@ -7,7 +7,10 @@ function BreadCrumb(props) {
   const { authenticated } = useAuth();
 
   return (
-    <ul data-testid={props["data-testid"]} className={'breadcrumb ' + props.className}>
+    <ul
+      data-testid={props['data-testid']}
+      className={'breadcrumb ' + props.className}
+    >
       <li
         className={
           'breadcrumb__item ' +
@@ -33,7 +36,7 @@ function BreadCrumb(props) {
 }
 
 BreadCrumb.defaultProps = {
-  "data-testid": 'breadcrumb',
+  'data-testid': 'breadcrumb',
   className: '',
   selected: 'related',
   onSelectedChange: () => {},

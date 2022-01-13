@@ -27,7 +27,9 @@ function AuthProvider({ children, defaultAuthenticated }) {
 
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
-    const isAuthenticated = Boolean(lastAuthState === null ? defaultAuthenticated : lastAuthState);
+    const isAuthenticated = Boolean(
+      lastAuthState === null ? defaultAuthenticated : lastAuthState
+    );
 
     setAuthenticated(isAuthenticated);
   }, []);
