@@ -53,16 +53,10 @@ const Information = styled.div`
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `;
 
-const Comments = styled(Information)`
-  height: auto;
-  min-height: 400px;
-`;
-
 export {
   DetailsContainer,
   VideoContainer,
   Video,
   ListVideosContainer,
   Information,
-  Comments,
 };

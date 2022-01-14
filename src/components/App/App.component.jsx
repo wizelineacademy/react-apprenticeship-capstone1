@@ -12,6 +12,7 @@ import Fortune from '../Fortune';
 import Layout from '../Layout';
 import DetailsPage from '../../pages/Details/Details.page';
 import { random } from '../../utils/fns';
+import { Provider } from '../../context';
 
 function App() {
   useLayoutEffect(() => {
@@ -33,36 +34,38 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Route exact path="/favorites">
-              <FavoritesPage />
-            </Route>
-            <Route exact path="/details/:id">
-              <DetailsPage />
-            </Route>
-            <Route exact path="/fav-details">
-              <div> details of fav video </div>
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-          <Fortune />
-        </Layout>
-      </AuthProvider>
-    </BrowserRouter>
+    <Provider>
+      <BrowserRouter>
+        <AuthProvider>
+          <Layout>
+            <Switch>
+              <Route exact path="/">
+                <HomePage />
+              </Route>
+              <Route exact path="/login">
+                <LoginPage />
+              </Route>
+              <Route exact path="/favorites">
+                <FavoritesPage />
+              </Route>
+              <Route exact path="/details/:id">
+                <DetailsPage />
+              </Route>
+              <Route exact path="/fav-details">
+                <div> details of fav video </div>
+              </Route>
+              <Private exact path="/secret">
+                <SecretPage />
+              </Private>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+            <Fortune />
+          </Layout>
+        </AuthProvider>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
