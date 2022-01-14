@@ -1,3 +1,4 @@
+// Client of axios to import the basic configuration
 import axios from 'axios'
 import { API_KEY } from '../utils/constants'
 

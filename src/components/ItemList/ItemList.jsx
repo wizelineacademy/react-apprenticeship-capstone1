@@ -1,10 +1,13 @@
+// Components
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Card, ListContainer } from './ItemList.styled'
 
 function ItemList({ items }) {
+  // Constanst
   const history = useHistory()
 
+  // Functions
   const onClickCard = (id) => {
     history.push(`/${id}`)
   }

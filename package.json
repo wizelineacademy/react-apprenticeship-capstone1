@@ -41,6 +41,7 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "husky": "^7.0.0",
     "lint-staged": "^10.2.13",
+    "msw": "^0.36.4",
     "prettier": "^2.5.1",
     "pretty-quick": "^3.0.0",
     "stylelint": "^14.2.0",
@@ -69,5 +70,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

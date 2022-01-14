@@ -13,6 +13,7 @@ function VideoDetails() {
   const [relatedVideos, setRelatedVideos] = useState([])
   const [loading, setLoading] = useState(false)
 
+  // Functions
   useEffect(() => {
     const fecthAPI = async () => {
       try {
@@ -21,7 +22,7 @@ function VideoDetails() {
         const relatedVideos = await axiosClient.get(
           `/search?relatedToVideoId=${videoid}`
         )
-
+        console.log(videoDetails.data.items[0])
         setRelatedVideos(relatedVideos.data.items)
         setVideoDetailed(videoDetails.data.items[0])
         setLoading(false)
@@ -32,14 +33,6 @@ function VideoDetails() {
     }
     fecthAPI()
   }, [videoid])
-
-  useEffect(() => {
-    return () => {
-      setRelatedVideos([])
-      setVideoDetailed(null)
-    }
-  }, [])
-  console.log(videoid)
 
   return loading || !videoDetailed || relatedVideos.length < 0 ? (
     '..Loading'

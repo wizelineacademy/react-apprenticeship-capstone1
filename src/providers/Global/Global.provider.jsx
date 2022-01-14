@@ -4,7 +4,7 @@ import React, { useState, useCallback } from 'react'
   searchParam: 'Wizeline',
 }
  */
-export const GlobalContext = React.createContext(null)
+export const GlobalContext = React.createContext('')
 
 export const GlobalProvider = ({ children }) => {
   const [searchParam, setSearchParam] = useState('wizeline')

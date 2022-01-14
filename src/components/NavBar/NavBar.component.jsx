@@ -11,8 +11,7 @@ import {
 import { NavContainer, ItemsNavContainer } from './NavBar.styled'
 import { useHistory } from 'react-router-dom'
 
-/* // Utils
-import { useAuth } from '../../providers/Auth' */
+// Utils
 import { GlobalContext } from '../../providers/Global/Global.provider'
 
 function NavBar() {
@@ -20,6 +19,7 @@ function NavBar() {
   const { onSubmitSearch } = useContext(GlobalContext)
   const history = useHistory()
 
+  // Functions
   const onSubmit = (e) => {
     e.preventDefault()
     history.push('./')
