@@ -1,47 +1,48 @@
-import React,{useState,useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import {
-    Title,
-    Description,
-    CustomCard,
-  } from '../../components/CustomElements';
-import {storage} from '../../utils/storage'
-function VideoDetail ({styles,selectedVideo,handleDisplay,userId,isLogged,path}){
+  Title,
+  Description,
+  CustomCard,
+} from '../../components/CustomElements';
+import { storage } from '../../utils/storage';
+function VideoDetail({
+  styles,
+  selectedVideo,
+  handleDisplay,
+  userId,
+  isLogged,
+}) {
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  const [isFavorite,setIsFavorite] = useState(false);
-console.log(isLogged)
-
-  useEffect(()=>{
-    const result = storage.find(userId,selectedVideo.id.videoId)
-    if(result!==null){
+  useEffect(() => {
+    const result = storage.find(userId, selectedVideo.id.videoId);
+    if (result !== null) {
       console.log(result);
       setIsFavorite(result.favorite);
     }
-      
+  }, []);
 
-  },[])
+  const addToFavorites = () => {
+    console.log(userId);
+    storage.set(userId, { ...selectedVideo, favorite: !isFavorite });
+    setIsFavorite(true);
+  };
 
-  const addToFavorites = () =>{
-    console.log(userId)
-    storage.set(userId,{...selectedVideo,favorite:!isFavorite})
-    setIsFavorite(true)
-  }
+  const removeFromFavorites = () => {
+    storage.remove(userId, selectedVideo.id.videoId);
+    setIsFavorite(false);
+  };
 
-  const removeFromFavorites = () =>{
-    storage.remove(userId,selectedVideo.id.videoId)
-    setIsFavorite(false)
-  }
-
-    return (<>
-    <Description color={styles.customCard.fontColor}>
+  return (
+    <>
+      <Description color={styles.customCard.fontColor}>
         <a href="#!" onClick={handleDisplay}>
           Home{' '}
         </a>
-      
         <i className="fa fa-chevron-right" aria-hidden="true"></i>{' '}
         {selectedVideo.snippet.title}
       </Description>
-          <iframe
+      <iframe
         width="100%"
         height="500px"
         title={selectedVideo.id.videoId}
@@ -53,22 +54,43 @@ console.log(isLogged)
         height={'150px'}
       >
         <Title fontColor={styles.customCard.fontColor}>
-          {selectedVideo.snippet.title} {' '}
-      {isLogged?<FavoriteBadge isFavorite={isFavorite} removeFromFavorites={removeFromFavorites}  addToFavorites={addToFavorites}/>:null}   
-
-          
-
+          {selectedVideo.snippet.title}{' '}
+          {isLogged ? (
+            <FavoriteBadge
+              isFavorite={isFavorite}
+              removeFromFavorites={removeFromFavorites}
+              addToFavorites={addToFavorites}
+            />
+          ) : null}
         </Title>
         <Description>{selectedVideo.snippet.description}</Description>
       </CustomCard>
-    </>)
+    </>
+  );
 }
 
-
-const FavoriteBadge = ({isFavorite,removeFromFavorites,addToFavorites}) =>{
-  return (<>{isFavorite ? <button type="button" className="btn btn-primary" onClick={removeFromFavorites}>Remove from favorites</button>:
-  <button type="button" className="btn btn-primary" onClick={addToFavorites}>Add to favorites</button>
-  }</>)
-}
+const FavoriteBadge = ({ isFavorite, removeFromFavorites, addToFavorites }) => {
+  return (
+    <>
+      {isFavorite ? (
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={removeFromFavorites}
+        >
+          Remove from favorites
+        </button>
+      ) : (
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={addToFavorites}
+        >
+          Add to favorites
+        </button>
+      )}
+    </>
+  );
+};
 
 export default VideoDetail;

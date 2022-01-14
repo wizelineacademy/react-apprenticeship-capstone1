@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import appContext from './appContext';
 import appReducer from './appReducer';
-import {MOCK_CREDENTIALS, USER_DEFAULT_PROPS} from '../utils/const'
+import { MOCK_CREDENTIALS, USER_DEFAULT_PROPS } from '../utils/const';
 function AppState(props) {
   const initialState = {
     searchTerm: '',
@@ -11,7 +11,7 @@ function AppState(props) {
       layout: { backgroundColor: 'antiquewhite', fontColor: '#000000' },
     },
     isLogged: true,
-    userProps: MOCK_CREDENTIALS
+    userProps: MOCK_CREDENTIALS,
   };
 
   const [state, dispatch] = useReducer(appReducer, initialState);
@@ -35,13 +35,13 @@ function AppState(props) {
     dispatch({ payload: value, type: 'UPDATE_UI_MODE', styles: newStyles });
   };
 
-  const setSession = (user) =>{
-    dispatch({ payload: user, type: 'USER_LOGIN'});
-  }
+  const setSession = (user) => {
+    dispatch({ payload: user, type: 'USER_LOGIN' });
+  };
 
-  const logout = ()=>{
-    dispatch({ payload: USER_DEFAULT_PROPS, type: 'USER_LOGOUT'});
-  }
+  const logout = () => {
+    dispatch({ payload: USER_DEFAULT_PROPS, type: 'USER_LOGOUT' });
+  };
 
   return (
     <appContext.Provider
@@ -49,13 +49,13 @@ function AppState(props) {
         videos: state.videos,
         searchTerm: state.searchTerm,
         styles: state.styles,
-        isLogged:state.isLogged,
-        userProps:state.userProps,
+        isLogged: state.isLogged,
+        userProps: state.userProps,
         setVideos,
         setSearchTerm,
         toggleStyles,
         setSession,
-        logout
+        logout,
       }}
     >
       {props.children}

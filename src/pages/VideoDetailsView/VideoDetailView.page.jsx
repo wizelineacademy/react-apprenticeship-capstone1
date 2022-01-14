@@ -10,7 +10,7 @@ function VideoDetailView({
   handleSelectVideo,
   styles,
   userId,
-  isLogged
+  isLogged,
 }) {
   const [relatedVideos, setRelatedVideos] = useState([]);
 
@@ -18,8 +18,15 @@ function VideoDetailView({
 
   return (
     <div>
-      {selectedVideo!==null?<VideoDetail styles={styles} selectedVideo={selectedVideo} handleDisplay={handleDisplay} userId={userId} isLogged={isLogged}></VideoDetail>:null}
-      
+      {selectedVideo !== null ? (
+        <VideoDetail
+          styles={styles}
+          selectedVideo={selectedVideo}
+          handleDisplay={handleDisplay}
+          userId={userId}
+          isLogged={isLogged}
+        ></VideoDetail>
+      ) : null}
 
       <VideoList
         videos={relatedVideos}

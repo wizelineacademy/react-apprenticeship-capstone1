@@ -7,9 +7,9 @@ export default (state, action) => {
     case 'UPDATE_UI_MODE':
       return { ...state, backMode: action.payload, styles: action.styles };
     case 'USER_LOGIN':
-      return {...state,isLogged:true,userProps:action.payload}
-      case 'USER_LOGOUT':
-        return {...state,isLogged:false,userProps:action.payload}  
+      return { ...state, isLogged: true, userProps: action.payload };
+    case 'USER_LOGOUT':
+      return { ...state, isLogged: false, userProps: action.payload };
     default:
       return state;
   }

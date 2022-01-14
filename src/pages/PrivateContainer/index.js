@@ -1,1 +1,1 @@
-export {default} from './Private.page'
+export { default } from './Private.page';

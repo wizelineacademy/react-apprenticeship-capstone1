@@ -3,30 +3,25 @@ import Layout from '../Layout';
 import Header from '../Header';
 import HomeView from '../../pages/HomeView';
 import AppState from '../../context/useAppState';
-import { BrowserRouter, Switch, Route,Redirect } from 'react-router-dom';
-import FavoritesView from '../../pages/FavoritesView';
-import PrivateContainer from '../../pages/PrivateContainer';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import VideoDetailsView from '../../pages/VideoDetailsView';
 function App() {
   return (
-
     <BrowserRouter>
-    <AppState>
-      <Layout>
-      <Header />
-        <Switch> 
-          <Route  path={'/home'}>
-            <HomeView />
-          </Route>
-          <Route  path={'/videos'}>
-          <VideoDetailsView></VideoDetailsView>
-          </Route>
-          <Route exact path="/" render={() => (
-            <Redirect to="/home"/>
-          )}/>
-        </Switch>
-      </Layout>
-    </AppState>
+      <AppState>
+        <Layout>
+          <Header />
+          <Switch>
+            <Route path={'/home'}>
+              <HomeView />
+            </Route>
+            <Route path={'/videos'}>
+              <VideoDetailsView></VideoDetailsView>
+            </Route>
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
+          </Switch>
+        </Layout>
+      </AppState>
     </BrowserRouter>
   );
 }
