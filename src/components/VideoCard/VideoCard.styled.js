@@ -4,6 +4,7 @@ const VideoCardStyled = styled.article`
   background: transparent;
   height: auto;
   padding: 0;
+  max-width: 350px;
   flex: 0 0 350px;
   margin: 12px;
   background: #efebf1;

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import mockVideos from '../mockvideos/youtube-mock-videos.json';
 
 const useFetchYoutubeVideos = (props) => {
   const [fetchedVideos, setVideosFetched] = useState([]);
 
-  const APIKey = 'AIzaSyDIRuOAK_ZD__dsBIetL_ykW0TSDO9H_Xk';
+  const APIKey = 'AIzaSyAOqGGiLINVpKNbodXDzDhpWqsrIgq7qrU';
   const resultMax = 20;
   const fetchURL = `https://www.googleapis.com/youtube/v3/search?q=${props.queryString}&part=snippet&maxResults=${resultMax}&order=date&key=${APIKey}`;
 
@@ -12,6 +13,10 @@ const useFetchYoutubeVideos = (props) => {
       .then((response) => response.json())
       .then((data) => setVideosFetched(data));
   }, [fetchURL]);
+
+  if (fetchedVideos.error) {
+    return mockVideos;
+  }
 
   return fetchedVideos;
 };

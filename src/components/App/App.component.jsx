@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SearchContext from '../../context/search-context';
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import MainHeader from '../Header';
+import Header from '../Header';
 import Heading from '../Heading';
 import MainContainer from '../MainContainer';
 import VideosContainer from '../VideosContainer';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('wizeline');
+  const value = { searchQuery, setSearchQuery };
+
   return (
-    <React.Fragment>
-      <MainHeader />
+    <SearchContext.Provider value={value}>
+      <Header />
       <MainContainer>
-        <Heading title="Welcome to the challenge" />
+        <Heading title="Welcome to the challenge!" />
         <VideosContainer />
       </MainContainer>
-    </React.Fragment>
+    </SearchContext.Provider>
   );
 }
 
