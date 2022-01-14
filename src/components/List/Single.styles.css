@@ -1,0 +1,47 @@
+img {
+    width: 100%;
+}
+
+h2, p {
+    color: white;
+    text-overflow: ellipsis;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 0.75rem;
+    text-overflow: ellipsis;
+    max-height: 85px;
+}
+
+.span-text {
+    color: white;
+    margin: 0 20px;
+}
+
+.thumbnail {
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    height: 140px;
+    width: 100%;
+}
+
+.single-container {
+    border-radius: 5px;
+    box-shadow: 2px 4px 5px black;
+    height: 350px;
+    margin: 10px;
+    width: 350px;
+}
+
+.info {
+    padding: 5px 10px;
+    overflow: hidden;
+}
+
+
+
