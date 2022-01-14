@@ -56,7 +56,6 @@ function Container() {
   return (
     <StyledContainer>
       <SearchBar search={handleSearch} />
-      {/* 
       {isLoading && !isSearching ? (
         <div>Loading ...</div>
       ) : (
@@ -65,7 +64,7 @@ function Container() {
             <Card key={index} snippet={video.snippet} id={video.id.videoId} />
           ))}
         </div>
-      )} */}
+      )}
       {isLoading && isSearching ? (
         <div>Loading ...</div>
       ) : (
