@@ -7,18 +7,20 @@ import Button from '@components/Button';
 
 function LoginModal(props) {
   const { login } = useAuth();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('wizeline');
+  const [password, setPassword] = useState('Rocks!');
 
   const authenticate = (event) => {
     event.preventDefault();
-    login();
-    //history.push('/secret');
+    login(username, password);
     props.closeModal();
   };
 
   return (
-    <div className={'login-modal ' + props.className}>
+    <div
+      data-testid={props['data-testid']}
+      className={'login-modal ' + props.className}
+    >
       <h1>Login</h1>
       <form onSubmit={authenticate} className="login-modal__form">
         <Input label="Username" value={username} onChange={setUsername} />
@@ -42,6 +44,7 @@ function LoginModal(props) {
 }
 
 LoginModal.defaultProps = {
+  'data-testid': 'login-modal-component',
   className: '',
   closeModal: () => {},
 };

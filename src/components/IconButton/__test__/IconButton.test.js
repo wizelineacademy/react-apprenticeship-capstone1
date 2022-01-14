@@ -9,17 +9,17 @@ describe('IconButton...', () => {
   });
 
   it('should render', () => {
-    let element = screen.getByTestId('icon-button');
+    let element = screen.getByRole('button');
     expect(element).toBeInTheDocument();
   });
 
   it('should be visible', () => {
-    let element = screen.getByTestId('icon-button');
+    let element = screen.getByRole('button');
     expect(element).toBeVisible();
   });
 
   it('should react when is clicked', () => {
-    let element = screen.getByTestId('icon-button');
+    let element = screen.getByRole('button');
     fireEvent.click(element);
     expect(onClick).toBeCalled();
   });

@@ -3,13 +3,13 @@
 
 .video-grid {
     width: 100%;
-    max-width: 936px;
+    max-width: 1280px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 264px);
     justify-content: center;
     place-items: center;
-    column-gap: 72px;
-    row-gap: 72px;
+    column-gap: 12px;
+    row-gap: 12px;
 
     &__load-more-row {
         display: flex;

@@ -3,7 +3,7 @@
 
 .video-card {
     width: 264px;
-    height: 216px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,7 +24,6 @@
 
     &__info {
         width: calc(264px - 24px);
-        height: auto;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -32,12 +31,11 @@
         padding: 6px 12px 12px;
 
         border-radius: 0px 0px 6px 6px;
-        box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        //box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
     }
 
     &__title-column {
         width: calc(264px - 24px - 16px - 6px);
-        height: calc(216px - 150px);
         display: flex;
         flex-direction: column;
         align-items: flex-start;

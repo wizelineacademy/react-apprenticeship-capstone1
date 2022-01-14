@@ -1,19 +1,18 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from '@components/Header';
 
 const setIsSideBarOpen = jest.fn();
-const onHomeButtonClick = jest.fn();
 
 describe('Header...', () => {
   beforeEach(() => {
     render(
       <BrowserRouter>
-        <Header
-          setIsSideBarOpen={setIsSideBarOpen}
-          onHomeButtonClick={onHomeButtonClick}
-        />
+        <Header setIsSideBarOpen={setIsSideBarOpen} />
+        <Routes>
+          <Route exact path="/" element={<i>Home view</i>} />
+        </Routes>
       </BrowserRouter>
     );
   });
@@ -43,10 +42,8 @@ describe('Header...', () => {
     expect(setIsSideBarOpen).toBeCalled();
   });
 
-  /*
-  it('should react when home button is clicked', () => {
+  it('should go to home page when home button is clicked', () => {
     fireEvent.click(screen.getByTestId('header__home-button'));
-    expect(onHomeButtonClick).toBeCalled();
+    expect(screen.getByText(/home view/i)).toBeInTheDocument();
   });
-  */
 });

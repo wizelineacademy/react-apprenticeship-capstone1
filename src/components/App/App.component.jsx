@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
-import AuthProvider, { RequireAuth } from '@providers/Auth';
+import { AuthProvider, RequireAuth } from '@providers/Auth';
 import Layout from '@components/Layout';
 import NotFound from '@pages/NotFound';
 import HomePage from '@pages/Home';

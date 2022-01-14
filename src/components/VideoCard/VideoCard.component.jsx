@@ -4,22 +4,11 @@ import moment from 'moment';
 import he from 'he';
 
 import './VideoCard.styles.scss';
-
-/*
-        <div className="video-card__title-row">
-          <h4 className="video-card__title">{video.snippet.title}</h4>
-          <FontAwesomeIcon
-            icon={[props.liked ? 'fas' : 'far', 'heart']}
-            className="video-card__liked-icon"
-          />
-        </div>
-        <h5>
-          {moment(new Date(video.snippet.publishTime)).fromNow()}
-        </h5>
-*/
+import { useAuth } from '@providers/Auth';
 
 function VideoCard(props) {
   const video = props.item;
+  const { authenticated, isFavorite } = useAuth();
 
   return (
     <div className={'video-card ' + props.className} onClick={props.onClick}>
@@ -39,10 +28,12 @@ function VideoCard(props) {
           </h4>
           <h5>{moment(new Date(video.snippet.publishTime)).fromNow()}</h5>
         </div>
-        <FontAwesomeIcon
-          icon={[props.liked ? 'fas' : 'far', 'heart']}
-          className="video-card__like-icon"
-        />
+        {authenticated ? (
+          <FontAwesomeIcon
+            icon={[isFavorite(video) ? 'fas' : 'far', 'heart']}
+            className="video-card__like-icon"
+          />
+        ) : null}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import AuthProvider from '@providers/Auth';
+import { AuthProvider } from '@providers/Auth';
 import BreadCrumb from '@components/BreadCrumb';
 
 const onSelectedChange = jest.fn();

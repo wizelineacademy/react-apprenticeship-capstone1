@@ -13,13 +13,17 @@ import IconButton from '@components/IconButton';
 function Sidebar(props) {
   let navigate = useNavigate();
   let location = useLocation();
-  const { authenticated } = useAuth();
+
+  const { authenticated, userInfo } = useAuth();
   var { openPortal, closePortal, isOpen, Portal } = usePortal({
     bindTo: document && document.getElementById('modal-root'),
   });
 
   return (
-    <div className={'sidebar ' + props.className}>
+    <div
+      data-testid={props['data-testid']}
+      className={'sidebar ' + props.className}
+    >
       <div className="sidebar__close-button-container">
         <IconButton
           icon={<FontAwesomeIcon icon={['fas', 'times']} size="2x" />}
@@ -33,7 +37,7 @@ function Sidebar(props) {
           alt="User's avatar"
           className="sidebar__avatar-image"
         />
-        <h3>Username</h3>
+        <h3>{userInfo.username}</h3>
       </div>
 
       <div
@@ -79,6 +83,7 @@ function Sidebar(props) {
 }
 
 Sidebar.defaultProps = {
+  'data-testid': 'sidebar',
   className: '',
   isLogged: false,
   setIsSideBarOpen: () => {},

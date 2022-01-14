@@ -10,15 +10,15 @@ describe('Button...', () => {
   });
 
   it('should render', () => {
-    expect(screen.getByTestId('button')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   it('should be visible', () => {
-    expect(screen.getByTestId('button')).toBeVisible();
+    expect(screen.getByRole('button')).toBeVisible();
   });
 
   it('should react when is clicked', () => {
-    fireEvent.click(screen.getByTestId('button'));
+    fireEvent.click(screen.getByRole('button'));
     expect(onClick).toBeCalled();
   });
 });

@@ -28,6 +28,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "test:coverage": "craco test src --coverage --collectCoverageFrom='src/**/*.{js,jsx}'",
     "eject": "react-scripts eject",
     "lint": "eslint ./src --ext .js,.jsx",
     "lint:fix": "eslint ./src --ext .js,.jsx --fix",
@@ -80,8 +81,13 @@
     }
   },
   "jest": {
+    "coverageThreshold": {
+      "global": {
+        "lines": 70
+      }
+    },
     "moduleNameMapper": {
-      "^@$": "<rootDir>/src/$1",
+      "^@src(.*)$": "<rootDir>/src/$1",
       "^@components(.*)$": "<rootDir>/src/components/$1",
       "^@pages(.*)$": "<rootDir>/src/pages/$1",
       "^@providers(.*)$": "<rootDir>/src/providers/$1",

@@ -36,6 +36,11 @@
     padding-left: 12px;
     padding-right: 12px;
     cursor: pointer;
+
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
 }
 
 .sidebar__tab--selected {
@@ -52,6 +57,11 @@
     color: $gray;
     text-decoration: underline;
     cursor: pointer;
+
+    &:hover {
+        background-color: $primary;
+        color: $white;
+    }
 }
 
 .sidebar__user-info-container {

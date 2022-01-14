@@ -10,12 +10,14 @@ function LogoutModal(props) {
   const deAuthenticate = (event) => {
     event.preventDefault();
     logout();
-    //history.push('/');
     props.closeModal();
   };
 
   return (
-    <div className={'logout-modal ' + props.className}>
+    <div
+      data-testid={props['data-testid']}
+      className={'logout-modal ' + props.className}
+    >
       <h3>Are you sure you want to log out?</h3>
       <div className="logout-modal__buttons-row ">
         <Button
@@ -30,6 +32,7 @@ function LogoutModal(props) {
 }
 
 LogoutModal.defaultProps = {
+  'data-testid': 'logout-modal-component',
   className: '',
   closeModal: () => {},
 };
