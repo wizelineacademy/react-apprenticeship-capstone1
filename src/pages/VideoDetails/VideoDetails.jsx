@@ -1,8 +1,9 @@
 // Modules
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import axiosClient from '../../utils/axiosClient'
 import { useParams } from 'react-router-dom'
 import VideoComponent from '../../components/VideoComponent/VideoComponent'
+import { VideoDetailsContainer } from './VideoDetails.styled'
 
 function VideoDetails() {
   // videoId param to search the video
@@ -20,6 +21,7 @@ function VideoDetails() {
         const relatedVideos = await axiosClient.get(
           `/search?relatedToVideoId=${videoid}`
         )
+
         setRelatedVideos(relatedVideos.data.items)
         setVideoDetailed(videoDetails.data.items[0])
         setLoading(false)
@@ -29,15 +31,22 @@ function VideoDetails() {
       }
     }
     fecthAPI()
+  }, [videoid])
+
+  useEffect(() => {
+    return () => {
+      setRelatedVideos([])
+      setVideoDetailed(null)
+    }
   }, [])
   console.log(videoid)
 
-  return loading || !videoDetailed ? (
+  return loading || !videoDetailed || relatedVideos.length < 0 ? (
     '..Loading'
   ) : (
-    <div>
-      <VideoComponent video={videoDetailed} />
-    </div>
+    <VideoDetailsContainer>
+      <VideoComponent video={videoDetailed} relatedVideos={relatedVideos} />
+    </VideoDetailsContainer>
   )
 }
 

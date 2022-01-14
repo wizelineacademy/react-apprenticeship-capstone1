@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router'
 import { useHistory } from 'react-router-dom'
 import { Card, ListContainer } from './ItemList.styled'
 

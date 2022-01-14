@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 
 /* const initialState = {
   searchParam: 'Wizeline',
