@@ -23,12 +23,24 @@ describe('Testing NavBar component', () => {
 
   it('Search input change value', () => {
     render(<NavBar />)
-    console.log(screen.debug)
     const input = screen.getByRole('searchbox')
-    console.log(input)
 
     fireEvent.change(input, { target: { value: 'Luke Skywalker' } })
 
     expect(input.value).toBe('Luke Skywalker')
+  })
+
+  it('Render a switch toogle button', () => {
+    render(<NavBar />)
+
+    const toogleBtn = screen.getByRole('checkbox')
+    expect(toogleBtn.toBeInTheDocument)
+  })
+
+  it('Changes the button text when it clicked', () => {
+    render(<NavBar />)
+
+    const toogleBtn = screen.getByRole('checkbox')
+    expect(toogleBtn.toBeInTheDocument)
   })
 })

@@ -10,13 +10,14 @@ import {
 } from 'react-bootstrap'
 import { NavContainer, ItemsNavContainer } from './NavBar.styled'
 import { useHistory } from 'react-router-dom'
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 // Utils
 import { GlobalContext } from '../../providers/Global/Global.provider'
 
 function NavBar() {
   const [params, setParams] = useState('wizeline')
-  const { onSubmitSearch } = useContext(GlobalContext)
+  const { onSubmitSearch, changeTheme } = useContext(GlobalContext)
   const history = useHistory()
 
   // Functions
@@ -24,6 +25,10 @@ function NavBar() {
     e.preventDefault()
     history.push('./')
     onSubmitSearch(params)
+  }
+
+  const onToogleChange = (e) => {
+    changeTheme()
   }
 
   return (
@@ -48,7 +53,16 @@ function NavBar() {
                 Search
               </Button>
             </Form>
-            <a href={'/home'}>Login</a>
+            <div>
+              <a href={'/home'}>Login</a>
+              <Form>
+                <Form.Check
+                  type="switch"
+                  id="custom-switch"
+                  onChange={onToogleChange}
+                />
+              </Form>
+            </div>
           </ItemsNavContainer>
 
           <Navbar.Offcanvas
