@@ -12,7 +12,11 @@ function Detail() {
 
   useEffect(() => {
     const fetchVideoById = async () => {
+<<<<<<< HEAD
       let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${params.videoId}&key=${process.env.REACT_APP_YOUTUBE_KEY}`;
+=======
+      let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${params.videoId}&key=AIzaSyDrde2OFO_CNqcG5Z2jjDXzNczQxE_RpGg`;
+>>>>>>> 6dbeb1a (build: detail pages and search bar)
       const response = await axios.get(url);
       setVideo(response.data.items[0]);
     };

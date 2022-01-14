@@ -6,17 +6,19 @@ import axios from 'axios';
 
 function Container() {
   const [videos, setVideos] = useState([]);
+  const [videosSearched, setVideosSearched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const KEY = 'AIzaSyDrde2OFO_CNqcG5Z2jjDXzNczQxE_RpGg';
 
   useEffect(() => {
     const fetchData = async () => {
       setIsError(false);
       setIsLoading(true);
-
       try {
         const result = await axios(
-          `https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=${process.env.REACT_APP_YOUTUBE_KEY}`
+          'https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=AIzaSyDrde2OFO_CNqcG5Z2jjDXzNczQxE_RpGg'
         );
         setVideos(result.data.items);
       } catch (error) {
@@ -31,18 +33,20 @@ function Container() {
 
   const handleSearch = (e) => {
     if (e.target.value.length) {
-      let query = e.target.value;
       setIsLoading(true);
+      setIsSearching(true);
+      let query = e.target.value;
 
       const fecthVideosSearched = async () => {
         try {
           const result = await axios(
-            `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${process.envREACT_APP_YOUTUBE_KEY}`
+            `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${KEY}`
           );
-          setVideos(result.data.items);
+          setVideosSearched(result.data.items);
           setIsLoading(false);
+          console.log('results after get', videosSearched, isLoading);
         } catch (error) {
-          setIsError(true);
+          console.log(error);
         }
       };
       fecthVideosSearched();
@@ -52,7 +56,8 @@ function Container() {
   return (
     <StyledContainer>
       <SearchBar search={handleSearch} />
-      {isLoading ? (
+      {/* 
+      {isLoading && !isSearching ? (
         <div>Loading ...</div>
       ) : (
         <div className="video-container">
@@ -60,7 +65,17 @@ function Container() {
             <Card key={index} snippet={video.snippet} id={video.id.videoId} />
           ))}
         </div>
+      )} */}
+      {isLoading && isSearching ? (
+        <div>Loading ...</div>
+      ) : (
+        <div className="video-container">
+          {videosSearched.map((video, index) => (
+            <Card key={index} snippet={video.snippet} id={video.id.videoId} />
+          ))}
+        </div>
       )}
+
       {isError && <div>Something went wrong ...</div>}
     </StyledContainer>
   );

@@ -8,4 +8,5 @@ export const StyledRelatedVideos = styled.div`
     font-size: 2rem;
     color: #1b9aaa;
   }
+  
 `;
