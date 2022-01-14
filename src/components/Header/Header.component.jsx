@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom'
 import './Header.styles.css';
-import { Container, Form, Row, Col } from 'react-bootstrap';
+import { Container, Form, Row, Col, Dropdown } from 'react-bootstrap';
 import styled from 'styled-components';
 import appContext from '../../context/appContext';
+import Login from '../login/Login.component';
 
 const HeaderButton = styled.button`
   background-color: #1c1c1c;
@@ -14,10 +16,13 @@ const HeaderButton = styled.button`
 
 function Header() {
   const [searchValue, setSearchValue] = useState('');
-  const thisContext = useContext(appContext);
   const [switchValue, setSwitchValue] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const { searchTerm, setSearchTerm, toggleStyles } = thisContext;
+  const handleShow = () => setShow(true);
+  const handleModal = () => setShow(!show)
+  const thisContext = useContext(appContext);
+  const { searchTerm, setSearchTerm, toggleStyles, userProps, isLogged, logout } = thisContext;
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
@@ -31,6 +36,7 @@ function Header() {
   const handleKeyPress = (target) => {
     if (target.charCode === 13) {
       if (searchTerm !== searchValue) {
+        console.log("different")
         setSearchTerm(searchValue);
       }
     }
@@ -53,7 +59,7 @@ function Header() {
               </Form.Group>
             </Form>
           </Col>
-          <Col sm={5} md={5} className="d-none d-sm-block d-xs-block">
+          <Col sm={5} md={5} className="d-none d-sm-block d-xs-block switch-container">
             <Form>
               <Form.Check
                 type="switch"
@@ -67,16 +73,37 @@ function Header() {
             </Form>
           </Col>
           <Col sm={1} md={1} className="d-none d-sm-block d-xs-block">
-            <HeaderButton data-testid="header-btn-login">
-              <i
-                className="fa fa-user-circle fa-2x"
-                style={{ float: 'right' }}
-              ></i>
-            </HeaderButton>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+
+            <Dropdown>
+              <Dropdown.Toggle id="dropdown-menu-login" >
+                {isLogged ? <img src={userProps.avatarUrl} className='user'></img> : <i className="fa fa-user-circle fa-2x user" style={{ float: 'right' }}></i>}
+              </Dropdown.Toggle>
+
+
+              <Dropdown.Menu>
+                {isLogged ? <Dropdown.Item><Link
+                  to={{
+                    pathname: "/private"
+                  }}
+                > Favorites</Link>
+                </Dropdown.Item>:null}
+              {isLogged ? <Dropdown.Item onClick={logout}><Link
+                  to={{
+                    pathname: "/home"
+                  }}
+                > Logout</Link></Dropdown.Item> :
+                <Dropdown.Item onClick={handleModal}>Login</Dropdown.Item>}
+
+
+            </Dropdown.Menu>
+          </Dropdown>
+
+
+          <Login show={show} setShow={setShow} handleShow={handleShow}></Login>
+        </Col>
+      </Row>
+    </Container>
+    </div >
   );
 }
 

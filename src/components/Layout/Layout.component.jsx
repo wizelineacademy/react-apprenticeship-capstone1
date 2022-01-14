@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 const LayoutStyled = styled.main`
   width: 100%;
+  height: 100vh;
   background-color: ${(props) => props.backgroundColor};
 `;
 // eslint-disable-next-line react/prop-types

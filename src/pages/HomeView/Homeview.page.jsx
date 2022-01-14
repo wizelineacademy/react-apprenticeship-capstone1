@@ -10,7 +10,7 @@ function HomeView() {
   const [performSearch, setPerformSearch] = useState(true);
   const thisContext = useContext(appContext);
 
-  const { styles, videos, setVideos, searchTerm } = thisContext;
+  const { styles, videos, setVideos, searchTerm,userProps,isLogged } = thisContext;
 
   const [displayVideo, setDisplayVideo] = useState(false);
 
@@ -38,12 +38,16 @@ function HomeView() {
   return (
     <Container style={{ paddingBottom: '5%' }}>
       <Col xs={12} sm={12} md={12}>
+    
+
         {displayVideo ? (
           <VideoDetailsView
             selectedVideo={selectedVideo}
             handleDisplay={handleDisplay}
             handleSelectVideo={handleSelectVideo}
             styles={styles}
+            userId={userProps.id}
+            isLogged={isLogged}
           ></VideoDetailsView>
         ) : (
           <VideoList
