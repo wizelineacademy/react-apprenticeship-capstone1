@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-  width: 500px;
+  width: 700px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin: 18px;
   display: flex;
   align-items: center;
   background-color: #eefbfc;
-  height: 170px;
+  height: 200px;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin: 8px;
     height: 190px;
@@ -17,7 +17,7 @@ export const StyledCard = styled.div`
     margin-right: 5px;
     margin-top: 0;
   }
-  h4 {
+  h5 {
     margin: 10px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 12px;
@@ -33,5 +33,17 @@ export const StyledCard = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: center;
+  }
+  #youtube {
+    font-size: 2.5rem;
+    color: red;
+  }
+  .favorite {
+    font-size: 2rem;
+    color: #cdd2d4;
+  }
+
+  .on {
+    color: #ffb703;
   }
 `;

@@ -1,13 +1,12 @@
 import React from 'react';
 import { StyledNavbar } from './Navbar.styled';
-import Button from '../Button/Button.component';
+import Button from '../Button/Button';
 
 function Navbar() {
   return (
     <StyledNavbar>
       <div>
         <img src="../../hamburger.svg" alt="menu" />
-        <input type="text" placeholder="Search..." />
       </div>
       <div>
         <h1>
@@ -15,7 +14,7 @@ function Navbar() {
         </h1>
       </div>
       <div>
-        <Button>Dark Theme</Button>
+        <Button text="Dark Mode"></Button>
         <img src="../../profile.svg" alt="profile img" />
       </div>
     </StyledNavbar>

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './Layout.styles.css';
+import { StyledLayout } from './Layout.styles.jsx';
 
 // eslint-disable-next-line react/prop-types
 function Layout({ children }) {
-  return <main className="container">{children}</main>;
+  return <StyledLayout> {children}</StyledLayout>;
 }
 
 export default Layout;

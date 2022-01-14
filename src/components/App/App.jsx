@@ -3,10 +3,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
+import DetailPage from '../../pages/Detail/Detail.page';
 import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
-import SecretPage from '../../pages/Secret';
-import Private from '../Private';
 import Layout from '../Layout';
 
 function App() {
@@ -14,6 +13,8 @@ function App() {
     tablet: '768px',
     mobile: '414px',
   };
+
+  //const [favorites, setFavorites] = useState([]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -27,9 +28,9 @@ function App() {
               <Route exact path="/login">
                 <LoginPage />
               </Route>
-              <Private exact path="/secret">
-                <SecretPage />
-              </Private>
+              <Route exact path="/:videoId">
+                <DetailPage />
+              </Route>
               <Route path="*">
                 <NotFound />
               </Route>

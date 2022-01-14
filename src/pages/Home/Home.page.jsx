@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar.component';
-import Container from '../../components/Container/Container.component';
+import Container from '../../components/VideosContainer/VideosContainer';
 import { StyledHome } from './Home.styles';
 
 function HomePage() {
   return (
-    <StyledHome className="homepage">
+    <StyledHome>
       <Navbar />
       <Container />
     </StyledHome>

@@ -6,6 +6,7 @@ export const StyledNavbar = styled.nav`
   align-items: center;
   justify-content: space-between;
   background-color: #1b9aaa;
+
   div {
     display: flex;
     align-items: center;
@@ -18,21 +19,7 @@ export const StyledNavbar = styled.nav`
         width: 20px;
       }
     }
-    input[type='text'] {
-      padding: 10px;
-      border: none;
-      border-bottom: 1px solid #fff;
-      margin-top: 8px;
-      margin-right: 16px;
-      font-size: 17px;
-      background: transparent;
-      ::placeholder {
-        color: #fff;
-      }
-      @media (max-width: ${({ theme }) => theme.mobile}) {
-        display: none;
-      }
-    }
+
     h1 {
       color: #fff;
       margin: 0;
