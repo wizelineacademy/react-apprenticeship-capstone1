@@ -6,12 +6,8 @@ import axios from 'axios';
 
 function Container() {
   const [videos, setVideos] = useState([]);
-  // const [videosSearched, setVideosSearched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  //const [isSearching, setIsSearching] = useState(false);
-
-  const KEY = 'AIzaSyDrde2OFO_CNqcG5Z2jjDXzNczQxE_RpGg';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +16,7 @@ function Container() {
 
       try {
         const result = await axios(
-          'https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=AIzaSyDrde2OFO_CNqcG5Z2jjDXzNczQxE_RpGg'
+          `https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=${process.env.REACT_APP_YOUTUBE_KEY}`
         );
         setVideos(result.data.items);
       } catch (error) {
@@ -41,12 +37,12 @@ function Container() {
       const fecthVideosSearched = async () => {
         try {
           const result = await axios(
-            `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${KEY}`
+            `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${process.envREACT_APP_YOUTUBE_KEY}`
           );
           setVideos(result.data.items);
           setIsLoading(false);
         } catch (error) {
-          console.log(error);
+          setIsError(true);
         }
       };
       fecthVideosSearched();

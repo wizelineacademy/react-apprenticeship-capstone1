@@ -15,7 +15,6 @@ function App() {
   };
 
   //const [favorites, setFavorites] = useState([]);
-
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
