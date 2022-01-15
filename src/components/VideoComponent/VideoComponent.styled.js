@@ -4,43 +4,24 @@ export const VideoComponentContainer = styled.div`
   display: flex;
   flex-direction: row;
 
+  .videoInfo-container {
+    width: 68vw;
+  }
+
   .iframe-container {
-    width: 47.5em;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
   }
-`
-export const RelatedContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  height: 100vh;
-  padding: 0.5rem 1rem;
 
-  .item-info {
-    padding: 0.5rem 0.5rem;
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
   }
-  .item-title {
-    font-size: 1rem;
-  }
-  .item-channel {
-    font-size: 0.5rem;
-    color: grey;
-  }
-`
-
-export const RelatedItem = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0.2rem 0;
-  padding: 0;
-  border: 1px solid grey;
-  border-radius: 5px;
-
-  :hover {
-    box-shadow: 1px 5px 3px grey;
-  }
-`
-
-export const ItemImage = styled.img`
-  max-width: 10rem;
-  min-height: 8rem;
 `

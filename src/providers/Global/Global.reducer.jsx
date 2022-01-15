@@ -8,7 +8,7 @@ export default (state, action) => {
         searchParam: action.payload,
       }
     case CHANGE_THEME:
-      console.log(state.darkTheme)
+      localStorage.setItem('theme', !state.darkTheme)
       return {
         ...state,
         darkTheme: !state.darkTheme,

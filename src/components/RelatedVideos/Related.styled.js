@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const RelatedContainer = styled.div`
   display: flex;
+  width: 32vw;
   flex-direction: column;
   overflow-y: scroll;
   height: 100vh;

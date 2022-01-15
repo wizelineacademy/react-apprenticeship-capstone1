@@ -17,7 +17,7 @@ import { GlobalContext } from '../../providers/Global/Global.provider'
 
 function NavBar() {
   const [params, setParams] = useState('wizeline')
-  const { onSubmitSearch, changeTheme } = useContext(GlobalContext)
+  const { onSubmitSearch, changeTheme, darkTheme } = useContext(GlobalContext)
   const history = useHistory()
 
   // Functions
@@ -33,7 +33,7 @@ function NavBar() {
 
   return (
     <NavContainer>
-      <Navbar bg="light" expand={false}>
+      <Navbar bg={!!darkTheme ? 'dark' : 'light'} expand={false}>
         <Container fluid>
           <ItemsNavContainer>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -60,6 +60,7 @@ function NavBar() {
                   type="switch"
                   id="custom-switch"
                   onChange={onToogleChange}
+                  checked={darkTheme ? true : false}
                 />
               </Form>
             </div>

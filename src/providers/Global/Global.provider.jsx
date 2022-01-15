@@ -3,7 +3,7 @@ import GlobalReducer from './Global.reducer'
 import { CHANGE_THEME, SET_SEARCH_PARAM } from './GloBal.types'
 const initialState = {
   searchParam: 'wizeline',
-  darkTheme: false,
+  darkTheme: JSON.parse(localStorage.getItem('theme')),
 }
 
 export const GlobalContext = React.createContext(initialState)
@@ -28,6 +28,7 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         searchParam: state.searchParam,
+        darkTheme: state.darkTheme,
         onSubmitSearch,
         changeTheme,
       }}

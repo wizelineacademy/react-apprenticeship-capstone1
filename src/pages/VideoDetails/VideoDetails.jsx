@@ -1,14 +1,17 @@
 // Modules
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axiosClient from '../../utils/axiosClient'
 import { useParams } from 'react-router-dom'
 import VideoComponent from '../../components/VideoComponent/VideoComponent'
 import { VideoDetailsContainer } from './VideoDetails.styled'
 
+// Context
+import { GlobalContext } from '../../providers/Global/Global.provider'
+
 function VideoDetails() {
   // videoId param to search the video
   const { videoid } = useParams()
-
+  const { darkTheme } = useContext(GlobalContext)
   const [videoDetailed, setVideoDetailed] = useState(null)
   const [relatedVideos, setRelatedVideos] = useState([])
   const [loading, setLoading] = useState(false)
@@ -37,7 +40,7 @@ function VideoDetails() {
   return loading || !videoDetailed || relatedVideos.length < 0 ? (
     '..Loading'
   ) : (
-    <VideoDetailsContainer>
+    <VideoDetailsContainer darkTheme={darkTheme}>
       <VideoComponent video={videoDetailed} relatedVideos={relatedVideos} />
     </VideoDetailsContainer>
   )

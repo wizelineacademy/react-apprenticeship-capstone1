@@ -1,19 +1,16 @@
 import styled from 'styled-components'
 
 export const ListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
   width: 90vw;
-  align-items: center;
 `
 export const Card = styled.div`
   width: 19rem;
   fit-content(20em);
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: left;
+  align-items: flex-start;
   margin: 1rem auto;
   border-radius: 5px;
   flex-direction: column;

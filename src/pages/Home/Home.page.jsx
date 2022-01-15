@@ -12,7 +12,7 @@ function HomePage() {
   const [loading, setLoading] = useState(false)
 
   // Use Context
-  const { searchParam } = useContext(GlobalContext)
+  const { searchParam, darkTheme } = useContext(GlobalContext)
 
   // Functions
   useEffect(() => {
@@ -48,7 +48,7 @@ function HomePage() {
   return loading ? (
     '...Loading'
   ) : (
-    <HomeContainer>
+    <HomeContainer darkTheme={darkTheme}>
       <HomeSubheader>Welcome to Wize Tube!</HomeSubheader>
       <ItemList items={youtubeItems} />
     </HomeContainer>
