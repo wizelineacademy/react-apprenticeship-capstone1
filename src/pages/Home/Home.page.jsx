@@ -12,28 +12,45 @@ function HomePage() {
   const [loading, setLoading] = useState(false)
 
   // Use Context
-  const { searchParam } = useContext(GlobalContext)
+  const { searchParam, darkTheme } = useContext(GlobalContext)
 
   // Functions
   useEffect(() => {
+    const controller = new AbortController()
     const fecthAPI = async () => {
       try {
         setLoading(true)
-        const response = await axiosClient.get(`/search?q=${searchParam}`)
-        setYoutubeItems(response.data.items)
+        const {
+          data: { items },
+        } = await axiosClient.get(`/search?q=${searchParam}`, {
+          signal: controller.signal,
+        })
+        setYoutubeItems(items)
         setLoading(false)
       } catch (error) {
         console.log(error)
         setLoading(false)
       }
     }
+
     fecthAPI()
+
+    return () => {
+      controller.abort()
+    }
   }, [searchParam])
+
+  useEffect(() => {
+    return () => {
+      setYoutubeItems([])
+      setLoading(false)
+    }
+  }, [])
 
   return loading ? (
     '...Loading'
   ) : (
-    <HomeContainer>
+    <HomeContainer darkTheme={darkTheme}>
       <HomeSubheader>Welcome to Wize Tube!</HomeSubheader>
       <ItemList items={youtubeItems} />
     </HomeContainer>

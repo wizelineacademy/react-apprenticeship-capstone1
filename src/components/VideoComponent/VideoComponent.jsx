@@ -16,8 +16,8 @@ function VideoComponent({ video, relatedVideos }) {
           allowFullScreen
           title="Embedded youtube"
         />
-        <h3>{video.snippet.title}</h3>
-        <p>{video.snippet.description}</p>
+        <h3>{video?.snippet?.title}</h3>
+        <p>{video?.snippet?.description}</p>
       </div>
       <div className="related-list">
         <RelatedVideos related={relatedVideos} />

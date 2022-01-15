@@ -24,11 +24,11 @@ function RelatedVideos({ related }) {
             key={item.id.videoId}
             onClick={() => onClickItem(item.id.videoId)}
           >
-            <ItemImage src={item.snippet.thumbnails.high.url} />
+            <ItemImage src={item?.snippet?.thumbnails?.high?.url} />
             <div className="item-info">
-              <p className="item-title">{item.snippet.title}</p>
+              <p className="item-title">{item?.snippet?.title}</p>
               <p className="item-channel">
-                Published by: {item.snippet.channelTitle}
+                Published by: {item?.snippet?.channelTitle}
               </p>
             </div>
           </RelatedItem>

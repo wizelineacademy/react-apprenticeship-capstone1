@@ -18,23 +18,25 @@ function VideoDetails() {
     const fecthAPI = async () => {
       try {
         setLoading(true)
-        const videoDetails = await axiosClient.get(`/search?q=${videoid}`)
-        const relatedVideos = await axiosClient.get(
-          `/search?relatedToVideoId=${videoid}`
-        )
-        console.log(videoDetails.data.items[0])
-        setRelatedVideos(relatedVideos.data.items)
-        setVideoDetailed(videoDetails.data.items[0])
+        const {
+          data: { items: videoItems },
+        } = await axiosClient.get(`/search?q=${videoid}`)
+
+        const {
+          data: { items: relatedItems },
+        } = await axiosClient.get(`/search?relatedToVideoId=${videoid}`)
+
+        setRelatedVideos(relatedItems)
+        setVideoDetailed(videoItems[0])
         setLoading(false)
       } catch (error) {
-        console.log(error)
         setLoading(false)
       }
     }
     fecthAPI()
   }, [videoid])
 
-  return loading || !videoDetailed || relatedVideos.length < 0 ? (
+  return loading || !videoDetailed ? (
     '..Loading'
   ) : (
     <VideoDetailsContainer>
