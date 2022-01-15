@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from '../Home.page'
 import { setupServer } from 'msw/node'
-import { render, waitFor, screen, act, cleanup } from '@testing-library/react'
+import { render, waitFor, screen, act } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { handlers } from '../../../mock/handlers'
 

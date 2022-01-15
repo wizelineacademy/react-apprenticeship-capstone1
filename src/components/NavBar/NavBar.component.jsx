@@ -10,7 +10,6 @@ import {
 } from 'react-bootstrap'
 import { NavContainer, ItemsNavContainer } from './NavBar.styled'
 import { useHistory } from 'react-router-dom'
-import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 // Utils
 import { GlobalContext } from '../../providers/Global/Global.provider'
@@ -27,13 +26,13 @@ function NavBar() {
     onSubmitSearch(params)
   }
 
-  const onToogleChange = (e) => {
+  const onToogleChange = () => {
     changeTheme()
   }
 
   return (
     <NavContainer>
-      <Navbar bg={!!darkTheme ? 'dark' : 'light'} expand={false}>
+      <Navbar bg={darkTheme ? 'dark' : 'light'} expand={false}>
         <Container fluid>
           <ItemsNavContainer>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />

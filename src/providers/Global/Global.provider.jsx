@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useReducer } from 'react'
+import React, { useCallback, useReducer } from 'react'
 import GlobalReducer from './Global.reducer'
 import { CHANGE_THEME, SET_SEARCH_PARAM } from './GloBal.types'
 const initialState = {
