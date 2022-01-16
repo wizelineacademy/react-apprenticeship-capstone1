@@ -1,4 +1,3 @@
-@import '@style/variables';
 @import '@style/mixins';
 
 .breadcrumb {
@@ -18,16 +17,17 @@
     align-items: center;
     min-width: 48px;
     height: 24px;
-    border: 1px solid $dark-gray;
+    border: 1px solid var(--strong-gray);
     box-sizing: border-box;
     border-radius: 6px;
     user-select: none;
     cursor: pointer;
+    color: var(--contrast);
 }
 
 .breadcrumb__item--selected {
     border: none;
-    background-color: $primary;
-    color: $white;
+    background-color: var(--primary);
+    color: var(--base);
     @include drop-shadow;
 }

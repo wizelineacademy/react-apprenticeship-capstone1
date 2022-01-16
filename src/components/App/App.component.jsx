@@ -5,6 +5,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
 import { AuthProvider, RequireAuth } from '@providers/Auth';
+import { ThemeProvider } from '@providers/Theme';
 import Layout from '@components/Layout';
 import NotFound from '@pages/NotFound';
 import HomePage from '@pages/Home';
@@ -18,22 +19,24 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Layout>
-          <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route exact path="/details/:id" element={<VideoDetailsPage />} />
-            <Route
-              exact
-              path="/favorites"
-              element={
-                <RequireAuth>
-                  <FavoritesPage />
-                </RequireAuth>
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        <ThemeProvider>
+          <Layout>
+            <Routes>
+              <Route exact path="/" element={<HomePage />} />
+              <Route exact path="/details/:id" element={<VideoDetailsPage />} />
+              <Route
+                exact
+                path="/favorites"
+                element={
+                  <RequireAuth>
+                    <FavoritesPage />
+                  </RequireAuth>
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </ThemeProvider>
       </AuthProvider>
     </BrowserRouter>
   );

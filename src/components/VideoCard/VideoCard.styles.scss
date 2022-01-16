@@ -1,4 +1,3 @@
-@import '@style/variables';
 @import '@style/mixins';
 
 .video-card {
@@ -7,18 +6,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: $white;
+    background-color: var(--base);
     border-radius: 6px;
     cursor: pointer;
 
-    //border: 1px solid $light-border;
-    //@include drop-shadow;
+    &:hover {
+        box-shadow: 0px 0px 2px 4px var(--primary);
+    }
 
     &__image {
         width: 264px;
         height: 150px;
         border-radius: 6px 6px 0px 0px;
-        background-color: $black;
+        background-color: var(--contrast);
         object-fit: cover;
     }
 
@@ -31,7 +31,6 @@
         padding: 6px 12px 12px;
 
         border-radius: 0px 0px 6px 6px;
-        //box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
     }
 
     &__title-column {
@@ -39,6 +38,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        color: var(--contrast);
     }
 
     &__title{
@@ -50,6 +50,6 @@
 
     &__like-icon {
         padding-top: 0.25em;
-        color: $gray;
+        color: var(--gray);
     }
 }

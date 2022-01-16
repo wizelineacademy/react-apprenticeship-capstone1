@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Home.styles.scss';
+import useFetchSearch from './useFetchSearch.hook';
 import VideoGrid from '@components/VideoGrid';
-import mockData from '@src/assets/mocks/youtube-videos-mock.json';
 
 function HomePage(props) {
-  let videos = mockData.items.filter(
-    (item) => item.id.kind === 'youtube#video'
-  );
+  let [pageToken, setPageToken] = useState('');
+  let [videos, setVideos] = useState([]);
+  let [response, loading] = useFetchSearch('Wizeline', pageToken);
+
+  useEffect(() => {
+    if (response) setVideos((prevState) => prevState.concat(response.items));
+  }, [response ? response.etag : '']);
 
   return (
     <section data-testid={props['data-testid']} className="home">
-      <VideoGrid items={videos} />
+      <VideoGrid
+        items={videos}
+        loading={loading}
+        loadMore={response ? () => setPageToken(response.nextPageToken) : null}
+      />
     </section>
   );
 }

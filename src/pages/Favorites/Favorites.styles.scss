@@ -1,4 +1,3 @@
-@import '@style/variables';
 @import '@style/mixins';
 
 .favorites {
@@ -11,6 +10,7 @@
 .favorites__title {
     width: 100%;
     padding: 24px 12px;
+    color: var(--contrast);
 }
 
 .favorites__empty-message {
@@ -21,4 +21,5 @@
     justify-content: center;
     align-items: center;
     gap: 6px;
+    color: var(--contrast);
 }

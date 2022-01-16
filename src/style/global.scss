@@ -1,7 +1,34 @@
-@import "@style/variables";
 
 html {
-  background-color: $white;
+  --black: #0c0a0a;
+  --white: #fff;
+  --base: #fff;
+  --contrast: #0c0a0a;
+  --light-contrast: #36363634;
+  --primary: #e93d44;
+  --light-primary: #e93d4334;
+  --border: #00000083;
+  --light-border: #0000002a;
+  --light-gray: #d3d3d4;
+  --strong-gray: #222529;
+  --gray: #4e5154;
+  --light-base: rgb(255 255 255 / 30%);
+
+  .--dark-mode {
+    --base: #0c0a0a;
+    --contrast: #fff;
+    --light-contrast: #afafaf34;
+    --primary: #e93d44;
+    --light-primary: #e40f1649;
+    --border: #96969683;
+    --light-border: #0000002a;
+    --light-gray: #d3d3d4;
+    --strong-gray: #ececec;
+    --gray: #c4c4c4;
+    --light-base: rgba(150, 150, 150, 0.3);
+  }
+
+  background-color: --base;
   font-family: Lato, Dosis, sans-serif;
 }
 

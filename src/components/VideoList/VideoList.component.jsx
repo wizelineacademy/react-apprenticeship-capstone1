@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import moment from 'moment';
+import he from 'he';
 
 import './VideoList.styles.scss';
 import BreadCrumb from '@components/BreadCrumb';
 import Button from '@components/Button';
-import image from './pexels-amina-filkins-5414061.jpeg';
+import Loader from '@components/Loader';
 
 function VideoList(props) {
   let [filter, setFilter] = useState('related');
@@ -16,25 +18,27 @@ function VideoList(props) {
         className="video-list__breadcrumb"
       />
       {props.items.map((item) => (
-        <div key={item.id} className="video-item">
+        <div key={item.id.videoId} className="video-item">
           <img
-            src={item.image ? item.image : image}
+            src={item ? item.snippet.thumbnails.default.url : null}
             alt="video&#39;s image"
             className="video-item__image"
           />
           <div className="video-item__info">
-            <h3>{item.title}</h3>
-            <p>
-              {item.views} - {item.time}
-            </p>
+            <h5>{he.decode(item.snippet.title)}</h5>
+            <small>
+              {moment(new Date(item.snippet.publishTime)).fromNow()}
+            </small>
           </div>
         </div>
       ))}
-      {props.loadMore ? (
-        <div className="video-list__load-more-row">
+      <div className="video-list__load-more-row">
+        {props.loading ? (
+          <Loader />
+        ) : props.loadMore ? (
           <Button text="Load more" onClick={props.loadMore} />
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -42,22 +46,7 @@ function VideoList(props) {
 VideoList.defaultProps = {
   className: '',
   loadMore: null,
-  items: [
-    {
-      image: null,
-      title: 'Video title',
-      views: '4.2M views',
-      time: '3 years ago',
-      onClick: null,
-    },
-    {
-      image: null,
-      title: 'Video title',
-      views: '4.2M views',
-      time: '3 years ago',
-      onClick: null,
-    },
-  ],
+  items: [],
 };
 
 export default VideoList;

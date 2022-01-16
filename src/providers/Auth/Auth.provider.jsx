@@ -2,8 +2,7 @@ import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import DefaultAvatar from './2D_logo_red.svg';
-import { AUTH_STORAGE_KEY } from '../../utils/constants';
-import { storage } from '../../utils/storage';
+import { authStorage } from '@storages';
 
 const AuthContext = React.createContext(null);
 
@@ -23,14 +22,14 @@ function RequireAuth({ children }) {
 
 function login(username, password, userData) {
   if (username === 'wizeline' && password === 'Rocks!') {
-    storage.set(AUTH_STORAGE_KEY, userData);
+    authStorage.set(userData);
     return true;
   }
   return false;
 }
 
 function logout(userData) {
-  return storage.set(AUTH_STORAGE_KEY, userData);
+  return authStorage.set(userData);
 }
 
 // eslint-disable-next-line react/prop-types
@@ -54,7 +53,7 @@ function AuthProvider({
   );
 
   useEffect(() => {
-    const lastAuthState = storage.get(AUTH_STORAGE_KEY);
+    const lastAuthState = authStorage.get();
     if (lastAuthState !== null && !!lastAuthState.authenticated) {
       setAuthenticated(lastAuthState.authenticated);
       setUserInfo(lastAuthState.userInfo);
@@ -64,21 +63,26 @@ function AuthProvider({
 
   const onLogin = useCallback((username, password) => {
     if (
-      login(username, password, { authenticated: true, userInfo, favorites })
+      login(username, password, {
+        authenticated: true,
+        userInfo: {
+          ...userInfo,
+          username: username,
+        },
+        favorites,
+      })
     ) {
       setAuthenticated(true);
-      setUserInfo((prevState) => ({ ...prevState, username: username }));
+      setUserInfo((prevState) => ({ ...prevState, username }));
       return true;
     }
     return false;
   }, []);
 
   const onLogout = useCallback(() => {
-    if (authenticated) {
-      logout({ authenticated, userInfo, favorites });
-      setAuthenticated(false);
-      setUserInfo((prevState) => ({ ...prevState, username: 'Guest' }));
-    }
+    logout({ authenticated, userInfo, favorites });
+    setAuthenticated(false);
+    setUserInfo((prevState) => ({ ...prevState, username: 'Guest' }));
   }, []);
 
   const addFavorites = useCallback((favorites) => {

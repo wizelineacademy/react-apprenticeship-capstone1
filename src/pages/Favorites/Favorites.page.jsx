@@ -13,7 +13,7 @@ function FavoritesPage(props) {
       ) : (
         <div className="favorites__empty-message">
           <h3>You have saved no favorite videos</h3>
-          <FontAwesomeIcon icon={['far', 'heart']} size="2x" />
+          <FontAwesomeIcon icon={['fas', 'heart']} size="2x" />
         </div>
       )}
     </section>

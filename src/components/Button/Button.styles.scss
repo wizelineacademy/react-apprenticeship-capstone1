@@ -1,4 +1,3 @@
-@import '@style/variables';
 @import '@style/mixins';
 
 .button {
@@ -9,11 +8,11 @@
     min-width: 86px;
     height: 36px;
     white-space: nowrap;
-    background-color: $primary;
+    background-color: var(--primary);
     border-radius: 6px;
     border: transparent;
     outline: 0px;
-    color: $white;
+    color: var(--base);
     cursor: pointer;
 
     &:active {
@@ -23,10 +22,10 @@
 
 .button--secondary {
     background-color: transparent;
-    color: $primary;
+    color: var(--primary);
 
     &:active {
-        color: $gray;
+        color: var(--gray);
         box-shadow: none;
     }
 }

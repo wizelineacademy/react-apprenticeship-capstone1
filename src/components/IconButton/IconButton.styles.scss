@@ -1,4 +1,3 @@
-@import '@style/variables';
 @import '@style/mixins';
 
 .icon-button {
@@ -12,5 +11,5 @@
 
 .icon-button:active {
     border-radius: 6px;
-    background-color: $light-border;
+    background-color: var(--light-border);
 }

@@ -5,16 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './Sidebar.styles.scss';
 import { useAuth } from '@providers/Auth';
+import { useTheme } from '@providers/Theme';
 import DefaultAvatar from './2D_logo_red.svg';
 import LoginModal from '@components/LoginModal';
 import LogoutModal from '@components/LogoutModal';
 import IconButton from '@components/IconButton';
+import Switch from '@components/Switch';
 
 function Sidebar(props) {
+  const { authenticated, userInfo } = useAuth();
+  let [theme, dispatchTheme] = useTheme();
+
   let navigate = useNavigate();
   let location = useLocation();
-
-  const { authenticated, userInfo } = useAuth();
   var { openPortal, closePortal, isOpen, Portal } = usePortal({
     bindTo: document && document.getElementById('modal-root'),
   });
@@ -25,6 +28,13 @@ function Sidebar(props) {
       className={'sidebar ' + props.className}
     >
       <div className="sidebar__close-button-container">
+        <Switch
+          label="Dark theme"
+          value={theme.darkMode}
+          onChange={() =>
+            dispatchTheme({ type: 'SET_DARK_MODE', value: !theme.darkMode })
+          }
+        />
         <IconButton
           icon={<FontAwesomeIcon icon={['fas', 'times']} size="2x" />}
           className="sidebar__close-button"

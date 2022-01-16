@@ -3,20 +3,23 @@ import React from 'react';
 import './VideoGrid.styles.scss';
 import VideoCard from '@components/VideoCard';
 import Button from '@components/Button';
+import Loader from '@components/Loader';
 
 function VideoGrid(props) {
   return (
     <div className="video-grid__container">
       <div className={'video-grid ' + props.className}>
         {props.items.map((item) => (
-          <VideoCard key={item.id.videoId} item={item} onClick={() => {}} />
+          <VideoCard key={item.id.videoId} item={item} />
         ))}
       </div>
-      {props.loadMore ? (
-        <div className="video-grid__load-more-row">
+      <div className="video-grid__load-more-row">
+        {props.loading ? (
+          <Loader />
+        ) : props.loadMore ? (
           <Button text="Load more" onClick={props.loadMore} />
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -24,6 +27,7 @@ function VideoGrid(props) {
 VideoGrid.defaultProps = {
   className: '',
   loadMore: null,
+  loading: false,
   items: [],
 };
 

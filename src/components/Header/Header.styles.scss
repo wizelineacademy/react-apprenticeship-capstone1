@@ -1,7 +1,8 @@
-@import '@style/variables';
 @import '@style/mixins';
 
 .header {
+    position: sticky;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,10 +11,9 @@
     padding: 6px 24px;
     width: auto;
     height: 60px;
-    background-color: $primary;
-    color: $white;
+    background-color: var(--primary);
+    color: var(--base);
     z-index: 5;
-
     @include drop-shadow;
 }
 
@@ -34,5 +34,5 @@
 }
 
 .header__icon_button {
-    color: $white;
+    color: var(--white);
 }

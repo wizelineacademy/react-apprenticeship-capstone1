@@ -22,6 +22,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
     "react-useportal": "^1.0.16",
+    "react-youtube": "^7.14.0",
     "styled-components": "^5.3.3"
   },
   "scripts": {
@@ -91,6 +92,7 @@
       "^@components(.*)$": "<rootDir>/src/components/$1",
       "^@pages(.*)$": "<rootDir>/src/pages/$1",
       "^@providers(.*)$": "<rootDir>/src/providers/$1",
+      "^@storages(.*)$": "<rootDir>/src/storages/$1",
       "^@utils(.*)$": "<rootDir>/src/utils/$1",
       "^@style(.*)$": "<rootDir>/src/style$1"
     }
