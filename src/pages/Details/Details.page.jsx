@@ -18,81 +18,66 @@ import RecomendedCard from '../../components/RecommendedCard/Recommendedcard.com
 
 const DetailsPage = () => {
   const { authenticated } = useAuth();
-  const [sidebarState, setSidebarState] = useState(false);
-  const initialVideo = {
-    snippet: '',
-    title: 'bla bla',
-  }
-  const [video, setVideo] = useState(initialVideo);
   const { id } = useParams();
-  const { state } = useContext(Context);
-  const [relatedVideos, setRelatedVideos] = useState({});
+
+  const initialVideo = {
+    items: [
+      {
+        etag: '',
+        id: {
+          kind: '',
+          videoId: '',
+        },
+        snippet: {
+          title: '',
+          description: '',
+          thumbnails: {
+            high: {
+              url: '',
+            },
+          },
+        },
+      },
+    ],
+  };
+  const videoSrc = `https://www.youtube.com/embed/${id}`;
+  let controller = new AbortController();
+
+  const [sidebarState, setSidebarState] = useState(false);
+  const [relatedVideos, setRelatedVideos] = useState(initialVideo);
   const { fetchData, response, isLoading } = useFetch();
 
-  //TODO: declare getRandomVideos here
+  const { state } = useContext(Context);
+  const { selectedVideo: selectedVideoFromState = { snippet: [] } } = state;
 
-  // useEffect(() => {
-  //   // fetchData(state.serchedValue, 20, id);
-  //   const getRandomVideos = () => {
-  //     // fetchData(state.serchedValue, 20, id);
-  //     // option 1 use async/await
-  //     // option 2 useEffect looking for changes in the response (as you did it in the other component)
-  //     try {
-  //       if (isLoading) return <p>is loaaaadiiiing....</p>; // delete this code and put it as a return of the whole component
-  //       if (response) setRelatedVideos(response);
-  //       else setRelatedVideos([]);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getRandomVideos();
-  //   console.log('response dentro del effect', response);
-  // }, []);
-
-  //TODO: validate that this only runs when parameters are not null.
-  useEffect(() => {
-    if (state && state.snippet) {
-      // assign values ...
-      // setVideo
+  const handleRandomVideos = () => {
+    try {
+      fetchData(state.serchedValue, 10, id);
+    } catch (error) {
+      console.log(error);
     }
-    fetchData(state.serchedValue, 20, id);
+  };
+
+  useEffect(() => {
+    handleRandomVideos();
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   useEffect(() => {
-    if (response) {
-      //TODO: Process data
-      // const tempData = response.('array').map(m=>{
-      //   return {
-      //     url: m.url
-      //     img: m.img
-      //   }
-      // })
+    if (response !== null) {
       setRelatedVideos(response);
     }
-    return () => {
-      //clean routine
-      // ex. clean state of component
-    };
   }, [response]);
 
-  function handleOpenMenu() {
+  const handleOpenMenu = () => {
     setSidebarState(!sidebarState);
-  }
-  //TODO: Put it above
-  //TODO: THIS IN USEFFECT
-  const videoSrc = `https://www.youtube.com/embed/${id}`;
-  const { selectedVideo = {snippet: ''} } = state;
-  const { snippet } = selectedVideo;
-  const { snippet: relatedSnippet } = relatedVideos;
+  };
 
-  console.log(relatedSnippet);
-
-  //TODO: Add Loading state here...
-  // if(loading ) return pepe
+  if (isLoading) return <p>Loading...</p>;
 
   return (
-    // isLoading && <></>
-    // !isLoading &&
     <div style={{ position: 'relative' }}>
       <Header
         title="Suetube videos"
@@ -108,10 +93,10 @@ const DetailsPage = () => {
                 <iframe src={videoSrc} title="Video player" />
               </Video>
               <Information>
-                {selectedVideo ? (
+                {selectedVideoFromState ? (
                   <>
-                    <h1>{snippet.title}</h1>
-                    <p>{snippet.description}</p>
+                    <h1>{selectedVideoFromState.snippet.title}</h1>
+                    <p>{selectedVideoFromState.snippet.description}</p>
                   </>
                 ) : (
                   <p>no data found</p>
@@ -119,10 +104,12 @@ const DetailsPage = () => {
               </Information>
             </VideoContainer>
             <ListVideosContainer>
-              {Array.from({ length: 20 }, () => (
+              {relatedVideos.items.map((item) => (
                 <RecomendedCard
-                  title="title of recommended video"
-                  videoContent=""
+                  key={item.id.videoId}
+                  title={item.snippet.title}
+                  videoContent={item.snippet.thumbnails.high.url}
+                  description={item.snippet.description}
                 />
               ))}
             </ListVideosContainer>

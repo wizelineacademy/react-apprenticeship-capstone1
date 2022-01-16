@@ -10,43 +10,61 @@ import useFetch from '../../utils/hooks/useFetch';
 import { Context } from '../../context';
 
 function HomePage() {
+  const initialData = {
+    etag: '',
+    items: [
+      {
+        id: {
+          kind: '',
+          videoId: '',
+        },
+        snippet: {
+          title: '',
+          description: '',
+          thumbnails: {
+            high: {
+              url: '',
+            },
+          },
+        },
+      },
+    ],
+  };
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
   const [sidebarState, setSidebarState] = useState(false);
   const [serchedValue, setSearchedValue] = useState('');
-  const [serchedData, setSearchedData] = useState({});
+  const [serchedData, setSearchedData] = useState(initialData.items);
   const history = useHistory();
   const { fetchData, response, isLoading } = useFetch();
   const { state, dispatch } = useContext(Context);
+  let controller = new AbortController();
 
-  // useEffect(() => {
-  //   const getRandomVideos = () => {
-  //     fetchData('', 12);
-  //     try {
-  //       if (isLoading) return <p>is loaaaadiiiing....</p>;
-  //       if (response && response.items) setSearchedData(response.items)
-  //       else setSearchedData([]);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getRandomVideos();
-  // }, []);
-
-  const handleReponse = () => {
+  const handleReponse = (responseStatus) => {
     try {
-      if (response && response.items) {
-        setSearchedData(response.items);
-        dispatch({
-          type: 'SAVE_ALL_DATA',
-          payload: {
-            ...state,
-            response,
-            serchedValue,
-          },
-        });
-      } else {
-        setSearchedData([]);
+      if (responseStatus === 'updating') {
+        if (response && response.items) {
+          setSearchedData(response.items);
+          dispatch({
+            type: 'SAVE_ALL_DATA',
+            payload: {
+              ...state,
+              response,
+              serchedValue,
+            },
+          });
+        } else {
+          setSearchedData([]);
+        }
+      }
+      if (responseStatus === 'firstLoad') {
+        //TODO: Change when deploy to not loose request.
+        //fetchData('', 15);
+        console.log('here will get some random videos');
+        if (response && response.items) setSearchedData(response.items);
+        else {
+          setSearchedData([]);
+        }
       }
     } catch (error) {
       console.log(error);
@@ -55,10 +73,16 @@ function HomePage() {
 
   useEffect(() => {
     handleReponse('firstLoad');
-  }, []); // TODO: remove isLoading
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
   useEffect(() => {
     handleReponse('updating');
+    return () => {
+      controller.abort();
+    };
   }, [response]);
 
   const handleSearch = (event) => {
@@ -91,7 +115,7 @@ function HomePage() {
     history.push('/login');
   };
 
-  if (isLoading) return <p>is loaaaadiiiing.....</p>; //TODO: put this at component level
+  if (isLoading) return <p>Loading...</p>; //TODO: put this at component level
 
   return (
     <div style={{ position: 'relative' }}>
