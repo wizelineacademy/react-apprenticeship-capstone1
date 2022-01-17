@@ -4,7 +4,7 @@ import mockVideos from '../mockvideos/youtube-mock-videos.json';
 const useFetchYoutubeVideos = (props) => {
   const [fetchedVideos, setVideosFetched] = useState([]);
 
-  const APIKey = 'AIzaSyA9vA9lErbUeBwwZrPDIKbcKl8Sx_Ubwaw';
+  const APIKey = 'AIzaSyAOqGGiLINVpKNbodXDzDhpWqsrIgq7qrU';
   const resultMax = 20;
   let fetchURL = '';
 

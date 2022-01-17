@@ -23,8 +23,14 @@ const DarkModeToggle = () => {
 
   return (
     <React.Fragment>
-      <ToggleContainer onClick={onClickHandler}>
-        <DarkModeInput type="checkbox" id="darkmode" />
+      <ToggleContainer>
+        <DarkModeInput
+          type="checkbox"
+          id="darkmode"
+          onClick={() => {
+            onClickHandler();
+          }}
+        />
         <DarkModeLabel htmlFor="darkmode">
           <DarkModeBall />
         </DarkModeLabel>
