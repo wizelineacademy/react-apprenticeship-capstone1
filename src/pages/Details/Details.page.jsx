@@ -33,21 +33,32 @@ const DetailsPage = () => {
   const [sidebarState, setSidebarState] = useState(false);
   const [searchInDetails, setSearchInDetails] = useState(false);
   const [relatedVideos, setRelatedVideos] = useState(initialData);
-  const { fetchData, response, isLoading } = useFetch();
+  const { fetchData, response, isLoading, error } = useFetch();
+  const [favorited, setFavorited] = useState(false);
   const { state, dispatch } = useContext(Context);
   const {
     selectedVideo: selectedVideoFromState = { snippet: [] },
     recomendedVideoSelected = { id: { videoId: '' } },
+    favorites,
   } = state;
 
   const { handleSearch, serchedData, serchedValue } = useSearch();
-  const { selectFavorites, deleteFavorites, favorited } = useFavorites(id);
+  const { selectFavorites, deleteFavorites, isfavorited } = useFavorites();
 
   const handleRandomVideos = () => {
     setTimeout(() => {
       fetchData(state.serchedValue, 10, id);
     }, 2000);
   };
+  useEffect(() => {
+    let fav;
+    if (id === selectedVideoFromState.id.videoId)
+      fav = isfavorited(selectedVideoFromState);
+    if (id === recomendedVideoSelected.id.videoId)
+      fav = isfavorited(recomendedVideoSelected);
+    setFavorited(fav);
+  }, [favorites, isfavorited]);
+
   useEffect(() => {
     handleRandomVideos();
   }, []);
@@ -95,6 +106,7 @@ const DetailsPage = () => {
     history.push('/login');
   };
   if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>No search found, try again please</p>;
 
   return (
     <div style={{ position: 'relative' }}>
