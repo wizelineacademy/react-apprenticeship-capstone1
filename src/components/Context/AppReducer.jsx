@@ -1,11 +1,15 @@
+/* eslint-disable no-case-declarations */
 export default (state, action) => {
   switch (action.type) {
     case 'ADD_VIDEO_TO_FAVORITESLIST':
       const favoriteVideo = state.favoritesList.find(
         (video) => video.id === action.payload.id
       );
-      const favorite =  (favoriteVideo) ? [...state.favoritesList] : [...state.favoritesList, action.payload]
-      
+      // eslint-disable-next-line prettier/prettier
+      const favorite = favoriteVideo
+        ? [...state.favoritesList]
+        : [...state.favoritesList, action.payload];
+
       return {
         ...state,
         favoritesList: favorite,
