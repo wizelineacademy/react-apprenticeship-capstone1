@@ -38,9 +38,7 @@ const DetailsPage = () => {
     selectedVideo: selectedVideoFromState = { snippet: [] },
     recomendedVideoSelected = { id: { videoId: '' } },
   } = state;
-  const [favoritedIcon, setFavoritedIcon] = useState(
-    selectedVideoFromState.favorited
-  );
+  const [favorited, setFavorited] = useState(selectedVideoFromState.favorited);
   const { handleSearch, serchedData, serchedValue } = useSearch();
 
   const handleRandomVideos = () => {
@@ -88,87 +86,78 @@ const DetailsPage = () => {
     });
     history.push(`/details/${id}`);
   };
-
-  // const handleFavorites = () => {
-  //   if (recomendedVideoSelected.id.videoId === id) {
-  //     dispatch({
-  //       type: 'SAVE_RECOMENDED_VIDEO',
-  //       payload: {
-  //         recomendedVideoSelected: {
-  //           ...state.recomendedVideoSelected,
-  //           favorited: true,
-  //         },
-  //       },
-  //     });
-  //     dispatch({
-  //       type: 'SAVE_FAVORITES',
-  //       payload: {
-  //         favorites: [...state.favorites, recomendedVideoSelected],
-  //       },
-  //     });
-  //     setFavoritedIcon(recomendedVideoSelected.favorited);
-  //   }
-  //   if (selectedVideoFromState.id.videoId === id) {
-  //     dispatch({
-  //       type: 'SAVE_SELECTED_VIDEO',
-  //       payload: {
-  //         selectedVideo: {
-  //           ...state.selectedVideo,
-  //           favorited: true,
-  //         },
-  //       },
-  //     });
-  //     dispatch({
-  //       type: 'SAVE_FAVORITES',
-  //       payload: {
-  //         favorites: [...state.favorites, selectedVideoFromState],
-  //       },
-  //     });
-  //     setFavoritedIcon(selectedVideoFromState.favorited);
-  //   }
-  // };
-
-  // const deleteFavorites = () => {
-  //   const deletedVideo = state.favorites.filter(
-  //     (item) => item.id.videoId !== id
-  //   );
-  //   dispatch({
-  //     type: 'REMOVE_FAVORITES',
-  //     payload: {
-  //       favorites: deletedVideo,
-  //     },
-  //   });
-  //   if (recomendedVideoSelected.id.videoId === id) {
-  //     dispatch({
-  //       type: 'SAVE_RECOMENDED_VIDEO',
-  //       payload: {
-  //         recomendedVideoSelected: {
-  //           ...state.recomendedVideoSelected,
-  //           favorited: false,
-  //         },
-  //       },
-  //     });
-  //     setFavoritedIcon(recomendedVideoSelected.favorited);
-  //   }
-  //   if (selectedVideoFromState.id.videoId === id) {
-  //     dispatch({
-  //       type: 'SAVE_SELECTED_VIDEO',
-  //       payload: {
-  //         selectedVideo: {
-  //           ...state.selectedVideo,
-  //           favorited: false,
-  //         },
-  //       },
-  //     });
-  //     setFavoritedIcon(selectedVideoFromState.favorited);
-  //   }
-  // };
-  const handleFavorites = () => {
+  const selectFavorites = () => {
     if (selectedVideoFromState.id.videoId === id) {
-      alert('hello selected');
+      dispatch({
+        type: 'SAVE_SELECTED_VIDEO',
+        payload: {
+          selectedVideo: {
+            ...state.selectedVideo,
+            favorited: true,
+          },
+        },
+      });
+      setFavorited(selectedVideoFromState.favorited);
+      dispatch({
+        type: 'SAVE_FAVORITES',
+        payload: {
+          favorites: [...state.favorites, selectedVideoFromState],
+        },
+      });
     }
     if (recomendedVideoSelected.id.videoId === id) {
-      alert('hello recommended');
+      dispatch({
+        type: 'SAVE_RECOMENDED_VIDEO',
+        payload: {
+          recomendedVideoSelected: {
+            ...state.recomendedVideoSelected,
+            favorited: true,
+          },
+        },
+      });
+      setFavorited(recomendedVideoSelected.favorited);
+      dispatch({
+        type: 'SAVE_FAVORITES',
+        payload: {
+          favorites: [...state.favorites, recomendedVideoSelected],
+        },
+      });
+    }
+  };
+
+  const deleteFavorites = () => {
+    const deletedVideo = state.favorites.filter(
+      (item) => item.id.videoId !== id
+    );
+    dispatch({
+      type: 'REMOVE_FAVORITES',
+      payload: {
+        favorites: deletedVideo,
+      },
+    });
+    if (selectedVideoFromState.id.videoId === id) {
+      dispatch({
+        type: 'SAVE_SELECTED_VIDEO',
+        payload: {
+          selectedVideo: {
+            ...state.selectedVideo,
+            favorited: false,
+          },
+        },
+      });
+      setFavorited(selectedVideoFromState.favorited);
+    }
+    if (recomendedVideoSelected.id.videoId === id) {
+      dispatch({
+        type: 'SAVE_RECOMENDED_VIDEO',
+        payload: {
+          recomendedVideoSelected: {
+            ...state.recomendedVideoSelected,
+            favorited: false,
+          },
+        },
+      });
+      setFavorited(recomendedVideoSelected.favorited);
     }
   };
 
@@ -209,19 +198,14 @@ const DetailsPage = () => {
                           : selectedVideoFromState.snippet.title}
                       </h3>
                       <FavoriteButton
-                        // onClick={() =>
-                        //   !favoritedIcon ? deleteFavorites() : handleFavorites()
-                        // }
-                        onClick={() => handleFavorites()}
+                        onClick={favorited ? deleteFavorites : selectFavorites}
                       >
                         <ReactSVG
                           src={
-                            favoritedIcon
-                              ? '/favorite.svg'
-                              : '/favorite-empty.svg'
+                            favorited ? '/favorite.svg' : '/favorite-empty.svg'
                           }
                         />
-                        <p>{favoritedIcon ? 'Remove' : 'Add'} to Favorites</p>
+                        <p>{favorited ? 'Remove' : 'Add'} to Favorites</p>
                       </FavoriteButton>
                     </TitleContainer>
                     <p>
