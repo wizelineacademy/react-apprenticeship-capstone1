@@ -62,7 +62,6 @@ function Header() {
                   placeholder="..."
                   value={searchValue}
                   onChange={(e) => handleChange(e)}
-                  // onKeyPress={(e) => handleKeyPress(e)}
                 />
               </Form.Group>
             </Form>

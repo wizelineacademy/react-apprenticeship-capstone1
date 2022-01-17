@@ -28,8 +28,6 @@ function FavoritesViewDetail() {
     }
   }, [selectedVideo]);
 
-  // useLocalStorage(userProps.id,setRelatedVideos)
-
   return (
     <Container>
       <Row>
@@ -40,6 +38,7 @@ function FavoritesViewDetail() {
               selectedVideo={selectedVideo}
               isLogged={isLogged}
               userId={userProps.id}
+              isPrivateRoute={true}
             ></VideoDetail>
           ) : null}
           <VideoList

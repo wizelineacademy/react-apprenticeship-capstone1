@@ -30,6 +30,7 @@ function VideoDetailView() {
               selectedVideo={selectedVideo}
               isLogged={isLogged}
               userId={userProps.id}
+              isPrivateRoute={false}
             ></VideoDetail>
           ) : null}
 

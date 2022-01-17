@@ -5,11 +5,17 @@ import {
   CustomCard,
 } from '../../components/CustomElements';
 import { storage } from '../../utils/storage';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-function VideoDetail({ styles, selectedVideo, userId, isLogged }) {
+function VideoDetail({
+  styles,
+  selectedVideo,
+  userId,
+  isLogged,
+  isPrivateRoute,
+}) {
   const [isFavorite, setIsFavorite] = useState(false);
-
+  const history = useHistory();
   useEffect(() => {
     const result = storage.find(userId, selectedVideo.id);
     if (result !== null) {
@@ -31,6 +37,9 @@ function VideoDetail({ styles, selectedVideo, userId, isLogged }) {
   const removeFromFavorites = () => {
     storage.remove(userId, selectedVideo.id);
     setIsFavorite(false);
+    if (isPrivateRoute) {
+      history.push('/favorites');
+    }
   };
 
   return (

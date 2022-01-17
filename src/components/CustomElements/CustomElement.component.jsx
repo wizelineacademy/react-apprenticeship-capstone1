@@ -27,7 +27,8 @@ export const Description = styled.div`
 `;
 
 export const VideoThumbnail = styled.img`
-  height: 15vh;
+  max-height: 150px;
+  min-height: 150px;
 `;
 
 export const CustomCard = styled.div`
@@ -35,7 +36,8 @@ export const CustomCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 0;
-  height: ${(props) => props.height || '30vh'};
+  min-height: ${(props) => props.height || '300px'};
+  max-height: 350px;
   margin: 5%;
   word-wrap: break-word;
   background-color: ${(props) => props.elementBackground || '#fff'};
