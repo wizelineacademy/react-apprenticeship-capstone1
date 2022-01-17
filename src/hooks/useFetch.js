@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useSafeState from '@utils/useSafeState';
+import useSafeState from '@src/hooks/useSafeState';
 import debounce from '@utils/debounce';
 
 const DEFAULT_OPTIONS = {
