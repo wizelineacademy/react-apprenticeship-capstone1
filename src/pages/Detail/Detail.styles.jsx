@@ -17,4 +17,12 @@ export const StyledDetail = styled.div`
       margin: 0;
     }
   }
+  .favorite {
+    font-size: 2rem;
+    color: #cdd2d4;
+  }
+
+  .on {
+    color: #ffb703;
+  }
 `;

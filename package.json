@@ -29,7 +29,7 @@
     "stylelint": "stylelint src/*.css src/**/*.css",
     "prepare": "husky install",
     "verify": "npm run lint && npm run stylelint ",
-    "stubapi": "json-server db.json"
+    "stubapi": "json-server videos.json"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",
@@ -48,6 +48,7 @@
     "lint-staged": "^10.2.13",
     "prettier": "^2.5.1",
     "pretty-quick": "^3.0.0",
+    "process": "^0.11.10",
     "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0"
   },

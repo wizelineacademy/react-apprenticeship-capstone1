@@ -8,7 +8,7 @@ const timePublished = (publishDate) => {
 
   let message = `${years} years, `;
   message += `${months} months, `;
-  message += `and ${days} ago.`;
+  message += `and ${days} days ago.`;
 
   return message;
 };

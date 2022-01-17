@@ -1,0 +1,717 @@
+{
+  "items": [
+    {
+      "kind": "marcela",
+      "etag": "kjAvGptLwflpAAkDfoMUEhsPS3U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "EMk6nom1aS4"
+      },
+      "snippet": {
+        "publishedAt": "2021-04-23T16:45:14Z",
+        "channelId": "UCJgGc8pQO1lv04VXrBxA_Hg",
+        "title": "APRENDE REACT BÁSICO en 30 MINUTOS ⏰  - Tutorial de React.js Desde Cero",
+        "description": "Aprende React.js en poco tiempo con una introducción a los fundamentos de la librería para empezar a trabajar con ella.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EMk6nom1aS4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EMk6nom1aS4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EMk6nom1aS4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Carlos Azaustre - Aprende JavaScript",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-04-23T16:45:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Tsktk29o78by79nrNuDQE7VKDvM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "w7ejDZ8SWv8"
+      },
+      "snippet": {
+        "publishedAt": "2021-01-18T19:01:11Z",
+        "channelId": "UC29ju8bIPH5as8OGnQzwJyA",
+        "title": "React JS Crash Course",
+        "description": "Get started with React in this crash course. We will be building a task tracker app and look at components, props, state, hooks, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/w7ejDZ8SWv8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/w7ejDZ8SWv8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/w7ejDZ8SWv8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Traversy Media",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-01-18T19:01:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YRCj4d4PfvjdT98IflopO-277M4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lWQ69WX7-hA"
+      },
+      "snippet": {
+        "publishedAt": "2019-06-10T23:00:02Z",
+        "channelId": "UCP15FVAA2UL-QOcGhy7-ezA",
+        "title": "¿Qué es React.js y cómo funciona?",
+        "description": "React.js es una librería para crear interfaces web, con ella están construidas las dos redes sociales más grandes: Facebook e ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lWQ69WX7-hA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lWQ69WX7-hA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lWQ69WX7-hA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "EDteam",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-06-10T23:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6pGqtfn8LazrhLGy-7l2N9wcPRg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "h3ry8M4_yDQ"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-14T13:00:31Z",
+        "channelId": "UCvInsdoSCTRGQNuXe7kMjhQ",
+        "title": "The Craziest Redstone Builds OF ALL TIME! #3",
+        "description": "BUY MERCH AT https://gamersreact.com/ PLAY ON THE NEW MINECRAFT SERVER JAVA EDITION IP Address: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/h3ry8M4_yDQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/h3ry8M4_yDQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/h3ry8M4_yDQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Gamers React",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-14T13:00:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wdm_UflMRIu2_C-O5hl6tpKczgY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "GNrdg3PzpJQ"
+      },
+      "snippet": {
+        "publishedAt": "2021-08-09T12:00:05Z",
+        "channelId": "UCDzGdB9TTgFm8jRXn1tBdoA",
+        "title": "React JS фундаментальный курс от А до Я",
+        "description": "React Полный курс от А до Я. Рассмотрим основные концепции и разработаем функционал, который встречается в ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GNrdg3PzpJQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GNrdg3PzpJQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GNrdg3PzpJQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Ulbi TV",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-08-09T12:00:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8CtpugnF5apsKJ6L_Z4brBYWtk4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zIY87vU33aA"
+      },
+      "snippet": {
+        "publishedAt": "2019-06-24T21:48:56Z",
+        "channelId": "UCX9NJ471o7Wie1DQe94RVIg",
+        "title": "Reactjs, Curso Práctico para Principiantes (React 16)",
+        "description": "EXPO, SDK De React para desarrollo de Apps Link ➞ https://bit.ly/3jdjnST Aprende a crear aplicaciones web Frontend usando ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zIY87vU33aA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zIY87vU33aA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zIY87vU33aA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Fazt",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-06-24T21:48:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ryGZpgv91uq4HkEF1JkyghaoJrY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pdfIwUcr_ug"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-14T17:27:25Z",
+        "channelId": "UCUfdFjobUyUlLw_DAqnfPNQ",
+        "title": "[🍓] ,, MCYTs React To Their IRL Selves | DSMP | Part 1",
+        "description": "Socials ღ IG https://www.instagram.com/eirynao/ ღ Discord e i r y n a#9305 ღ DISCORD SERVER!!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pdfIwUcr_ug/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pdfIwUcr_ug/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pdfIwUcr_ug/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Eiryna",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-14T17:27:25Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Pp3BIXn_fKWKOkCti1hN-uEdTOM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ke90Tje7VS0"
+      },
+      "snippet": {
+        "publishedAt": "2018-07-16T16:51:44Z",
+        "channelId": "UCWv7vMbMWH4-V0ZXdmDpPBA",
+        "title": "React JS - React Tutorial for Beginners",
+        "description": "React JS Tutorial - Get up & running with React JS: the most popular JavaScript library in the world! Want to master React?",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ke90Tje7VS0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Programming with Mosh",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-07-16T16:51:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "AiZpUf3kWtijZPk2nBeWq1rXKOE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "b-wQJarohBI"
+      },
+      "snippet": {
+        "publishedAt": "2019-07-22T21:00:03Z",
+        "channelId": "UC0v-tlzsn0QZwJnkiaUSJVQ",
+        "title": "Teens React To Try To Keep Eating While Watching Challenge",
+        "description": "Try To Keep Eating While Watching Challenge Reacted to by Teens. Original links below. Join the SuperFam and support FBE: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/b-wQJarohBI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/b-wQJarohBI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/b-wQJarohBI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "REACT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-07-22T21:00:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HiS1K5GWRB31eqDDr4o7vX7eZ7E",
+      "id": {
+        "kind": "youtube#channel",
+        "channelId": "UC0v-tlzsn0QZwJnkiaUSJVQ"
+      },
+      "snippet": {
+        "publishedAt": "2007-06-04T09:55:54Z",
+        "channelId": "UC0v-tlzsn0QZwJnkiaUSJVQ",
+        "title": "REACT",
+        "description": "Welcome to REACT! From our award-winning REACT series, to shows across scripted, unscripted, animation, interactive, TV ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AKedOLTmodYcIhaD7hLjs5UVNv1Ccf1O8k6b2GTJNqTwyw=s88-c-k-c0xffffffff-no-rj-mo"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AKedOLTmodYcIhaD7hLjs5UVNv1Ccf1O8k6b2GTJNqTwyw=s240-c-k-c0xffffffff-no-rj-mo"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AKedOLTmodYcIhaD7hLjs5UVNv1Ccf1O8k6b2GTJNqTwyw=s800-c-k-c0xffffffff-no-rj-mo"
+          }
+        },
+        "channelTitle": "REACT",
+        "liveBroadcastContent": "upcoming",
+        "publishTime": "2007-06-04T09:55:54Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "FG8mklB7-udNgk9_lh3-Qs7iOrE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4UZrsTqkcW4"
+      },
+      "snippet": {
+        "publishedAt": "2020-10-06T14:16:07Z",
+        "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+        "title": "Full React Course 2020 - Learn Fundamentals, Hooks, Context API, React Router, Custom Hooks",
+        "description": "Learn the basics of React in this comprehensive course. You will learn about fundamentals, hooks, context API, react router, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4UZrsTqkcW4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4UZrsTqkcW4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4UZrsTqkcW4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "freeCodeCamp.org",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-10-06T14:16:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dwsE8WFaau53S600h8YHisVG3JI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VhSdhen3FrM"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-13T14:00:19Z",
+        "channelId": "UC0v-tlzsn0QZwJnkiaUSJVQ",
+        "title": "Teens React To The 1982 Sony Watchman (Portable TV) | Reacting to Old Technology",
+        "description": "Teens react to the Sony Watchman -- a portable TV from the 80s. Watch to see their reactions to this old tech from decades before ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VhSdhen3FrM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VhSdhen3FrM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VhSdhen3FrM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "REACT",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-13T14:00:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rSxDLifjND5lNkiabITMovNmLaA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "T_j60n1zgu0"
+      },
+      "snippet": {
+        "publishedAt": "2020-04-11T08:16:31Z",
+        "channelId": "UC8LeXCWOalN8SxlrPcG-PaQ",
+        "title": "Curso REACT JS ⚛️ - Aprende desde CERO 📈 Componentes, State, JSX (Tutorial Desde Cero en Español)",
+        "description": "Te enseño React desde cero. ‍   ¿Qué es React? ¿Por qué deberías aprenderlo? ¿Por qué lo necesitamos? ¿Qué es JSX ?",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/T_j60n1zgu0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/T_j60n1zgu0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/T_j60n1zgu0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "midudev",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-04-11T08:16:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "J2VhWY6Cp81J1FR7N3PGwjbaC3s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1-2eyS0k-IA"
+      },
+      "snippet": {
+        "publishedAt": "2018-02-20T04:15:30Z",
+        "channelId": "UC-foHKza2KlpQuo2wi6UCAg",
+        "title": "¿Qué es React JS? Breve explicación animada",
+        "description": "React (también llamada React.js o ReactJS) es una librería Javascript de código abierto para crear interfaces de usuario con el ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1-2eyS0k-IA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1-2eyS0k-IA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1-2eyS0k-IA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Bitech Studio",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-02-20T04:15:30Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wUvF_R42AXlTH8Hwx0cS9_-P2C0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uJ2AL4sj5UQ"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-15T00:41:35Z",
+        "channelId": "UCFOKPO2Z0a3yUXmoFQNKqKg",
+        "title": "Team 7 parents react to them | part 1/1 | read desc first ! | no ship | Naru_ko.Xp",
+        "description": "Intro by: @『StrawBerries』 https://m.youtube.com/channel/UCu7YvGYVaKpTeofIoAB_GKg ______ Kizashi Mebuki Mikoto ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uJ2AL4sj5UQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uJ2AL4sj5UQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uJ2AL4sj5UQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Naru_ko. Xp",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-15T00:41:35Z"
+      }
+    }
+  ],
+  "detailedVideos": [
+    {
+      "items": [
+        {
+          "kind": "youtube#video",
+          "etag": "UzMZujOAvyZZxzFJFKQlVaCr8VI",
+          "id": "EMk6nom1aS4",
+          "snippet": {
+            "publishedAt": "2021-04-23T16:45:14Z",
+            "channelId": "UCJgGc8pQO1lv04VXrBxA_Hg",
+            "title": "APRENDE REACT BÁSICO en 30 MINUTOS ⏰  - Tutorial de React.js Desde Cero",
+            "description": "Aprende React.js en poco tiempo con una introducción a los fundamentos de la librería para empezar a trabajar con ella.\n\nVeremos como iniciar una app React con create-react-app, desarrollo basado en componentes, state, props, principales hooks, manejo de eventos y mucho.\n\nAl finalizar el vídeo tendrás un conocimiento basico de los principios de React.js para adentrarte en la librería.\n\nRepositorio en GitHub con el código del ejemplo visto en el vídeo: https://github.com/carlosazaustre/react-30-minutes\n\n⏱ CONTENIDO DEL VIDEO\n00:00 | Introducción\n01:37 | Create React App\n04:04 | Estructura de archivos\n05:07 | JSX\n07:35 | Componente raíz\n09:31 | Componente Lista\n11:39 | Props\n13:00 | Hook useState\n14:25 | Fragments\n17:43 | Componente Item\n19:35 | Manejo de cambios con Eventos\n24:53 | Keys\n28:42 | Flujo de Props y Eventos\n32:10 | Hook useEffect\n\nTambién te puede interesar\nComo construir un BLOG desde cero con NEXT.js REACT y MARKDOWNX\n► https://www.youtube.com/watch?v=g0D6VCh_fvA\n\nProbamos GITHUB COPILOT, la IA que ¿Te ayuda? a programar\n► https://www.youtube.com/watch?v=vvvxUJDrv0c\n\n🔔 No olvides suscribirte y activar la campanita para no perderte ningún vídeo \n► https://youtube.com/carlosazaustre?sub_confirmation=1\n\n🏆 Si te gusta el contenido que comparto, puedes apoyarme de una manera más directa uniéndote al programa de MIEMBROS del canal\n► https://www.youtube.com/channel/UCJgGc8pQO1lv04VXrBxA_Hg/join",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/EMk6nom1aS4/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/EMk6nom1aS4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/EMk6nom1aS4/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/EMk6nom1aS4/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              },
+              "maxres": {
+                "url": "https://i.ytimg.com/vi/EMk6nom1aS4/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "channelTitle": "Carlos Azaustre - Aprende JavaScript",
+            "tags": [
+              "carlos azaustre",
+              "javascript",
+              "desarrollo web",
+              "programación web",
+              "react",
+              "react.js",
+              "react.js tutorial",
+              "curso react js",
+              "aprende react",
+              "curso aprende react.js desde cero",
+              "fundamentos de react js",
+              "libreria react js",
+              "curso react",
+              "curso react.js",
+              "curso react desde cero",
+              "tutorial react js",
+              "tutorial react.js",
+              "react desde cero",
+              "react desde 0",
+              "react tutorial 2021",
+              "tutorial react hooks",
+              "react js",
+              "aprender react",
+              "react app"
+            ],
+            "categoryId": "28",
+            "liveBroadcastContent": "none",
+            "localized": {
+              "title": "APRENDE REACT BÁSICO en 30 MINUTOS ⏰  - Tutorial de React.js Desde Cero",
+              "description": "Aprende React.js en poco tiempo con una introducción a los fundamentos de la librería para empezar a trabajar con ella.\n\nVeremos como iniciar una app React con create-react-app, desarrollo basado en componentes, state, props, principales hooks, manejo de eventos y mucho.\n\nAl finalizar el vídeo tendrás un conocimiento basico de los principios de React.js para adentrarte en la librería.\n\nRepositorio en GitHub con el código del ejemplo visto en el vídeo: https://github.com/carlosazaustre/react-30-minutes\n\n⏱ CONTENIDO DEL VIDEO\n00:00 | Introducción\n01:37 | Create React App\n04:04 | Estructura de archivos\n05:07 | JSX\n07:35 | Componente raíz\n09:31 | Componente Lista\n11:39 | Props\n13:00 | Hook useState\n14:25 | Fragments\n17:43 | Componente Item\n19:35 | Manejo de cambios con Eventos\n24:53 | Keys\n28:42 | Flujo de Props y Eventos\n32:10 | Hook useEffect\n\nTambién te puede interesar\nComo construir un BLOG desde cero con NEXT.js REACT y MARKDOWNX\n► https://www.youtube.com/watch?v=g0D6VCh_fvA\n\nProbamos GITHUB COPILOT, la IA que ¿Te ayuda? a programar\n► https://www.youtube.com/watch?v=vvvxUJDrv0c\n\n🔔 No olvides suscribirte y activar la campanita para no perderte ningún vídeo \n► https://youtube.com/carlosazaustre?sub_confirmation=1\n\n🏆 Si te gusta el contenido que comparto, puedes apoyarme de una manera más directa uniéndote al programa de MIEMBROS del canal\n► https://www.youtube.com/channel/UCJgGc8pQO1lv04VXrBxA_Hg/join"
+            },
+            "defaultAudioLanguage": "es"
+          }
+        }
+      ]
+    }
+  ],
+  "relatedVideos": [
+    {
+      "items": [
+        {
+          "kind": "youtube#searchResult",
+          "etag": "OBEg6tRRKvBji1SfR3LmOzIMGK4",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "xwtdhWltSIg"
+          },
+          "snippet": {
+            "publishedAt": "2011-07-02T00:22:34Z",
+            "channelId": "UC7eaRqtonpyiYw0Pns0Au_g",
+            "title": "R.E.M. - Losing My Religion (Official Music Video)",
+            "description": "The GRAMMY Award-winning \"Losing My Religion\" from R.E.M.’s critically-acclaimed, 1991 album, Out of Time.\n\nTo learn more, visit http://www.remhq.com.\n Buy the album: \n3CD+BluRay Deluxe Edition - https://rem.lnk.to/OutOfTimeDeluxe\n2CD - https://rem.lnk.to/OutOfTime\n3LP - https://rem.lnk.to/OutOfTime\n1CD - https://rem.lnk.to/OutOfTime\n1LP - https://rem.lnk.to/OutOfTime1LP\n\n———————\nSubscribe for more R.E.M.: http://bit.ly/subscribe-to-remhq\n \nFollow On:\nYouTube: http://found.ee/REM-youtube-r\nFacebook: http://found.ee/REM-Facebook-r\nTwitter: http://found.ee/REM-twitter-r\nInstagram: http://found.ee/REM-instagram-r\nSpotify: http://found.ee/REM-spotify-r-1\nApple Music: http://found.ee/REM-apple-r\nREMHQ: http://found.ee/REMHQ-r",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/xwtdhWltSIg/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/xwtdhWltSIg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/xwtdhWltSIg/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/xwtdhWltSIg/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "remhq",
+            "liveBroadcastContent": "none",
+            "publishTime": "2011-07-02T00:22:34Z"
+          }
+        },
+        {
+          "kind": "youtube#searchResult",
+          "etag": "dwVJU0z5r7jBA_XumkMmJQ2_crI",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "m9mTiANT0yQ"
+          }
+        },
+        {
+          "kind": "youtube#searchResult",
+          "etag": "91DDx37Ug2gbFSPzY9mM6xQMJfs",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "dLxpNiF0YKs"
+          },
+          "snippet": {
+            "publishedAt": "2017-09-13T23:50:17Z",
+            "channelId": "UC7eaRqtonpyiYw0Pns0Au_g",
+            "title": "R.E.M. - Man On The Moon (Official Music Video)",
+            "description": "As heard in Captain Marvel. \"Man On The Moon\" from R.E.M.'s 1992 album Automatic For The People.\n\nDiscover more R.E.M. via Apple Essentials (https://found.ee/rem-apple-essentials-r) or Spotify's Best Of (https://found.ee/rem-spotify-bestof-r).\n\nBuy the album: http://found.ee/REM-automatic25-r\n \nLearn more about #AUTOMATIC25 at REMHQ: http://found.ee/REMHQ-r\n\n———————\nSubscribe for more R.E.M.: http://bit.ly/subscribe-to-remhq\n \nFollow On:\nYouTube: http://found.ee/REM-youtube-r\nFacebook: http://found.ee/REM-Facebook-r\nTwitter: http://found.ee/REM-twitter-r\nInstagram: http://found.ee/REM-instagram-r\nSpotify: http://found.ee/REM-spotify-r-1\nApple Music: http://found.ee/REM-apple-r\nREMHQ: http://found.ee/REMHQ-r",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/dLxpNiF0YKs/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/dLxpNiF0YKs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/dLxpNiF0YKs/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/dLxpNiF0YKs/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "remhq",
+            "liveBroadcastContent": "none",
+            "publishTime": "2017-09-13T23:50:17Z"
+          }
+        },
+        {
+          "kind": "youtube#searchResult",
+          "etag": "xUDMx8pu5cCEwfjN06UdFjnxgVI",
+          "id": {
+            "kind": "youtube#video",
+            "videoId": "Mx8yD3-HWTg"
+          },
+          "snippet": {
+            "publishedAt": "2018-04-21T16:48:01Z",
+            "channelId": "UCUtZaxDF3hD5VK4xRYFBePQ",
+            "title": "Father Ray Kelly takes us to church with AMAZING version of ‘Everybody Hurts’ | Auditions | BGT 2018",
+            "description": "Tissues at the ready, Father Ray Kelly is taking to the stage for a totes emosh performance of R.E.M’s ‘Everybody Hurts’.\n\nWatch as puts his own special stamp on the classic, and try not to well up with him at the end (we know, impossible). \n\nSee more from Britain's Got Talent at http://itv.com/talent\n\nSUBSCRIBE: http://bit.ly/BGTsub\nFacebook: http://www.facebook.com/BGT\nTwitter: http://twitter.com/BGT",
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/Mx8yD3-HWTg/default.jpg",
+                "width": 120,
+                "height": 90
+              },
+              "medium": {
+                "url": "https://i.ytimg.com/vi/Mx8yD3-HWTg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "high": {
+                "url": "https://i.ytimg.com/vi/Mx8yD3-HWTg/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+              },
+              "standard": {
+                "url": "https://i.ytimg.com/vi/Mx8yD3-HWTg/sddefault.jpg",
+                "width": 640,
+                "height": 480
+              }
+            },
+            "channelTitle": "Britain's Got Talent",
+            "liveBroadcastContent": "none",
+            "publishTime": "2018-04-21T16:48:01Z"
+          }
+        }
+      ]
+    }
+  ]
+}

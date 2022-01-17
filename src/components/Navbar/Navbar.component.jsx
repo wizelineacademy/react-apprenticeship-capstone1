@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { StyledNavbar } from './Navbar.styled';
 import Button from '../Button/Button';
 
 function Navbar() {
   return (
     <StyledNavbar>
-      <div>
-        <img src="../../hamburger.svg" alt="menu" />
-      </div>
+      <Link to={'/'}>
+        <div>
+          <img src="../../hamburger.svg" alt="menu" />
+        </div>
+      </Link>
       <div>
         <h1>
           Wize<span>Tube</span>

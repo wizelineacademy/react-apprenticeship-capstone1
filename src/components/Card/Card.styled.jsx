@@ -38,12 +38,4 @@ export const StyledCard = styled.div`
     font-size: 2.5rem;
     color: red;
   }
-  .favorite {
-    font-size: 2rem;
-    color: #cdd2d4;
-  }
-
-  .on {
-    color: #ffb703;
-  }
 `;
