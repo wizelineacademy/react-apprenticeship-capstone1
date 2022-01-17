@@ -5,13 +5,18 @@ import { useAuth } from '../../providers/Auth';
 import './Login.styles.css';
 
 function LoginPage() {
+  //console.log(useAuth());
   const { login } = useAuth();
+  console.log(useAuth());
+  
   const history = useHistory();
 
   function authenticate(event) {
+    
     event.preventDefault();
     login();
     history.push('/secret');
+
   }
 
   return (

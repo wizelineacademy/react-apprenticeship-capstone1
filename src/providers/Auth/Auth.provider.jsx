@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
+import AuthContext from '../../auth/AuthContext.auth';
+import getVideos from '../../selectors/getVideos';
 
 import { AUTH_STORAGE_KEY } from '../../utils/constants';
 import { storage } from '../../utils/storage';
-
-const AuthContext = React.createContext(null);
 
 function useAuth() {
   const context = useContext(AuthContext);
@@ -15,14 +15,23 @@ function useAuth() {
 
 // eslint-disable-next-line react/prop-types
 function AuthProvider({ children }) {
+  
   const [authenticated, setAuthenticated] = useState(false);
+  const [videos, setVideos] = useState([]);
+  const [category, setCategory] = useState('Wizeline');
+
+
 
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
     const isAuthenticated = Boolean(lastAuthState);
 
+    getVideos(category).then((videosData) => {
+      setVideos(videosData);
+    });
+
     setAuthenticated(isAuthenticated);
-  }, []);
+  }, [category]);
 
   const login = useCallback(() => {
     setAuthenticated(true);
@@ -35,7 +44,7 @@ function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ login, logout, authenticated }}>
+    <AuthContext.Provider value={{ login, logout, authenticated, videos, category, setCategory }}>
       {children}
     </AuthContext.Provider>
   );
