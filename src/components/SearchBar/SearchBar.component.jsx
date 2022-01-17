@@ -1,10 +1,12 @@
 import React from 'react';
-import { Input, Container, IconContainer, SeachImg } from './SearchBar.styles';
+import { ReactSVG } from 'react-svg';
+
+import { Input, Container, IconContainer } from './SearchBar.styles';
 
 const SeachBar = ({ placeholder, handleSearch, inputValue }) => (
   <Container>
     <IconContainer>
-      <SeachImg src="./images/search.png" />
+      <ReactSVG src="./search.svg" />
     </IconContainer>
     <Input
       value={inputValue}

@@ -16,7 +16,7 @@ const RecomendedCard = ({
   return (
     <CardContainer onClick={handleRelatedVideo}>
       <VideoContainer>
-        <img src={videoContent} />
+        <img src={videoContent} alt="recommended-video" />
       </VideoContainer>
       <TextContainer>
         <Title>{title}</Title>

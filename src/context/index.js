@@ -1,6 +1,8 @@
 import React, { useReducer, createContext } from 'react';
 
-const initialState = {};
+const initialState = {
+  favorites: [],
+};
 
 const Context = createContext();
 
@@ -12,8 +14,12 @@ const reducer = (state, action) => {
       return { ...state, ...action.payload };
     case 'SAVE_RECOMENDED_VIDEO':
       return { ...state, ...action.payload };
+    case 'SAVE_FAVORITES':
+      return { ...state, ...action.payload };
+    case 'REMOVE_FAVORITES':
+      return { ...state, ...action.payload };
     default:
-      throw new Error('internet is broken');
+      throw new Error('Sutube is broken');
   }
 };
 

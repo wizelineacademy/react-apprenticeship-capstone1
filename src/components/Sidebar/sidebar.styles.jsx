@@ -24,7 +24,7 @@ const SidebarContainer = styled.section`
   top: 0;
   left: 0;
   height: 100%;
-  background: white;
+  background: #333333;
   padding: 8px;
   display: flex;
   flex-direction: columm;

@@ -12,10 +12,6 @@ const IconContainer = styled.div`
   height: 20px;
   display: flex;
 `;
-const SeachImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
 
 const Input = styled.input`
   font-size: 12px;
@@ -25,9 +21,10 @@ const Input = styled.input`
   margin: 10px;
   background: transparent;
   border: 1px solid pink;
-  width: 220px;
+  width: 350px;
   border-radius: 20px;
   text-align: center;
+  color: white;
   @media screen and (max-width: 425px) {
     width: 80%;
   }
@@ -40,4 +37,4 @@ const Input = styled.input`
   }
 `;
 
-export { Input, Container, IconContainer, SeachImg };
+export { Input, Container, IconContainer };

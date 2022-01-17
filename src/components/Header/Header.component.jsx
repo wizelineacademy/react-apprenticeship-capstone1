@@ -18,7 +18,7 @@ const Header = ({
   return (
     <Container>
       <MunuButton onClick={handleMenu}>
-        <ReactSVG src="./images/menu-pink.svg" />
+        <ReactSVG src="./menu-pink.svg" />
       </MunuButton>
       <Title>{title}</Title>
       <SeachBar

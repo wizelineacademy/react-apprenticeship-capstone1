@@ -84,7 +84,10 @@ function HomePage() {
       type: 'SAVE_SELECTED_VIDEO',
       payload: {
         ...state,
-        selectedVideo: item,
+        selectedVideo: {
+          ...item,
+          favorited: false,
+        },
       },
     });
     history.push(`/details/${id}`);
