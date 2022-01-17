@@ -13,12 +13,15 @@ function VideoList(props) {
   let history = useHistory();
 
   const handleClick = (video) => {
-    navigateURL();
-    props.handleSelectVideo(video);
+    navigateURL(video);
   };
 
-  const navigateURL = () => {
-    history.push('/private/videos');
+  const navigateURL = (video) => {
+    if (props.privateRoute) {
+      history.push(`/playFavorites?videoId=${video.id.videoId}`);
+    } else {
+      history.push(`/play?videoId=${video.id.videoId}`);
+    }
   };
 
   return (
@@ -53,4 +56,5 @@ function VideoList(props) {
     </Row>
   );
 }
+
 export default VideoList;

@@ -1,40 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import VideoList from '../../components/VideoList';
 import useYoutubeRelatedSearch from '../../utils/hooks/useYoutubeRelatedSearch';
-
+import useYoutubeVideo from '../../utils/hooks/useYoutubeVideo';
+import { useLocation } from 'react-router-dom';
 import './VideoDetailView.styles.css';
 import VideoDetail from '../../components/VideoDetail';
-function VideoDetailView({
-  selectedVideo,
-  handleDisplay,
-  handleSelectVideo,
-  styles,
-  userId,
-  isLogged,
-}) {
-  const [relatedVideos, setRelatedVideos] = useState([]);
+import appContext from '../../context/appContext';
+import { Container, Row, Col } from 'react-bootstrap';
 
-  useYoutubeRelatedSearch(selectedVideo, setRelatedVideos);
+function VideoDetailView() {
+  const [relatedVideos, setRelatedVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const thisContext = useContext(appContext);
+  const { styles, userProps, isLogged } = thisContext;
+
+  let query = useQuery();
+
+  useYoutubeVideo(query.get('videoId'), setSelectedVideo);
+
+  useYoutubeRelatedSearch(query.get('videoId'), setRelatedVideos);
 
   return (
-    <div>
-      {selectedVideo !== null ? (
-        <VideoDetail
-          styles={styles}
-          selectedVideo={selectedVideo}
-          handleDisplay={handleDisplay}
-          userId={userId}
-          isLogged={isLogged}
-        ></VideoDetail>
-      ) : null}
+    <Container>
+      <Row>
+        <Col lg={12} md={12} sm={12} xs={12}>
+          {selectedVideo !== null ? (
+            <VideoDetail
+              styles={styles}
+              selectedVideo={selectedVideo}
+              isLogged={isLogged}
+              userId={userProps.id}
+            ></VideoDetail>
+          ) : null}
 
-      <VideoList
-        videos={relatedVideos}
-        handleSelectVideo={handleSelectVideo}
-        styles={styles}
-      ></VideoList>
-    </div>
+          <VideoList
+            videos={relatedVideos}
+            styles={styles}
+            userId={userProps.id}
+          ></VideoList>
+        </Col>
+      </Row>
+    </Container>
   );
+}
+
+function useQuery() {
+  const { search } = useLocation();
+
+  return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
 export default VideoDetailView;

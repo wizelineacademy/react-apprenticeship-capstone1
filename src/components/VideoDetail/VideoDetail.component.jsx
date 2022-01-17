@@ -5,48 +5,46 @@ import {
   CustomCard,
 } from '../../components/CustomElements';
 import { storage } from '../../utils/storage';
-function VideoDetail({
-  styles,
-  selectedVideo,
-  handleDisplay,
-  userId,
-  isLogged,
-}) {
+import { Link } from 'react-router-dom';
+
+function VideoDetail({ styles, selectedVideo, userId, isLogged }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    const result = storage.find(userId, selectedVideo.id.videoId);
+    const result = storage.find(userId, selectedVideo.id);
     if (result !== null) {
-      console.log(result);
       setIsFavorite(result.favorite);
+    } else {
+      setIsFavorite(false);
     }
-  }, []);
+  }, [selectedVideo]);
 
   const addToFavorites = () => {
-    console.log(userId);
-    storage.set(userId, { ...selectedVideo, favorite: !isFavorite });
+    storage.set(userId, {
+      ...selectedVideo,
+      favorite: !isFavorite,
+      id: { videoId: selectedVideo.id },
+    });
     setIsFavorite(true);
   };
 
   const removeFromFavorites = () => {
-    storage.remove(userId, selectedVideo.id.videoId);
+    storage.remove(userId, selectedVideo.id);
     setIsFavorite(false);
   };
 
   return (
     <>
       <Description color={styles.customCard.fontColor}>
-        <a href="#!" onClick={handleDisplay}>
-          Home{' '}
-        </a>
+        <Link to="/home">Home </Link>
         <i className="fa fa-chevron-right" aria-hidden="true"></i>{' '}
         {selectedVideo.snippet.title}
       </Description>
       <iframe
         width="100%"
         height="500px"
-        title={selectedVideo.id.videoId}
-        src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}`}
+        title={selectedVideo.id}
+        src={`https://www.youtube.com/embed/${selectedVideo.id}`}
       ></iframe>
       <CustomCard
         className="card-div-detail"

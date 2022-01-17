@@ -1,15 +1,15 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import './Header.styles.css';
 import { Container, Form, Row, Col, Dropdown } from 'react-bootstrap';
 import appContext from '../../context/appContext';
 import Login from '../login/Login.component';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
   const [searchValue, setSearchValue] = useState('');
   const [switchValue, setSwitchValue] = useState(false);
   const [show, setShow] = useState(false);
-
+  let history = useHistory();
   const handleShow = () => setShow(true);
   const handleModal = () => setShow(!show);
   const thisContext = useContext(appContext);
@@ -31,20 +31,30 @@ function Header() {
     toggleStyles(!switchValue);
   };
 
-  const handleKeyPress = (target) => {
-    if (target.charCode === 13) {
-      if (searchTerm !== searchValue) {
-        console.log('different');
-        setSearchTerm(searchValue);
-      }
+  const navigateURL = (path) => {
+    history.push(`/${path}`);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm !== searchValue) {
+      setSearchTerm(searchValue);
+      navigateURL('home');
     }
   };
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+    navigateURL('home');
+  };
+
   return (
     <div className="header">
       <Container className="form-search">
         <Row>
           <Col xs={12} sm={6} md={6}>
-            <Form>
+            <Form onSubmit={(e) => handleSubmit(e)}>
               <Form.Group controlId="formSearch">
                 <Form.Control
                   type="text"
@@ -52,7 +62,7 @@ function Header() {
                   placeholder="..."
                   value={searchValue}
                   onChange={(e) => handleChange(e)}
-                  onKeyPress={(e) => handleKeyPress(e)}
+                  // onKeyPress={(e) => handleKeyPress(e)}
                 />
               </Form.Group>
             </Form>
@@ -89,27 +99,22 @@ function Header() {
 
               <Dropdown.Menu>
                 {isLogged ? (
-                  <Dropdown.Item>
-                    <Link
-                      to={{
-                        pathname: '/private',
-                      }}
-                    >
-                      {' '}
-                      Favorites
-                    </Link>
+                  <Dropdown.Item
+                    onClick={() => {
+                      navigateURL('favorites');
+                    }}
+                  >
+                    Favorites
                   </Dropdown.Item>
                 ) : null}
                 {isLogged ? (
-                  <Dropdown.Item onClick={logout}>
-                    <Link
-                      to={{
-                        pathname: '/home',
-                      }}
-                    >
-                      {' '}
-                      Logout
-                    </Link>
+                  <Dropdown.Item
+                    tag={'Link'}
+                    onClick={(e) => {
+                      handleLogout(e);
+                    }}
+                  >
+                    Logout
                   </Dropdown.Item>
                 ) : (
                   <Dropdown.Item onClick={handleModal}>Login</Dropdown.Item>

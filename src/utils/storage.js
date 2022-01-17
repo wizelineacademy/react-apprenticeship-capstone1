@@ -22,15 +22,10 @@ const storage = {
   find(key, videoId) {
     const items = this.get(key);
     if (items !== null) {
-      console.log(items);
-
-      console.log(videoId);
       const favorite = items.find((video) => video.id.videoId == videoId);
-
       if (favorite == undefined) {
         return null;
       }
-
       return favorite;
     } else {
       return null;

@@ -13,10 +13,7 @@ function FavoritesView() {
   useEffect(() => {
     try {
       const item = storage.get(userProps.id);
-      console.log(userProps.id);
-      console.log(item);
       if (item !== null) {
-        console.log(item);
         setFavoriteVideos(item);
       }
     } catch (err) {
@@ -30,7 +27,12 @@ function FavoritesView() {
         {favoriteVideos.length == 0 ? (
           <EmptyVideos></EmptyVideos>
         ) : (
-          <VideoList videos={favoriteVideos} styles={styles} userId></VideoList>
+          <VideoList
+            videos={favoriteVideos}
+            styles={styles}
+            userId={userProps.id}
+            privateRoute={true}
+          ></VideoList>
         )}
       </Col>
     </Container>

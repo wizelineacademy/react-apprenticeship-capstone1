@@ -15,12 +15,11 @@
   transition: none;
 }
 
-#dropdown-menu-login::after{
+#dropdown-menu-login::after {
   display: none;
 }
 
-
-#dropdown-menu-login:focus{
+#dropdown-menu-login:focus {
   box-shadow: none;
 }
 
@@ -31,7 +30,7 @@
   overflow: hidden;
 }
 
-.form-check-input{
+.form-check-input {
   margin-top: 15% !important;
 }
 

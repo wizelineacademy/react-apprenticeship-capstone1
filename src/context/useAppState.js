@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import appContext from './appContext';
 import appReducer from './appReducer';
-import { MOCK_CREDENTIALS, USER_DEFAULT_PROPS } from '../utils/const';
+import { USER_DEFAULT_PROPS } from '../utils/const';
 function AppState(props) {
   const initialState = {
     searchTerm: '',
@@ -10,8 +10,8 @@ function AppState(props) {
       customCard: { backgroundColor: '#fff', fontColor: '#000' },
       layout: { backgroundColor: 'antiquewhite', fontColor: '#000000' },
     },
-    isLogged: true,
-    userProps: MOCK_CREDENTIALS,
+    isLogged: false,
+    userProps: USER_DEFAULT_PROPS,
   };
 
   const [state, dispatch] = useReducer(appReducer, initialState);
