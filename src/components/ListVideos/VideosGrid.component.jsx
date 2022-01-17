@@ -1,8 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import YouTube from 'react-youtube';
+import React from 'react';
 import { useAuth } from '../../providers/Auth';
-import getVideoById from '../../selectors/getVideoById';
-import getVideos from '../../selectors/getVideos';
 import { VideosGridContainer } from '../../theme/pages/Videos/Videos.styles';
 
 

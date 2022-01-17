@@ -18,7 +18,8 @@ const VideoItem = ({video}) => {
                         onClick={handleStartVideo}
                         width={video.width}
                         height={video.height} 
-                        src={video.url}      
+                        src={video.url}    
+                        alt="video"  
                         />
                 
                 </Link>

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AddCategory from '../ListVideos/AddCategory.component';
 import SwitchButton from './SwitchButton.component';
 import { Link, NavLink} from 'react-router-dom'
@@ -9,7 +9,7 @@ import styled from 'styled-components';
 //import { Link } from 'react-router-dom';
 
 function Navbar() {
-    const [categories, setCategory] = useState(['wizeline']);
+
     const [isToggle, setIsToggle] = useState(false); 
     
     function handleToggle() {

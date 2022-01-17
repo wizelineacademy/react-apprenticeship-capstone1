@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +13,6 @@ import LoginPage from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import SecretPage from '../pages/Secret';
 import Layout from "../components/Layout";
-import Private from "../components/Private";
 import PublicRoute from "./routes/PublicRoutes/PublicRoute.route";
 import PrivateRoute from "./routes/PrivateRoutes/PrivateRoute.route";
 import Navbar from "../components/Ui/Navbar.component";

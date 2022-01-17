@@ -2,7 +2,7 @@ import React from 'react';
 import VideoItem from './VideoItem.component';
 
 function VideosList({ videos }){
-    console.log(videos);
+
     return (
         <>
         {

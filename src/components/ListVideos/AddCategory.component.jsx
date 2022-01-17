@@ -6,7 +6,6 @@ import { AddCategoryInput } from '../../theme/components/ListVideos/ListVideos.s
 function AddCategory() {
     const [inputValue, setInputValue] = useState('wizeline');
     const { setCategory } = useAuth();
-    console.log(useAuth());
     const handleInputChange = (e) => {
         //console.log(e);
         setInputValue( e.target.value );

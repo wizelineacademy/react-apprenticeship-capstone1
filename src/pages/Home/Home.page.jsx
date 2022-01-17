@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import VideosGrid from '../../components/ListVideos/VideosGrid.component';
-import SwitchButton from '../../components/Ui/SwitchButton.component';
 
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
