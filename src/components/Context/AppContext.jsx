@@ -5,6 +5,7 @@ import AppReducer from './AppReducer';
 const initialState = {
   favoritesList: [],
   detailVideo: [],
+  toggleMode: false,
 };
 
 export const AppContext = createContext(initialState);
@@ -15,11 +16,14 @@ export const AppProvider = (props) => {
   const getVideosList = (list) => {
     dispatch({ type: 'FETCH_VIDEOS_SUCCESS', payload: list });
   };
-  const addVideotoFavorite = (video) => {
+  const addVideoToFavorite = (video) => {
     dispatch({ type: 'ADD_VIDEO_TO_FAVORITESLIST', payload: video });
   };
   const getVideoDetails = (video) => {
     dispatch({ type: 'GET_VIDEO_DETAILS', payload: video });
+  };
+  const setToggleMode = () => {
+    dispatch({ type: 'TOGGLE_MODE' });
   };
 
   return (
@@ -27,8 +31,10 @@ export const AppProvider = (props) => {
       value={{
         detailVideo: state.detailVideo,
         favoritesList: state.favoritesList,
+        toggleMode: state.toggleMode,
+        setToggleMode,
         getVideosList,
-        addVideotoFavorite,
+        addVideoToFavorite,
         getVideoDetails,
       }}
     >

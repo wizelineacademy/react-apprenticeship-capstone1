@@ -20,13 +20,15 @@ function Card({ snippet, id, video }) {
         <p>{description}</p>
         <p> Published: {publishTime && timePublished(publishTime)}</p>
         <div>
-          <Link
-            to={videoId}
-            onClick={() => getVideoDetails(video)}
-            video={video}
-          >
-            <FaYoutube id="youtube" />
-          </Link>
+          {videoId && (
+            <Link
+              to={videoId}
+              onClick={() => getVideoDetails(video)}
+              video={video}
+            >
+              <FaYoutube id="youtube" />
+            </Link>
+          )}
         </div>
       </div>
     </StyledCard>

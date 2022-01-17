@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../Context/AppContext';
+
 import { StyledButton } from './Button.styled';
 
-function button(props) {
-  const handleClick = (e) => {
-    console.log(e.target.value);
-  };
+function Button(props) {
+  const { setToggleMode } = useContext(AppContext);
 
   return (
-    <StyledButton data-testid="button" onClick={handleClick}>
+    <StyledButton
+      data-testid="button"
+      onClick={() => {
+        setToggleMode();
+      }}
+    >
       {props.text}
     </StyledButton>
   );
 }
 
-export default button;
+export default Button;

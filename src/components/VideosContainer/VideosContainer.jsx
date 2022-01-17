@@ -3,10 +3,8 @@ import { StyledContainer } from './VideosContainer.styled';
 import SearchBar from '../SearchBar/SearchBar';
 import Card from '../Card/Card';
 import axios from 'axios';
-//import { AppContext } from '../Context/AppContext';
 
 function Container() {
-  //const { getVideoDetails } = useContext(AppContext);
 
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
