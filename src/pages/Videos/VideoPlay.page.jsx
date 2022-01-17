@@ -25,8 +25,11 @@ function VideoPlay() {
                     />
                 </VideoPlayCard>
                 <VideoPlayContent>
+                {/*
                     <p>{video.title}</p>
                     <p>{video.description}</p>
+                */
+                }
                 </VideoPlayContent>
             </div>
                 <VideosGrid />

@@ -41,11 +41,6 @@ function AppRouter() {
                         component={ HomePage } 
                         isAuthenticated={false}
                     />
-                        {/**
-                         <VideoPlay/>
-                        <HomePage />
-                        */
-                        }
                     <PublicRoute 
                         exact
                         path="/:videoId" 
