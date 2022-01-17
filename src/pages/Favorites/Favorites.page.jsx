@@ -21,7 +21,7 @@ function FavoritesPage(props) {
 }
 
 FavoritesPage.defaultProps = {
-  'data-testid': 'favorites-page',
+  'data-testid': '',
 };
 
 export default FavoritesPage;

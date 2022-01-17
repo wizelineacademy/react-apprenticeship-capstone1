@@ -8,7 +8,7 @@ import useFetchVideoInfo from '@src/hooks/useFetchVideoInfo.hook';
 import VideoInfo from '@components/VideoInfo';
 import VideoList from '@components/VideoList';
 
-function VideoDetails() {
+function VideoDetails(props) {
   let { id } = useParams();
   let [relatedVideos, setRelatedVideos] = useState([]);
   let [relatedPageToken, setRelatedPageToken] = useState('');
@@ -29,7 +29,7 @@ function VideoDetails() {
     };
 
   return (
-    <section className="video-details">
+    <section data-testid={props['data-testid']} className="video-details">
       <YouTube
         videoId={id}
         containerClassName="video-details__video-player-container"
@@ -52,7 +52,7 @@ function VideoDetails() {
 }
 
 VideoDetails.defaultProps = {
-  video: {},
+  'data-testid': '',
 };
 
 export default VideoDetails;

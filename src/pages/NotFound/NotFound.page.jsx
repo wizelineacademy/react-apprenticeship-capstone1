@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './NotFound.styles.scss';
 
-function NotFound() {
+function NotFound(props) {
   return (
-    <section className="not-found-page">
+    <section data-testid={props['data-testid']} className="not-found-page">
       <FontAwesomeIcon
         icon={['far', 'frown']}
         size="7x"
@@ -17,5 +17,9 @@ function NotFound() {
     </section>
   );
 }
+
+NotFound.defaultProps = {
+  'data-testid': '',
+};
 
 export default NotFound;

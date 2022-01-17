@@ -13,6 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
     "he": "^1.2.0",
     "jest-fetch-mock": "^3.0.3",
@@ -88,6 +89,7 @@
         "lines": 70
       }
     },
+    "automock": false,
     "moduleNameMapper": {
       "^@src(.*)$": "<rootDir>/src/$1",
       "^@components(.*)$": "<rootDir>/src/components/$1",

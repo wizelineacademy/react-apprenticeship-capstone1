@@ -25,7 +25,7 @@ function HomePage(props) {
 }
 
 HomePage.defaultProps = {
-  'data-testid': 'home-page',
+  'data-testid': '',
 };
 
 export default HomePage;

@@ -10,5 +10,4 @@ import { enableFetchMocks } from 'jest-fetch-mock';
 
 library.add(fas, far);
 
-//jest.mock(fetchMock.sandbox().mock('https://www.googleapis.com/', 200));
 enableFetchMocks();
