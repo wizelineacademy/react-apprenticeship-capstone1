@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import './Home.styles.scss';
-import useFetchSearch from './useFetchSearch.hook';
+import useFetchSearch from '@src/hooks/useFetchSearch.hook';
 import VideoGrid from '@components/VideoGrid';
 
 function HomePage(props) {

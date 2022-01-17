@@ -7,7 +7,7 @@ import Loader from '@components/Loader';
 
 function VideoGrid(props) {
   return (
-    <div className="video-grid__container">
+    <div data-testid={props['data-testid']} className="video-grid__container">
       <div className={'video-grid ' + props.className}>
         {props.items.map((item) => (
           <VideoCard key={item.id.videoId} item={item} />
@@ -25,6 +25,7 @@ function VideoGrid(props) {
 }
 
 VideoGrid.defaultProps = {
+  'data-testid': '',
   className: '',
   loadMore: null,
   loading: false,

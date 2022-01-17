@@ -20,7 +20,7 @@ function Switch(props) {
 }
 
 Switch.defaultProps = {
-  testId: 'switch',
+  testId: '',
   className: '',
   label: '',
   value: false,

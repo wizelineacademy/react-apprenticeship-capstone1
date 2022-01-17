@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from '@providers/Auth';
+import { ThemeProvider } from '@providers/Theme';
 import Layout from '@components/Layout';
 
 describe('Input...', () => {
@@ -9,12 +10,14 @@ describe('Input...', () => {
     render(
       <BrowserRouter>
         <AuthProvider defaultAuthenticated={false}>
-          <Layout>
-            <i>Children</i>
-          </Layout>
-          <Routes>
-            <Route exact path="/" element={<i>Home view</i>} />
-          </Routes>
+          <ThemeProvider>
+            <Layout>
+              <i>Children</i>
+            </Layout>
+            <Routes>
+              <Route exact path="/" element={<i>Home view</i>} />
+            </Routes>
+          </ThemeProvider>
         </AuthProvider>
       </BrowserRouter>
     );

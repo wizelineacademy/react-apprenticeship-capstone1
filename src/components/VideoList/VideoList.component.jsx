@@ -11,7 +11,10 @@ function VideoList(props) {
   let [filter, setFilter] = useState('related');
 
   return (
-    <div className={'video-list ' + props.className}>
+    <div
+      data-testid={props['data-testid']}
+      className={'video-list ' + props.className}
+    >
       <BreadCrumb
         selected={filter}
         onSelectedChange={setFilter}
@@ -44,8 +47,10 @@ function VideoList(props) {
 }
 
 VideoList.defaultProps = {
+  'data-testid': '',
   className: '',
-  loadMore: null,
+  loading: false,
+  loadMore: () => {},
   items: [],
 };
 

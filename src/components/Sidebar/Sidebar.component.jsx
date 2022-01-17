@@ -36,6 +36,7 @@ function Sidebar(props) {
           }
         />
         <IconButton
+          data-testid="sidebar__close"
           icon={<FontAwesomeIcon icon={['fas', 'times']} size="2x" />}
           className="sidebar__close-button"
           onClick={() => props.setIsSideBarOpen((prevState) => !prevState)}
@@ -50,7 +51,7 @@ function Sidebar(props) {
         <h3>{userInfo.username}</h3>
       </div>
 
-      <div
+      <button
         className={
           'sidebar__tab ' +
           (location.pathname === '/' ? 'sidebar__tab--selected' : '')
@@ -59,10 +60,10 @@ function Sidebar(props) {
       >
         <FontAwesomeIcon icon={['fas', 'home']} size="2x" />
         <h3>Home</h3>
-      </div>
+      </button>
 
       {authenticated ? (
-        <div
+        <button
           className={
             'sidebar__tab ' +
             (location.pathname === '/favorites' ? 'sidebar__tab--selected' : '')
@@ -71,12 +72,12 @@ function Sidebar(props) {
         >
           <FontAwesomeIcon icon={['fas', 'heart']} size="2x" />
           <h3>Favorites</h3>
-        </div>
+        </button>
       ) : null}
 
-      <div className="sidebar__item sidebar__link" onClick={openPortal}>
+      <button className="sidebar__item sidebar__link" onClick={openPortal}>
         {authenticated ? <h3>Logout</h3> : <h3>Login</h3>}
-      </div>
+      </button>
 
       {isOpen &&
         (authenticated ? (
@@ -95,7 +96,6 @@ function Sidebar(props) {
 Sidebar.defaultProps = {
   'data-testid': 'sidebar',
   className: '',
-  isLogged: false,
   setIsSideBarOpen: () => {},
 };
 

@@ -13,6 +13,7 @@ function VideoCard(props) {
 
   return (
     <div
+      data-testid={props.testId}
       className={'video-card ' + props.className}
       onClick={() => navigate(`details/${props.item.id.videoId}`)}
     >
@@ -44,8 +45,15 @@ function VideoCard(props) {
 }
 
 VideoCard.defaultProps = {
+  testId: '',
   className: '',
-  item: {},
+  item: {
+    id: { videoId: '' },
+    snippet: {
+      thumbnails: { medium: { url: '' } },
+      publishTime: new Date(0, 0, 0, 0, 0, 0, 0),
+    },
+  },
 };
 
 export default VideoCard;

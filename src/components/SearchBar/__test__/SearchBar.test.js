@@ -20,9 +20,4 @@ describe('SearchBar...', () => {
       'typing-test'
     );
   });
-
-  it('should call fetch when clicking typing enter', () => {
-    global.fetch = jest.fn();
-    expect(global.fetch).toBeCalledTimes(1);
-  });
 });

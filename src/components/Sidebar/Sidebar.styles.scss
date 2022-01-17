@@ -29,12 +29,14 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
-    width: 226px;
+    width: 250px;
     height: 48px;
     color: var(--primary);
     padding-left: 12px;
     padding-right: 12px;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 
     &:hover {
         background-color: var(--primary);
@@ -56,6 +58,8 @@
     color: var(--gray);
     text-decoration: underline;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 
     &:hover {
         background-color: var(--primary);

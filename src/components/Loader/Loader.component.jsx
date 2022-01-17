@@ -12,7 +12,7 @@ function Loader(props) {
 }
 
 Loader.defaultProps = {
-  testId: 'loader',
+  testId: 'loader-component',
   className: '',
 };
 

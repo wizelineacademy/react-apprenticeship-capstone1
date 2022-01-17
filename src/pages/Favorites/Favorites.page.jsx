@@ -6,7 +6,7 @@ import VideoGrid from '@components/VideoGrid';
 
 function FavoritesPage(props) {
   return (
-    <section className="favorites">
+    <section data-testid={props['data-testid']} className="favorites">
       <h1 className="favorites__title">Your favorite videos</h1>
       {props.items ? (
         <VideoGrid items={[]} />
@@ -19,5 +19,9 @@ function FavoritesPage(props) {
     </section>
   );
 }
+
+FavoritesPage.defaultProps = {
+  'data-testid': 'favorites-page',
+};
 
 export default FavoritesPage;

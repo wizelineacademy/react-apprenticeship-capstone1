@@ -7,26 +7,30 @@ import './VideoInfo.styles.scss';
 
 function VideoInfo(props) {
   return (
-    <div className={'video-info ' + props.className}>
+    <div
+      data-testid={props['data-testid']}
+      className={'video-info ' + props.className}
+    >
       <div className="video-info__title-row">
-        <h2>{he.decode(props.item.snippet.title)}</h2>
+        <h2>{he.decode(props.video.snippet.title)}</h2>
         <FontAwesomeIcon
           icon={[props ? 'fas' : 'far', 'heart']}
           size="2x"
           className="video-info__liked-icon"
         />
       </div>
-      <h5>{moment(new Date(props.item.snippet.publishTime)).fromNow()}</h5>
+      <h5>{moment(new Date(props.video.snippet.publishTime)).fromNow()}</h5>
       <p className="video-info__description">
-        {props.item.snippet.description}
+        {props.video.snippet.description}
       </p>
     </div>
   );
 }
 
 VideoInfo.defaultProps = {
+  'data-testid': '',
   className: '',
-  item: {
+  video: {
     snippet: {
       title: '',
       publishTime: new Date(),
