@@ -8,6 +8,8 @@ import Sidebar from '../../components/Sidebar/sidebar.component';
 import { Context } from '../../context';
 import useFetch from '../../utils/hooks/useFetch';
 import initialData from '../../utils/mocks';
+import useSearch from '../../utils/hooks/useSearch';
+import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
 
 import {
   DetailsContainer,
@@ -21,13 +23,14 @@ import {
 import RecomendedCard from '../../components/RecommendedCard/Recommendedcard.component';
 
 const DetailsPage = () => {
-  const { authenticated } = useAuth();
+  const { authenticated, logout } = useAuth();
   const { id } = useParams();
   const history = useHistory();
   const videoSrc = `https://www.youtube.com/embed/${id}`;
   let controller = new AbortController();
 
   const [sidebarState, setSidebarState] = useState(false);
+  const [searchInDetails, setSearchInDetails] = useState(false);
   const [relatedVideos, setRelatedVideos] = useState(initialData);
   const { fetchData, response, isLoading } = useFetch();
   const { state, dispatch } = useContext(Context);
@@ -38,6 +41,7 @@ const DetailsPage = () => {
   const [favoritedIcon, setFavoritedIcon] = useState(
     selectedVideoFromState.favorited
   );
+  const { handleSearch, serchedData, serchedValue } = useSearch();
 
   const handleRandomVideos = () => {
     setTimeout(() => {
@@ -47,6 +51,10 @@ const DetailsPage = () => {
   useEffect(() => {
     handleRandomVideos();
   }, []);
+
+  useEffect(() => {
+    if (serchedValue !== '') setSearchInDetails(true);
+  }, [serchedValue]);
 
   useEffect(() => {
     try {
@@ -81,81 +89,94 @@ const DetailsPage = () => {
     history.push(`/details/${id}`);
   };
 
+  // const handleFavorites = () => {
+  //   if (recomendedVideoSelected.id.videoId === id) {
+  //     dispatch({
+  //       type: 'SAVE_RECOMENDED_VIDEO',
+  //       payload: {
+  //         recomendedVideoSelected: {
+  //           ...state.recomendedVideoSelected,
+  //           favorited: true,
+  //         },
+  //       },
+  //     });
+  //     dispatch({
+  //       type: 'SAVE_FAVORITES',
+  //       payload: {
+  //         favorites: [...state.favorites, recomendedVideoSelected],
+  //       },
+  //     });
+  //     setFavoritedIcon(recomendedVideoSelected.favorited);
+  //   }
+  //   if (selectedVideoFromState.id.videoId === id) {
+  //     dispatch({
+  //       type: 'SAVE_SELECTED_VIDEO',
+  //       payload: {
+  //         selectedVideo: {
+  //           ...state.selectedVideo,
+  //           favorited: true,
+  //         },
+  //       },
+  //     });
+  //     dispatch({
+  //       type: 'SAVE_FAVORITES',
+  //       payload: {
+  //         favorites: [...state.favorites, selectedVideoFromState],
+  //       },
+  //     });
+  //     setFavoritedIcon(selectedVideoFromState.favorited);
+  //   }
+  // };
+
+  // const deleteFavorites = () => {
+  //   const deletedVideo = state.favorites.filter(
+  //     (item) => item.id.videoId !== id
+  //   );
+  //   dispatch({
+  //     type: 'REMOVE_FAVORITES',
+  //     payload: {
+  //       favorites: deletedVideo,
+  //     },
+  //   });
+  //   if (recomendedVideoSelected.id.videoId === id) {
+  //     dispatch({
+  //       type: 'SAVE_RECOMENDED_VIDEO',
+  //       payload: {
+  //         recomendedVideoSelected: {
+  //           ...state.recomendedVideoSelected,
+  //           favorited: false,
+  //         },
+  //       },
+  //     });
+  //     setFavoritedIcon(recomendedVideoSelected.favorited);
+  //   }
+  //   if (selectedVideoFromState.id.videoId === id) {
+  //     dispatch({
+  //       type: 'SAVE_SELECTED_VIDEO',
+  //       payload: {
+  //         selectedVideo: {
+  //           ...state.selectedVideo,
+  //           favorited: false,
+  //         },
+  //       },
+  //     });
+  //     setFavoritedIcon(selectedVideoFromState.favorited);
+  //   }
+  // };
   const handleFavorites = () => {
-    if (recomendedVideoSelected.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_RECOMENDED_VIDEO',
-        payload: {
-          recomendedVideoSelected: {
-            ...state.recomendedVideoSelected,
-            favorited: true,
-          },
-        },
-      });
-      dispatch({
-        type: 'SAVE_FAVORITES',
-        payload: {
-          favorites: [...state.favorites, recomendedVideoSelected],
-        },
-      });
-      setFavoritedIcon(recomendedVideoSelected.favorited);
-    }
     if (selectedVideoFromState.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_SELECTED_VIDEO',
-        payload: {
-          selectedVideo: {
-            ...state.selectedVideo,
-            favorited: true,
-          },
-        },
-      });
-      dispatch({
-        type: 'SAVE_FAVORITES',
-        payload: {
-          favorites: [...state.favorites, selectedVideoFromState],
-        },
-      });
-      setFavoritedIcon(selectedVideoFromState.favorited);
+      alert('hello selected');
+    }
+    if (recomendedVideoSelected.id.videoId === id) {
+      alert('hello recommended');
     }
   };
 
-  const deleteFavorites = () => {
-    const deletedVideo = state.favorites.filter(
-      (item) => item.id.videoId !== id
-    );
-    dispatch({
-      type: 'REMOVE_FAVORITES',
-      payload: {
-        favorites: deletedVideo,
-      },
-    });
-    if (recomendedVideoSelected.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_RECOMENDED_VIDEO',
-        payload: {
-          recomendedVideoSelected: {
-            ...state.recomendedVideoSelected,
-            favorited: false,
-          },
-        },
-      });
-      setFavoritedIcon(recomendedVideoSelected.favorited);
-    }
-    if (selectedVideoFromState.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_SELECTED_VIDEO',
-        payload: {
-          selectedVideo: {
-            ...state.selectedVideo,
-            favorited: false,
-          },
-        },
-      });
-      setFavoritedIcon(selectedVideoFromState.favorited);
-    }
+  const deAuthenticate = (event) => {
+    event.preventDefault();
+    logout();
+    history.push('/login');
   };
-
   if (isLoading) return <p>Loading...</p>;
 
   return (
@@ -164,61 +185,85 @@ const DetailsPage = () => {
         title="Suetube videos"
         handleMenu={handleOpenMenu}
         authenticated={authenticated}
+        deAuthenticate={deAuthenticate}
+        handleSearch={handleSearch}
+        inputValue={serchedValue}
       />
       {sidebarState ? <Sidebar /> : null}
-      <section className="homepage">
-        <DetailsContainer>
-          <VideoContainer>
-            <Video>
-              <iframe src={videoSrc} title="Video player" />
-            </Video>
-            <Information>
-              {
-                <>
-                  <TitleContainer>
-                    <h3>
+      <section className="details">
+        {searchInDetails ? (
+          <SearchDashboard serchedData={serchedData} />
+        ) : (
+          <DetailsContainer>
+            <VideoContainer>
+              <Video>
+                <iframe src={videoSrc} title="Video player" />
+              </Video>
+              <Information>
+                {
+                  <>
+                    <TitleContainer>
+                      <h3>
+                        {recomendedVideoSelected.id.videoId === id
+                          ? recomendedVideoSelected.snippet.title
+                          : selectedVideoFromState.snippet.title}
+                      </h3>
+                      <FavoriteButton
+                        // onClick={() =>
+                        //   !favoritedIcon ? deleteFavorites() : handleFavorites()
+                        // }
+                        onClick={() => handleFavorites()}
+                      >
+                        <ReactSVG
+                          src={
+                            favoritedIcon
+                              ? '/favorite.svg'
+                              : '/favorite-empty.svg'
+                          }
+                        />
+                        <p>{favoritedIcon ? 'Remove' : 'Add'} to Favorites</p>
+                      </FavoriteButton>
+                    </TitleContainer>
+                    <p>
                       {recomendedVideoSelected.id.videoId === id
-                        ? recomendedVideoSelected.snippet.title
-                        : selectedVideoFromState.snippet.title}
-                    </h3>
-                    <FavoriteButton
-                      onClick={() =>
-                        favoritedIcon ? deleteFavorites() : handleFavorites()
-                      }
-                    >
-                      <ReactSVG
-                        src={
-                          favoritedIcon
-                            ? '/favorite.svg'
-                            : '/favorite-empty.svg'
-                        }
-                      />
-                      <p>{favoritedIcon ? 'Remove' : 'Add'} to Favorites</p>
-                    </FavoriteButton>
-                  </TitleContainer>
-                  <p>
-                    {recomendedVideoSelected.id.videoId === id
-                      ? recomendedVideoSelected.snippet.description
-                      : selectedVideoFromState.snippet.description}
-                  </p>
-                </>
-              }
-            </Information>
-          </VideoContainer>
-          <ListVideosContainer>
-            {relatedVideos.items.map((item) => (
-              <RecomendedCard
-                handleRelatedVideo={() =>
-                  handleRelatedVideo(item.id.videoId, item)
+                        ? recomendedVideoSelected.snippet.description
+                        : selectedVideoFromState.snippet.description}
+                    </p>
+                  </>
                 }
-                key={item.id.videoId}
-                title={item.snippet.title}
-                videoContent={item.snippet.thumbnails.high.url}
-                description={item.snippet.description}
-              />
-            ))}
-          </ListVideosContainer>
-        </DetailsContainer>
+              </Information>
+            </VideoContainer>
+            <ListVideosContainer>
+              {relatedVideos.items.map((item) => (
+                <RecomendedCard
+                  handleRelatedVideo={() =>
+                    handleRelatedVideo(item.id.videoId, item)
+                  }
+                  key={item.id.videoId}
+                  title={item.snippet.title}
+                  videoContent={item.snippet.thumbnails.high.url}
+                  description={item.snippet.description}
+                />
+              ))}
+              {selectedVideoFromState.id.videoId !== id ? (
+                <RecomendedCard
+                  handleRelatedVideo={() =>
+                    handleRelatedVideo(
+                      selectedVideoFromState.id.videoId,
+                      selectedVideoFromState
+                    )
+                  }
+                  key={selectedVideoFromState.id.videoId}
+                  title={selectedVideoFromState.snippet.title}
+                  videoContent={
+                    selectedVideoFromState.snippet.thumbnails.high.url
+                  }
+                  description={selectedVideoFromState.snippet.description}
+                />
+              ) : null}
+            </ListVideosContainer>
+          </DetailsContainer>
+        )}
       </section>
     </div>
   );

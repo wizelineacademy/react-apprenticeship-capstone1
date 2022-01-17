@@ -13,6 +13,7 @@ const CardContainer = styled.div`
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   margin: 16px 8px;
   overflow: scroll;
+  background: #333333;
 `;
 const VideoContainer = styled.div`
   width: 100%;

@@ -1,105 +1,32 @@
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../providers/Auth';
 import Header from '../../components/Header/Header.component';
 import Sidebar from '../../components/Sidebar/sidebar.component';
-import Card from '../../components/Card/Card.component';
-import CardsContainer from '../../components/CardsContainer/CardContainer.component';
+import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
+
+import useSearch from '../../utils/hooks/useSearch';
 import useFetch from '../../utils/hooks/useFetch';
-import { Context } from '../../context';
-import initialData from '../../utils/mocks';
 
 function HomePage() {
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
   const [sidebarState, setSidebarState] = useState(false);
-  const [serchedValue, setSearchedValue] = useState('');
-  const [serchedData, setSearchedData] = useState(initialData.items);
   const history = useHistory();
-  const { fetchData, response, isLoading } = useFetch();
-  const { state, dispatch } = useContext(Context);
-  let controller = new AbortController();
-
-  const handleReponse = (responseStatus) => {
-    try {
-      if (responseStatus === 'updating') {
-        if (response && response.items) {
-          setSearchedData(response.items);
-          dispatch({
-            type: 'SAVE_ALL_DATA',
-            payload: {
-              ...state,
-              response,
-              serchedValue,
-            },
-          });
-        } else {
-          setSearchedData([]);
-        }
-      }
-      if (responseStatus === 'firstLoad') {
-        //TODO: Change when deploy to not loose request.
-        //fetchData('', 15);
-        console.log('here will get some random videos');
-        if (response && response.items) setSearchedData(response.items);
-        else {
-          setSearchedData([]);
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    handleReponse('firstLoad');
-    return () => {
-      controller.abort();
-    };
-  }, []);
-
-  useEffect(() => {
-    handleReponse('updating');
-    return () => {
-      controller.abort();
-    };
-  }, [response]);
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    const { value } = event.target;
-    setSearchedValue(value);
-    if (event.key === 'Enter') {
-      fetchData(serchedValue, 50);
-    }
-  };
+  const { isLoading } = useFetch();
+  const { handleSearch, serchedData, serchedValue } = useSearch();
 
   const handleOpenMenu = () => {
     setSidebarState(!sidebarState);
   };
-
-  const handleDetails = (id, item) => {
-    dispatch({
-      type: 'SAVE_SELECTED_VIDEO',
-      payload: {
-        ...state,
-        selectedVideo: {
-          ...item,
-          favorited: false,
-        },
-      },
-    });
-    history.push(`/details/${id}`);
-  };
-
   const deAuthenticate = (event) => {
     event.preventDefault();
     logout();
     history.push('/login');
   };
 
-  if (isLoading) return <p>Loading...</p>; //TODO: put this at component level
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <div style={{ position: 'relative' }}>
@@ -113,21 +40,7 @@ function HomePage() {
       />
       {sidebarState ? <Sidebar /> : null}
       <section className="homepage" ref={sectionRef}>
-        <CardsContainer>
-          {serchedData.map((item) => {
-            const { title, thumbnails, description } = item.snippet;
-            return (
-              <Card
-                {...item}
-                key={item.id.videoId}
-                handleDetails={() => handleDetails(item.id.videoId, item)}
-                title={title}
-                videoImage={thumbnails.high.url}
-                subtitle={description}
-              />
-            );
-          })}
-        </CardsContainer>
+        <SearchDashboard serchedData={serchedData} />
       </section>
     </div>
   );
