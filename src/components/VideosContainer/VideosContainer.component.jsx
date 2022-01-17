@@ -7,15 +7,20 @@ import SearchContext from '../../context/search-context';
 
 const VideosContainer = () => {
   const searchContext = useContext(SearchContext);
+
   const videosList = useFetchYoutubeVideos({
     queryString: searchContext.searchQuery,
+    related: false,
   });
+
   const videoCards = usePopulateVideoCards(videosList);
 
   return (
-    <VideosContainerStyled data-testid="videos-container-component">
-      {videoCards}
-    </VideosContainerStyled>
+    <>
+      <VideosContainerStyled data-testid="videos-container-component">
+        {videoCards}
+      </VideosContainerStyled>
+    </>
   );
 };
 
