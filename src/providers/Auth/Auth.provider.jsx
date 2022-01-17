@@ -19,7 +19,7 @@ function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [videos, setVideos] = useState([]);
   const [category, setCategory] = useState('Wizeline');
-
+  
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
     const isAuthenticated = Boolean(lastAuthState);
