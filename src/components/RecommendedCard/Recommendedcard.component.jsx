@@ -7,9 +7,14 @@ import {
   TextContainer,
 } from '../RecommendedCard/RecommendedCard.styles';
 
-const RecomendedCard = ({ videoContent, title, decription }) => {
+const RecomendedCard = ({
+  videoContent,
+  title,
+  decription,
+  handleRelatedVideo,
+}) => {
   return (
-    <CardContainer>
+    <CardContainer onClick={handleRelatedVideo}>
       <VideoContainer>
         <img src={videoContent} />
       </VideoContainer>

@@ -8,28 +8,9 @@ import Card from '../../components/Card/Card.component';
 import CardsContainer from '../../components/CardsContainer/CardContainer.component';
 import useFetch from '../../utils/hooks/useFetch';
 import { Context } from '../../context';
+import initialData from '../../utils/mocks';
 
 function HomePage() {
-  const initialData = {
-    etag: '',
-    items: [
-      {
-        id: {
-          kind: '',
-          videoId: '',
-        },
-        snippet: {
-          title: '',
-          description: '',
-          thumbnails: {
-            high: {
-              url: '',
-            },
-          },
-        },
-      },
-    ],
-  };
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
   const [sidebarState, setSidebarState] = useState(false);

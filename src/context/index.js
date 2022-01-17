@@ -10,6 +10,8 @@ const reducer = (state, action) => {
       return { ...state, ...action.payload };
     case 'SAVE_SELECTED_VIDEO':
       return { ...state, ...action.payload };
+    case 'SAVE_RECOMENDED_VIDEO':
+      return { ...state, ...action.payload };
     default:
       throw new Error('internet is broken');
   }

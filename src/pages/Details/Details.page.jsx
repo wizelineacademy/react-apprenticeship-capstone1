@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../providers/Auth';
 import Header from '../../components/Header/Header.component';
 import Sidebar from '../../components/Sidebar/sidebar.component';
 import { Context } from '../../context';
 import useFetch from '../../utils/hooks/useFetch';
+import initialData from '../../utils/mocks';
 
 import {
   DetailsContainer,
@@ -19,36 +20,19 @@ import RecomendedCard from '../../components/RecommendedCard/Recommendedcard.com
 const DetailsPage = () => {
   const { authenticated } = useAuth();
   const { id } = useParams();
-
-  const initialVideo = {
-    items: [
-      {
-        etag: '',
-        id: {
-          kind: '',
-          videoId: '',
-        },
-        snippet: {
-          title: '',
-          description: '',
-          thumbnails: {
-            high: {
-              url: '',
-            },
-          },
-        },
-      },
-    ],
-  };
+  const history = useHistory();
   const videoSrc = `https://www.youtube.com/embed/${id}`;
   let controller = new AbortController();
 
   const [sidebarState, setSidebarState] = useState(false);
-  const [relatedVideos, setRelatedVideos] = useState(initialVideo);
+  const [relatedVideos, setRelatedVideos] = useState(initialData);
   const { fetchData, response, isLoading } = useFetch();
 
-  const { state } = useContext(Context);
-  const { selectedVideo: selectedVideoFromState = { snippet: [] } } = state;
+  const { state, dispatch } = useContext(Context);
+  const {
+    selectedVideo: selectedVideoFromState = { snippet: [] },
+    recomendedVideoSelected = { id: { videoId: '' } },
+  } = state;
 
   const handleRandomVideos = () => {
     try {
@@ -68,11 +52,25 @@ const DetailsPage = () => {
   useEffect(() => {
     if (response !== null) {
       setRelatedVideos(response);
+      return () => {
+        controller.abort();
+      };
     }
   }, [response]);
 
   const handleOpenMenu = () => {
     setSidebarState(!sidebarState);
+  };
+
+  const handleRelatedVideo = (id, item) => {
+    dispatch({
+      type: 'SAVE_RECOMENDED_VIDEO',
+      payload: {
+        ...state,
+        recomendedVideoSelected: item,
+      },
+    });
+    history.push(`/details/${id}`);
   };
 
   if (isLoading) return <p>Loading...</p>;
@@ -93,25 +91,36 @@ const DetailsPage = () => {
                 <iframe src={videoSrc} title="Video player" />
               </Video>
               <Information>
-                {selectedVideoFromState ? (
+                {recomendedVideoSelected.id.videoId === id ? (
+                  <>
+                    <h1>{recomendedVideoSelected.snippet.title}</h1>
+                    <p>{recomendedVideoSelected.snippet.description}</p>
+                  </>
+                ) : (
                   <>
                     <h1>{selectedVideoFromState.snippet.title}</h1>
                     <p>{selectedVideoFromState.snippet.description}</p>
                   </>
-                ) : (
-                  <p>no data found</p>
                 )}
               </Information>
             </VideoContainer>
             <ListVideosContainer>
-              {relatedVideos.items.map((item) => (
-                <RecomendedCard
-                  key={item.id.videoId}
-                  title={item.snippet.title}
-                  videoContent={item.snippet.thumbnails.high.url}
-                  description={item.snippet.description}
-                />
-              ))}
+              {relatedVideos.items.length !== 0 ? (
+                relatedVideos.items.map((item) => (
+                  <RecomendedCard
+                    {...item}
+                    handleRelatedVideo={() =>
+                      handleRelatedVideo(item.id.videoId, item)
+                    }
+                    key={item.id.videoId}
+                    title={item.snippet.title}
+                    videoContent={item.snippet.thumbnails.high.url}
+                    description={item.snippet.description}
+                  />
+                ))
+              ) : (
+                <p>not related videos</p>
+              )}
             </ListVideosContainer>
           </DetailsContainer>
         ) : (

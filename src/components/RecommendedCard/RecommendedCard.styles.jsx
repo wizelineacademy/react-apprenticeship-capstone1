@@ -10,6 +10,7 @@ const CardContainer = styled.div`
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   margin: 16px;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 const TextContainer = styled.div`
