@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar.component';
+import Navbar from '../../components/Navbar/Navbar';
 import Container from '../../components/VideosContainer/VideosContainer';
 import { StyledHome } from './Home.styles';
 

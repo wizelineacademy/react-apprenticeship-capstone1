@@ -53,14 +53,15 @@ function Container() {
   };
 
   return (
-    <StyledContainer>
+    <StyledContainer data-testid="container">
       <SearchBar search={handleSearch} />
       {isLoading ? (
-        <div>Loading ...</div>
+        <div>Loading...</div>
       ) : (
         <div className="video-container">
           {videos.map((video, index) => (
             <Card
+              data-testid={video.id.videoId}
               video={video}
               key={index}
               snippet={video.snippet}

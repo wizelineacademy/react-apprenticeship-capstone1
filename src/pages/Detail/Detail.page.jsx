@@ -6,7 +6,7 @@ import axios from 'axios';
 import { StyledDetail } from './Detail.styles';
 import VideoFrame from '../../components/VideoFrame/VideoFrame';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
-import Navbar from '../../components/Navbar/Navbar.component';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Detail() {
   const { addVideoToFavorite } = useContext(AppContext);

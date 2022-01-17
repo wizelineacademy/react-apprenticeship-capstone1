@@ -5,7 +5,6 @@ export default (state, action) => {
       const favoriteVideo = state.favoritesList.find(
         (video) => video.id === action.payload.id
       );
-      // eslint-disable-next-line prettier/prettier
       const favorite = favoriteVideo
         ? [...state.favoritesList]
         : [...state.favoritesList, action.payload];

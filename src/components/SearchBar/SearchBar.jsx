@@ -5,7 +5,12 @@ import { StyledSearchBar } from './SearchBar.styles';
 function SearchBar({ search }) {
   return (
     <StyledSearchBar>
-      <input type="text" placeholder="Search" onChange={search} />
+      <input
+        type="text"
+        data-testid="search-input"
+        placeholder="Search"
+        onChange={search}
+      />
     </StyledSearchBar>
   );
 }
