@@ -7,11 +7,8 @@ import { GlobalProvider } from '../../providers/Global/Global.provider'
 
 // Pages
 import HomePage from '../../pages/Home'
-import LoginPage from '../../pages/Login'
 import NotFound from '../../pages/NotFound'
-import Private from '../Private'
 import Layout from '../Layout'
-import Favorites from '../../pages/Favorites'
 import VideoDetails from '../../pages/VideoDetails'
 
 function App() {
@@ -27,12 +24,7 @@ function App() {
               <Route exact path="/:videoid">
                 <VideoDetails />
               </Route>
-              <Route exact path="/login">
-                <LoginPage />
-              </Route>
-              <Private exact path="/secret">
-                <Favorites />
-              </Private>
+
               <Route path="*">
                 <NotFound />
               </Route>
