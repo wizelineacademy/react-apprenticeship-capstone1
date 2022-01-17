@@ -9,7 +9,7 @@ function useFetchRelated(videoId, pageToken) {
   url.searchParams.set('type', 'video');
   url.searchParams.set('safeSearch', 'strict');
   url.searchParams.set('order', 'relevance');
-  url.searchParams.set('maxResults', '10');
+  url.searchParams.set('maxResults', '25');
   url.searchParams.set('part', 'snippet');
   return useFetch(url.toString(), { method: 'GET' }, arguments);
 }

@@ -1,13 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
+import { SearchProvider } from '@providers/Search';
 import SearchBar from '@components/SearchBar';
 
 const onFocusChange = jest.fn();
 
 describe('SearchBar...', () => {
   beforeEach(() => {
-    render(<SearchBar onFocusChange={onFocusChange} />);
+    render(
+      <BrowserRouter>
+        <SearchProvider>
+          <SearchBar onFocusChange={onFocusChange} />
+        </SearchProvider>
+      </BrowserRouter>
+    );
   });
 
   it('should render', () => {
@@ -15,7 +22,9 @@ describe('SearchBar...', () => {
   });
 
   it('should change input value when typing', () => {
-    userEvent.type(screen.getByPlaceholderText(/.*search.*/i), 'typing-test');
+    fireEvent.change(screen.getByPlaceholderText(/.*search.*/i), {
+      target: { value: 'typing-test' },
+    });
     expect(screen.getByPlaceholderText(/.*search.*/i)).toHaveValue(
       'typing-test'
     );

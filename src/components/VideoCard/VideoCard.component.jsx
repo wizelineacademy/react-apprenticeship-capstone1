@@ -9,13 +9,13 @@ import { useAuth } from '@providers/Auth';
 
 function VideoCard(props) {
   let navigate = useNavigate();
-  const { authenticated, isFavorite } = useAuth();
+  let { authenticated, isFavorite } = useAuth();
 
   return (
     <div
       data-testid={props.testId}
       className={'video-card ' + props.className}
-      onClick={() => navigate(`details/${props.item.id.videoId}`)}
+      onClick={() => navigate(`/details/${props.item.id.videoId}`)}
     >
       <img
         src={

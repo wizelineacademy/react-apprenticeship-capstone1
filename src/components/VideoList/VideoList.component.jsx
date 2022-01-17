@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import he from 'he';
 
@@ -8,6 +9,7 @@ import Button from '@components/Button';
 import Loader from '@components/Loader';
 
 function VideoList(props) {
+  const navigate = useNavigate();
   let [filter, setFilter] = useState('related');
 
   return (
@@ -21,7 +23,11 @@ function VideoList(props) {
         className="video-list__breadcrumb"
       />
       {props.items.map((item) => (
-        <div key={item.id.videoId} className="video-item">
+        <div
+          key={item.id.videoId}
+          className="video-item"
+          onClick={() => navigate(`/details/${item.id.videoId}`)}
+        >
           <img
             src={item ? item.snippet.thumbnails.default.url : null}
             alt="video&#39;s image"

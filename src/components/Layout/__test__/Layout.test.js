@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from '@providers/Auth';
 import { ThemeProvider } from '@providers/Theme';
+import { SearchProvider } from '@providers/Search';
 import Layout from '@components/Layout';
 
 describe('Input...', () => {
@@ -11,12 +12,14 @@ describe('Input...', () => {
       <BrowserRouter>
         <AuthProvider defaultAuthenticated={false}>
           <ThemeProvider>
-            <Layout>
-              <i>Children</i>
-            </Layout>
-            <Routes>
-              <Route exact path="/" element={<i>Home view</i>} />
-            </Routes>
+            <SearchProvider>
+              <Layout>
+                <i>Children</i>
+              </Layout>
+              <Routes>
+                <Route exact path="/" element={<i>Home view</i>} />
+              </Routes>
+            </SearchProvider>
           </ThemeProvider>
         </AuthProvider>
       </BrowserRouter>

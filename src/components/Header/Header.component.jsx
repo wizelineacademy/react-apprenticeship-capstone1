@@ -8,8 +8,9 @@ import IconButton from '@components/IconButton';
 import Searchbar from '@components/SearchBar';
 
 function Header(props) {
-  let navigate = useNavigate();
   let [searchBarFocus, onSearchBarFocusChange] = useState(false);
+
+  let navigate = useNavigate();
 
   return (
     <section

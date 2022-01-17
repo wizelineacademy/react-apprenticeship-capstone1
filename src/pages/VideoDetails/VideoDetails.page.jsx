@@ -16,8 +16,13 @@ function VideoDetails(props) {
   let [videoInfoResponse] = useFetchVideoInfo(id);
 
   useEffect(() => {
-    if (relatedResponse)
-      setRelatedVideos((prevState) => prevState.concat(relatedResponse.items));
+    if (relatedResponse) {
+      let items = relatedResponse.items.filter(
+        (item) =>
+          !relatedVideos.find((video) => video.id.videoId === item.id.videoId)
+      );
+      setRelatedVideos((prevState) => prevState.concat(items));
+    }
   }, [relatedResponse ? relatedResponse.etag : '']);
 
   let videoInfo;

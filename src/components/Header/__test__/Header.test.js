@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { SearchProvider } from '@providers/Search';
 import Header from '@components/Header';
 
 const setIsSideBarOpen = jest.fn();
@@ -8,12 +9,14 @@ const setIsSideBarOpen = jest.fn();
 describe('Header...', () => {
   beforeEach(() => {
     render(
-      <BrowserRouter>
-        <Header setIsSideBarOpen={setIsSideBarOpen} />
-        <Routes>
-          <Route exact path="/" element={<i>Home view</i>} />
-        </Routes>
-      </BrowserRouter>
+      <SearchProvider>
+        <BrowserRouter>
+          <Header setIsSideBarOpen={setIsSideBarOpen} />
+          <Routes>
+            <Route exact path="/" element={<i>Home view</i>} />
+          </Routes>
+        </BrowserRouter>
+      </SearchProvider>
     );
   });
 
