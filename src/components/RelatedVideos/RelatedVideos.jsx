@@ -41,7 +41,6 @@ function RelatedVideos() {
       <div className="related-list">
         {related != null
           ? related.map((item, index) => {
-
               if (!item.snippet) {
                 item.snippet = {
                   title: 'no title',
