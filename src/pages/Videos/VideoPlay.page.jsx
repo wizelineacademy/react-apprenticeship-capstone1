@@ -8,6 +8,7 @@ function VideoPlay() {
     //const [ video, setVideo] = useState({});
     const { videos } = useAuth();
     const { videoId } = useParams();
+    console.log(videoId);
     const video = videos.find( element => element.id === videoId );
     //const hero = useMemo(() => getHeroeById(Id), [heroeId]);
     console.log(video);

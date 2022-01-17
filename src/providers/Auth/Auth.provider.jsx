@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import AuthContext from '../../auth/AuthContext.auth';
-import getVideos from '../../selectors/getVideos';
+import getVideosFetch from '../../hooks/getVideosFetch';
 
 import { AUTH_STORAGE_KEY } from '../../utils/constants';
 import { storage } from '../../utils/storage';
@@ -20,15 +20,13 @@ function AuthProvider({ children }) {
   const [videos, setVideos] = useState([]);
   const [category, setCategory] = useState('Wizeline');
 
-
-
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
     const isAuthenticated = Boolean(lastAuthState);
 
-    getVideos(category).then((videosData) => {
+    getVideosFetch(category).then((videosData) => {
       setVideos(videosData);
-    });
+    }, [category]);
 
     setAuthenticated(isAuthenticated);
   }, [category]);

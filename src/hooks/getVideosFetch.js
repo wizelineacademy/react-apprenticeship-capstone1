@@ -1,4 +1,4 @@
-async function getVideos(category){
+async function getVideosFetch(category){
 
     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCrSoy7RbcW2fEfna7ipATtTs4qyjloW2I&q=${category}&part=snippet&maxResults=25`,
     //const response = await fetch('./data/youtube-videos-mock.json',
@@ -31,7 +31,7 @@ async function getVideos(category){
     return data;
 }
 
-export default getVideos;
+export default getVideosFetch;
 
 
 /*
