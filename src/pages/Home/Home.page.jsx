@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../providers/Auth';
 import Header from '../../components/Header/Header.component';
@@ -110,25 +110,21 @@ function HomePage() {
       />
       {sidebarState ? <Sidebar /> : null}
       <section className="homepage" ref={sectionRef}>
-        {authenticated ? (
-          <CardsContainer>
-            {serchedData.map((item) => {
-              const { title, thumbnails, description } = item.snippet;
-              return (
-                <Card
-                  {...item}
-                  key={item.id.videoId}
-                  handleDetails={() => handleDetails(item.id.videoId, item)}
-                  title={title}
-                  videoImage={thumbnails.high.url}
-                  subtitle={description}
-                />
-              );
-            })}
-          </CardsContainer>
-        ) : (
-          <Link to="/login">let me in →</Link>
-        )}
+        <CardsContainer>
+          {serchedData.map((item) => {
+            const { title, thumbnails, description } = item.snippet;
+            return (
+              <Card
+                {...item}
+                key={item.id.videoId}
+                handleDetails={() => handleDetails(item.id.videoId, item)}
+                title={title}
+                videoImage={thumbnails.high.url}
+                subtitle={description}
+              />
+            );
+          })}
+        </CardsContainer>
       </section>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../providers/Auth';
 import Header from '../../components/Header/Header.component';
@@ -25,7 +25,7 @@ const DetailsPage = () => {
   let controller = new AbortController();
 
   const [sidebarState, setSidebarState] = useState(false);
-  const [relatedVideos, setRelatedVideos] = useState(initialData);
+  const [relatedVideos, setRelatedVideos] = useState(initialData.items);
   const { fetchData, response, isLoading } = useFetch();
 
   const { state, dispatch } = useContext(Context);
@@ -36,7 +36,11 @@ const DetailsPage = () => {
 
   const handleRandomVideos = () => {
     try {
-      fetchData(state.serchedValue, 10, id);
+      if (response) {
+        setRelatedVideos(response.items);
+      } else {
+        setRelatedVideos(initialData.items);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -47,16 +51,13 @@ const DetailsPage = () => {
     return () => {
       controller.abort();
     };
-  }, []);
+  }, [response]);
 
   useEffect(() => {
-    if (response !== null) {
-      setRelatedVideos(response);
-      return () => {
-        controller.abort();
-      };
-    }
-  }, [response]);
+    setTimeout(() => {
+      fetchData(state.serchedValue, 10, id);
+    }, 1000);
+  }, []);
 
   const handleOpenMenu = () => {
     setSidebarState(!sidebarState);
@@ -73,6 +74,8 @@ const DetailsPage = () => {
     history.push(`/details/${id}`);
   };
 
+  console.log('relatedVideos', relatedVideos);
+  console.log('response', response);
   if (isLoading) return <p>Loading...</p>;
 
   return (
@@ -84,48 +87,39 @@ const DetailsPage = () => {
       />
       {sidebarState ? <Sidebar /> : null}
       <section className="homepage">
-        {authenticated ? (
-          <DetailsContainer>
-            <VideoContainer>
-              <Video>
-                <iframe src={videoSrc} title="Video player" />
-              </Video>
-              <Information>
-                {recomendedVideoSelected.id.videoId === id ? (
-                  <>
-                    <h1>{recomendedVideoSelected.snippet.title}</h1>
-                    <p>{recomendedVideoSelected.snippet.description}</p>
-                  </>
-                ) : (
-                  <>
-                    <h1>{selectedVideoFromState.snippet.title}</h1>
-                    <p>{selectedVideoFromState.snippet.description}</p>
-                  </>
-                )}
-              </Information>
-            </VideoContainer>
-            <ListVideosContainer>
-              {relatedVideos.items.length !== 0 ? (
-                relatedVideos.items.map((item) => (
-                  <RecomendedCard
-                    {...item}
-                    handleRelatedVideo={() =>
-                      handleRelatedVideo(item.id.videoId, item)
-                    }
-                    key={item.id.videoId}
-                    title={item.snippet.title}
-                    videoContent={item.snippet.thumbnails.high.url}
-                    description={item.snippet.description}
-                  />
-                ))
+        <DetailsContainer>
+          <VideoContainer>
+            <Video>
+              <iframe src={videoSrc} title="Video player" />
+            </Video>
+            <Information>
+              {recomendedVideoSelected.id.videoId === id ? (
+                <>
+                  <h1>{recomendedVideoSelected.snippet.title}</h1>
+                  <p>{recomendedVideoSelected.snippet.description}</p>
+                </>
               ) : (
-                <p>not related videos</p>
+                <>
+                  <h1>{selectedVideoFromState.snippet.title}</h1>
+                  <p>{selectedVideoFromState.snippet.description}</p>
+                </>
               )}
-            </ListVideosContainer>
-          </DetailsContainer>
-        ) : (
-          <Link to="/login">details videos, log here</Link>
-        )}
+            </Information>
+          </VideoContainer>
+          <ListVideosContainer>
+            {relatedVideos.map((item) => (
+              <RecomendedCard
+                handleRelatedVideo={() =>
+                  handleRelatedVideo(item.id.videoId, item)
+                }
+                key={item.id.videoId}
+                title={item.snippet.title}
+                videoContent={item.snippet.thumbnails.high.url}
+                description={item.snippet.description}
+              />
+            ))}
+          </ListVideosContainer>
+        </DetailsContainer>
       </section>
     </div>
   );
