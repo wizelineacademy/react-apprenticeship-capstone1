@@ -32,7 +32,7 @@ const useSearch = () => {
       }
       if (responseStatus === 'firstLoad') {
         //TODO: Change when deploy to not loose request.
-        //fetchData('', 15);
+        // fetchData('', 15);
         console.log('here will get some random videos');
         if (response && response.items) setSearchedData(response.items);
         else {

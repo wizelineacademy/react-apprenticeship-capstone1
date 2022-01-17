@@ -9,6 +9,7 @@ import { Context } from '../../context';
 import useFetch from '../../utils/hooks/useFetch';
 import initialData from '../../utils/mocks';
 import useSearch from '../../utils/hooks/useSearch';
+import useFavorites from '../../utils/hooks/useFavorites';
 import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
 
 import {
@@ -38,8 +39,9 @@ const DetailsPage = () => {
     selectedVideo: selectedVideoFromState = { snippet: [] },
     recomendedVideoSelected = { id: { videoId: '' } },
   } = state;
-  const [favorited, setFavorited] = useState(selectedVideoFromState.favorited);
+
   const { handleSearch, serchedData, serchedValue } = useSearch();
+  const { selectFavorites, deleteFavorites, favorited } = useFavorites(id);
 
   const handleRandomVideos = () => {
     setTimeout(() => {
@@ -86,80 +88,6 @@ const DetailsPage = () => {
     });
     history.push(`/details/${id}`);
   };
-  const selectFavorites = () => {
-    if (selectedVideoFromState.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_SELECTED_VIDEO',
-        payload: {
-          selectedVideo: {
-            ...state.selectedVideo,
-            favorited: true,
-          },
-        },
-      });
-      setFavorited(selectedVideoFromState.favorited);
-      dispatch({
-        type: 'SAVE_FAVORITES',
-        payload: {
-          favorites: [...state.favorites, selectedVideoFromState],
-        },
-      });
-    }
-    if (recomendedVideoSelected.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_RECOMENDED_VIDEO',
-        payload: {
-          recomendedVideoSelected: {
-            ...state.recomendedVideoSelected,
-            favorited: true,
-          },
-        },
-      });
-      setFavorited(recomendedVideoSelected.favorited);
-      dispatch({
-        type: 'SAVE_FAVORITES',
-        payload: {
-          favorites: [...state.favorites, recomendedVideoSelected],
-        },
-      });
-    }
-  };
-
-  const deleteFavorites = () => {
-    const deletedVideo = state.favorites.filter(
-      (item) => item.id.videoId !== id
-    );
-    dispatch({
-      type: 'REMOVE_FAVORITES',
-      payload: {
-        favorites: deletedVideo,
-      },
-    });
-    if (selectedVideoFromState.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_SELECTED_VIDEO',
-        payload: {
-          selectedVideo: {
-            ...state.selectedVideo,
-            favorited: false,
-          },
-        },
-      });
-      setFavorited(selectedVideoFromState.favorited);
-    }
-    if (recomendedVideoSelected.id.videoId === id) {
-      dispatch({
-        type: 'SAVE_RECOMENDED_VIDEO',
-        payload: {
-          recomendedVideoSelected: {
-            ...state.recomendedVideoSelected,
-            favorited: false,
-          },
-        },
-      });
-      setFavorited(recomendedVideoSelected.favorited);
-    }
-  };
 
   const deAuthenticate = (event) => {
     event.preventDefault();
@@ -198,7 +126,9 @@ const DetailsPage = () => {
                           : selectedVideoFromState.snippet.title}
                       </h3>
                       <FavoriteButton
-                        onClick={favorited ? deleteFavorites : selectFavorites}
+                        onClick={() =>
+                          favorited ? deleteFavorites(id) : selectFavorites(id)
+                        }
                       >
                         <ReactSVG
                           src={
