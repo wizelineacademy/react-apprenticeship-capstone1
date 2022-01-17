@@ -1,14 +1,13 @@
 import React, { useReducer } from 'react';
 import appContext from './appContext';
 import appReducer from './appReducer';
-import { USER_DEFAULT_PROPS } from '../utils/const';
+import { USER_DEFAULT_PROPS, LIGHT_STYLE, DARK_STYLE } from '../utils/const';
 function AppState(props) {
   const initialState = {
     searchTerm: '',
     videos: [],
     styles: {
-      customCard: { backgroundColor: '#fff', fontColor: '#000' },
-      layout: { backgroundColor: 'antiquewhite', fontColor: '#000000' },
+      ...LIGHT_STYLE,
     },
     isLogged: false,
     userProps: USER_DEFAULT_PROPS,
@@ -25,12 +24,7 @@ function AppState(props) {
   };
 
   const toggleStyles = (value) => {
-    let styles = {
-      customCard: { backgroundColor: '#1C1C1C', fontColor: '#B9B8B8' },
-      layout: { backgroundColor: '#1C1C1C', fontColor: '#000000' },
-    };
-
-    let newStyles = value ? styles : initialState.styles;
+    let newStyles = value ? { ...DARK_STYLE } : { ...LIGHT_STYLE };
 
     dispatch({ payload: value, type: 'UPDATE_UI_MODE', styles: newStyles });
   };

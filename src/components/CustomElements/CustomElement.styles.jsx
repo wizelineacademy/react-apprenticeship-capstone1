@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { ModalBody, ModalFooter, Modal } from 'react-bootstrap';
 export const Title = styled.div`
   margin: auto;
   padding: 2%;
@@ -9,6 +9,7 @@ export const Title = styled.div`
   line-height: 1.6;
   padding-bottom: 0;
   overflow: hidden;
+  height: 100px;
   text-overflow: ellipsis;
   color: ${(props) => props.fontColor || '#fff'};
 `;
@@ -46,4 +47,18 @@ export const CustomCard = styled.div`
   border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: ${(props) => props.cursor || 'default'};
+`;
+
+export const CustomModalHeader = styled(Modal.Header)`
+  background-color: ${(props) => props.elementbackground || '#fff'};
+  color: ${(props) => props.color || '#000'};
+`;
+export const CustomModalBody = styled(ModalBody)`
+  background-color: ${(props) => props.elementbackground || '#fff'};
+  color: ${(props) => props.color || '#000'};
+`;
+export const CustomModalFooter = styled(ModalFooter)`
+  background-color: ${(props) => props.elementbackground || '#fff'};
+  color: ${(props) => props.color || '#000'};
 `;

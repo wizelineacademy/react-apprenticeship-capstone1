@@ -2,13 +2,17 @@ import React, { useState, useContext } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import loginApi from '../../utils/login.api';
 import appContext from '../../context/appContext';
-
+import {
+  CustomModalHeader,
+  CustomModalBody,
+  CustomModalFooter,
+} from '../CustomElements';
 function Login({ show, setShow }) {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
   const thisContext = useContext(appContext);
-  const { setSession } = thisContext;
+  const { setSession, styles } = thisContext;
 
   const handleClose = () => {
     setShow(false);
@@ -29,16 +33,23 @@ function Login({ show, setShow }) {
 
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+      <CustomModalHeader
+        closeButton
+        elementbackground={styles.customCard.backgroundColor}
+        color={styles.customCard.fontColor}
+      >
         <Modal.Title>Login</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+      </CustomModalHeader>
+      <CustomModalBody
+        elementbackground={styles.customCard.backgroundColor}
+        color={styles.customCard.fontColor}
+      >
         <Form>
           <Form.Group controlId="formUsername">
             <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
-              data-testid="login-input-username"
+              title="login-input-username"
               placeholder="username"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
@@ -49,22 +60,29 @@ function Login({ show, setShow }) {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              data-testid="login-input-password"
+              title="login-input-password"
               placeholder="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
         </Form>
-      </Modal.Body>
-      <Modal.Footer>
+      </CustomModalBody>
+      <CustomModalFooter
+        elementbackground={styles.customCard.backgroundColor}
+        color={styles.customCard.fontColor}
+      >
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={(e) => handleLogin(e)}>
+        <Button
+          variant="primary"
+          title="btn-login-submit"
+          onClick={(e) => handleLogin(e)}
+        >
           Submit
         </Button>
-      </Modal.Footer>
+      </CustomModalFooter>
     </Modal>
   );
 }

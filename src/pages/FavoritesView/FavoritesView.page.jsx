@@ -24,7 +24,7 @@ function FavoritesView() {
   return (
     <Container style={{ paddingBottom: '5%' }}>
       <Col xs={12} sm={12} md={12}>
-        {favoriteVideos.length == 0 ? (
+        {favoriteVideos.length === 0 ? (
           <EmptyVideos></EmptyVideos>
         ) : (
           <VideoList

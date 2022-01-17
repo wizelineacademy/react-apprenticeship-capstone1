@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import HomeView from '../pages/HomeView/Homeview.page';
 import AppContext from '../context/appContext';
+import { MOCK_CREDENTIALS } from '../utils/const';
 const toggleStyles = (value) => {
   return value;
 };
@@ -19,6 +20,7 @@ let initialState = {
   },
   toggleStyles,
   setSearchTerm,
+  userProps: MOCK_CREDENTIALS,
 };
 
 describe('Testing the component elements', () => {

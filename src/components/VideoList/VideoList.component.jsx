@@ -5,7 +5,7 @@ import {
   Description,
   CustomCard,
   VideoThumbnail,
-} from '../CustomElements/CustomElement.component';
+} from '../CustomElements/CustomElement.styles';
 import './VideoList.styles.css';
 import { useHistory } from 'react-router-dom';
 
@@ -37,18 +37,26 @@ function VideoList(props) {
             className="card-container"
           >
             <CustomCard
+              title="customCard-videoList"
+              cursor={'pointer'}
               onClick={() => handleClick(video)}
               elementBackground={props.styles.customCard.backgroundColor}
             >
               <VideoThumbnail
                 src={video.snippet.thumbnails.medium.url}
                 data-testid="header-component-thumbnail"
+                title="video-thumbnail"
               ></VideoThumbnail>
 
-              <Title fontColor={props.styles.customCard.fontColor}>
+              <Title
+                fontColor={props.styles.customCard.fontColor}
+                title="video-title"
+              >
                 {video.snippet.title}
               </Title>
-              <Description>{video.snippet.description}</Description>
+              <Description title="video-description">
+                {video.snippet.description}
+              </Description>
             </CustomCard>
           </Col>
         );

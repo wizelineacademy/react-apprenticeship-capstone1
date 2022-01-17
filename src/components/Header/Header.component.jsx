@@ -43,8 +43,7 @@ function Header() {
     }
   };
 
-  const handleLogout = (e) => {
-    e.preventDefault();
+  const handleLogout = () => {
     logout();
     navigateURL('home');
   };
@@ -58,7 +57,7 @@ function Header() {
               <Form.Group controlId="formSearch">
                 <Form.Control
                   type="text"
-                  data-testid="header-input-search"
+                  title="header-input-search"
                   placeholder="..."
                   value={searchValue}
                   onChange={(e) => handleChange(e)}
@@ -75,9 +74,9 @@ function Header() {
               <Form.Check
                 type="switch"
                 id="custom-switch"
-                data-testid="header-input-switch"
+                title="header-input-switch"
                 label="Toggle Style"
-                checked={switchValue}
+                value={switchValue}
                 onChange={handleSwitch}
                 style={{ float: 'right' }}
               />
@@ -85,9 +84,16 @@ function Header() {
           </Col>
           <Col sm={1} md={1} className="d-none d-sm-block d-xs-block">
             <Dropdown>
-              <Dropdown.Toggle id="dropdown-menu-login">
+              <Dropdown.Toggle
+                id="dropdown-menu-login"
+                title="header-button-login"
+              >
                 {isLogged ? (
-                  <img src={userProps.avatarUrl} className="user"></img>
+                  <img
+                    src={userProps.avatarUrl}
+                    className="user"
+                    alt="user-logo"
+                  ></img>
                 ) : (
                   <i
                     className="fa fa-user-circle fa-2x user"

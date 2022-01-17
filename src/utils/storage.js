@@ -22,8 +22,8 @@ const storage = {
   find(key, videoId) {
     const items = this.get(key);
     if (items !== null) {
-      const favorite = items.find((video) => video.id.videoId == videoId);
-      if (favorite == undefined) {
+      const favorite = items.find((video) => video.id.videoId === videoId);
+      if (favorite === undefined) {
         return null;
       }
       return favorite;

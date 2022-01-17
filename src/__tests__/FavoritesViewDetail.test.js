@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import VideoDetailView from '../pages/VideoDetailsView/VideoDetailView.page';
+import FavoritesViewDetail from '../pages/FavoritesViewDetail';
 import { MOCK_CREDENTIALS } from '../utils/const';
 import AppContext from '../context/appContext';
 import { MemoryRouter } from 'react-router-dom';
@@ -30,7 +30,7 @@ describe('Testing the component elements', () => {
     render(
       <MemoryRouter>
         <AppContext.Provider value={initialState}>
-          <VideoDetailView></VideoDetailView>
+          <FavoritesViewDetail></FavoritesViewDetail>
         </AppContext.Provider>
       </MemoryRouter>
     );

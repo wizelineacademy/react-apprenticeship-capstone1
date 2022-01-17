@@ -12,7 +12,6 @@ function Layout({ children }) {
   const thisContext = useContext(appContext);
 
   const { styles } = thisContext;
-
   return (
     <LayoutStyled backgroundColor={styles.layout.backgroundColor}>
       {children}

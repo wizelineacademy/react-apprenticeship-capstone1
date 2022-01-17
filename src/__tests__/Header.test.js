@@ -2,7 +2,7 @@ import { render, fireEvent } from '@testing-library/react';
 import Header from '../components/Header/Header.component';
 import React from 'react';
 import AppContext from '../context/appContext';
-
+import { MemoryRouter } from 'react-router';
 const toggleStyles = (value) => {
   return value;
 };
@@ -22,12 +22,23 @@ let initialState = {
   setSearchTerm,
 };
 
+const mockHistoryPush = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
+
 describe('Testing the component elements', () => {
   test('Text input should be present', () => {
     const { getByTitle } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
     const searchInput = getByTitle('header-input-search');
     expect(searchInput).toBeInTheDocument();
@@ -35,9 +46,11 @@ describe('Testing the component elements', () => {
 
   test('Login button should be present', () => {
     const { getByTitle } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
     const switchInput = getByTitle('header-input-switch');
     expect(switchInput).toBeInTheDocument();
@@ -45,9 +58,11 @@ describe('Testing the component elements', () => {
 
   test('Switch input should be present', () => {
     const { getByTitle } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
     const button = getByTitle('header-button-login');
     expect(button).toBeInTheDocument();
@@ -55,9 +70,11 @@ describe('Testing the component elements', () => {
 
   test('Switch value changed to on', () => {
     const { getByTitle, getAllByRole } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
     const switchInput = getByTitle('header-input-switch');
     fireEvent.click(switchInput);
@@ -67,9 +84,11 @@ describe('Testing the component elements', () => {
 
   test('Switch value changed to off', () => {
     const { getByTitle, getAllByRole } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
     const switchInput = getByTitle('header-input-switch');
     fireEvent.click(switchInput);
@@ -80,9 +99,11 @@ describe('Testing the component elements', () => {
 
   test('Text input changes', () => {
     const { getByTitle } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
 
     const searchInput = getByTitle('header-input-search');
@@ -93,9 +114,11 @@ describe('Testing the component elements', () => {
 
   test('Text form submit', () => {
     const { getByTitle } = render(
-      <AppContext.Provider value={initialState}>
-        <Header />
-      </AppContext.Provider>
+      <MemoryRouter>
+        <AppContext.Provider value={initialState}>
+          <Header />
+        </AppContext.Provider>
+      </MemoryRouter>
     );
     const searchInput = getByTitle('header-input-search');
     fireEvent.change(searchInput, { target: { value: 'wizeline' } });
