@@ -12,7 +12,8 @@ const VideoRecommendationsList = () => {
 
   const videosList = usePopulateVideoCards(recommendedVideos);
 
-  if (recommendedVideos.length > 0) {
+  if (recommendedVideos.items && videosList.length > 0) {
+    console.log('in recommended return');
     return <>{videosList}</>;
   } else {
     return <></>;

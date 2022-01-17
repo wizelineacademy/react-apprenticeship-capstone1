@@ -6,4 +6,12 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: all 0.50s linear;
   }
+
+  article {
+    background: ${({ theme }) => theme.articleBackground};
+  }
+
+  p {
+    color: ${({ theme }) => theme.para};
+  }
   `;
