@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainerStyled = styled.section`
   width: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
   margin: 0;
   padding: 1rem;
   display: flex;

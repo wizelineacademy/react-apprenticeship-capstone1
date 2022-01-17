@@ -1,9 +1,9 @@
 import React from 'react';
 import VideoCard from '../components/VideoCard';
 
-const usePopulateVideoCards = (props) => {
+const usePopulateVideoCards = (videos, displayDescription = true) => {
   let videoCardsPopulated = <></>;
-  const { items } = props;
+  const { items } = videos;
 
   if (items && items.length > 0) {
     videoCardsPopulated = items.map((video, index) => {
@@ -14,6 +14,7 @@ const usePopulateVideoCards = (props) => {
           description={video.snippet.description}
           key={`${video.id.videoId}-${index}`}
           id={video.id.videoId}
+          displayDescription={displayDescription}
         />
       );
     });

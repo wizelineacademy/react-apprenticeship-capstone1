@@ -27,7 +27,9 @@ const VideoCard = (props) => {
     >
       <VideoThumbnail src={props.imgsrc} data-testid="video-card-thumbnail" />
       <VideoTitle>{props.title}</VideoTitle>
-      <VideoDescription>{props.description}</VideoDescription>
+      {props.displayDescription ? (
+        <VideoDescription>{props.description}</VideoDescription>
+      ) : null}
       {props.children}
     </VideoCardStyled>
   );
