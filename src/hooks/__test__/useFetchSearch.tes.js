@@ -11,7 +11,9 @@ describe('useFetchSearch', () => {
   it('should return expected value', async () => {
     await act(async () => {
       fetch.mockResponseOnce(JSON.stringify(searchMockedJson));
-      const { result, waitForNextUpdate } = await renderHook(() => useFetchSearch());
+      const { result, waitForNextUpdate } = await renderHook(() =>
+        useFetchSearch()
+      );
       await waitForNextUpdate();
 
       const [response] = result.current;
@@ -19,4 +21,4 @@ describe('useFetchSearch', () => {
       expect(response).toEqual(searchMockedJson);
     });
   });
-})
+});

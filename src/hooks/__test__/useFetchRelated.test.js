@@ -11,7 +11,9 @@ describe('useFetchRelated', () => {
   it('should return expected value', async () => {
     await act(async () => {
       fetch.mockResponseOnce(JSON.stringify(searchMockedJson));
-      const { result, waitForNextUpdate } = await renderHook(() => useFetchRelated());
+      const { result, waitForNextUpdate } = await renderHook(() =>
+        useFetchRelated()
+      );
       await waitForNextUpdate();
 
       const [response] = result.current;
@@ -19,4 +21,4 @@ describe('useFetchRelated', () => {
       expect(response).toEqual(searchMockedJson);
     });
   });
-})
+});

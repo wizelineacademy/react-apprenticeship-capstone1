@@ -89,7 +89,6 @@
         "lines": 70
       }
     },
-    "automock": false,
     "moduleNameMapper": {
       "^@src(.*)$": "<rootDir>/src/$1",
       "^@components(.*)$": "<rootDir>/src/components/$1",

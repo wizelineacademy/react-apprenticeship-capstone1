@@ -11,12 +11,14 @@ describe('useFetchVideoInfo', () => {
   it('should return expected value', async () => {
     await act(async () => {
       fetch.mockResponseOnce(JSON.stringify(videoInfoMockedJson));
-      const { result, waitForNextUpdate } = await renderHook(() => useFetchVideoInfo());
+      const { result, waitForNextUpdate } = await renderHook(() =>
+        useFetchVideoInfo()
+      );
       await waitForNextUpdate();
 
       const [response] = result.current;
       expect(fetch).toBeCalled();
-      expect(response).toEqual(searchMockedJson);
+      expect(response).toEqual(videoInfoMockedJson);
     });
   });
-})
+});
