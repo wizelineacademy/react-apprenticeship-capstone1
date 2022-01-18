@@ -11,7 +11,7 @@ import { useFavorites } from '@providers/Favorites';
 function VideoCard(props) {
   let navigate = useNavigate();
   let { authenticated } = useAuth();
-  let [ favorites ] = useFavorites();
+  let [favorites] = useFavorites();
   let favoritesMap = new Map(favorites);
 
   return (

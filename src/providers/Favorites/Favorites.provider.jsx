@@ -12,10 +12,10 @@ function FavoritesProvider({ children }) {
         if (favorites.find((item) => item[1].id === action.value.id))
           return favorites;
         return favorites.concat([[action.value.id, action.value]]);
-      
+
       case 'REMOVE_FAVORITE':
         return favorites.filter((item) => item[1].id !== action.value.id);
-      
+
       default:
         return favorites;
     }
@@ -26,7 +26,7 @@ function FavoritesProvider({ children }) {
   }, [favorites]);
 
   return (
-    <FavoritesContext.Provider value={[favorites, dispatch ]}>
+    <FavoritesContext.Provider value={[favorites, dispatch]}>
       {children}
     </FavoritesContext.Provider>
   );

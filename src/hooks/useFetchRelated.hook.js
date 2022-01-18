@@ -1,6 +1,6 @@
 import useFetch from '@src/hooks/useFetch';
 import { YOUTUBE_API_KEY } from '@utils/constants';
-import produce from "immer";
+import produce from 'immer';
 
 function useFetchRelated(videoId, pageToken) {
   let url = new URL('https://www.googleapis.com/youtube/v3/search');
@@ -12,14 +12,18 @@ function useFetchRelated(videoId, pageToken) {
   url.searchParams.set('order', 'relevance');
   url.searchParams.set('maxResults', '25');
   url.searchParams.set('part', 'snippet');
-  
-  let [response, loading, error] = useFetch(url.toString(), { method: 'GET' }, arguments);
-  let reorganizedResponse = produce(response, draft => {
+
+  let [response, loading, error] = useFetch(
+    url.toString(),
+    { method: 'GET' },
+    arguments
+  );
+  let reorganizedResponse = produce(response, (draft) => {
     if (response) {
       draft.items = draft.items.map((item) => {
         item.id = item.id.videoId;
         return item;
-      });  
+      });
     }
   });
   return [reorganizedResponse, loading, error];

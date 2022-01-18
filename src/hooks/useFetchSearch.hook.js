@@ -1,4 +1,4 @@
-import produce from "immer";
+import produce from 'immer';
 
 import useFetch from '@src/hooks/useFetch';
 import { YOUTUBE_API_KEY } from '@utils/constants';
@@ -14,13 +14,17 @@ function useFetchSearch(searchTerm, pageToken) {
   url.searchParams.set('maxResults', '25');
   url.searchParams.set('part', 'snippet');
 
-  let [response, loading, error] = useFetch(url.toString(), { method: 'GET' }, arguments);
-  let reorganizedResponse = produce(response, draft => {
+  let [response, loading, error] = useFetch(
+    url.toString(),
+    { method: 'GET' },
+    arguments
+  );
+  let reorganizedResponse = produce(response, (draft) => {
     if (response) {
       draft.items = draft.items.map((item) => {
         item.id = item.id.videoId;
         return item;
-      });  
+      });
     }
   });
   return [reorganizedResponse, loading, error];

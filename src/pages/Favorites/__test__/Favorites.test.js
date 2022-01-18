@@ -9,7 +9,6 @@ describe('FavoritesPage...', () => {
       <FavoritesProvider>
         <FavoritesPage data-testid="favorites-page" />
       </FavoritesProvider>
-
     );
   });
 

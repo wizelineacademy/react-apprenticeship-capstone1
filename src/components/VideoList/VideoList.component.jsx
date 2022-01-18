@@ -12,13 +12,11 @@ import Loader from '@components/Loader';
 function VideoList(props) {
   const navigate = useNavigate();
   let [filter, setFilter] = useState('related');
-  let [ favorites ] = useFavorites();
+  let [favorites] = useFavorites();
 
   let videos = [];
-  if (filter === 'related')
-    videos = props.items;
-  else
-    videos = favorites.map((item) => item[1]);
+  if (filter === 'related') videos = props.items;
+  else videos = favorites.map((item) => item[1]);
 
   return (
     <div

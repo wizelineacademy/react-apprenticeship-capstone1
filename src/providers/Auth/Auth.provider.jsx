@@ -33,11 +33,7 @@ function logout(userData) {
 }
 
 // eslint-disable-next-line react/prop-types
-function AuthProvider({
-  children,
-  defaultAuthenticated,
-  defaultUserInfo,
-}) {
+function AuthProvider({ children, defaultAuthenticated, defaultUserInfo }) {
   const [authenticated, setAuthenticated] = useState(!!defaultAuthenticated);
   const [userInfo, setUserInfo] = useState(
     defaultUserInfo
@@ -63,7 +59,7 @@ function AuthProvider({
         userInfo: {
           ...userInfo,
           username: username,
-        }
+        },
       })
     ) {
       setAuthenticated(true);

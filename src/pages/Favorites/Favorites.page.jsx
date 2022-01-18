@@ -6,12 +6,12 @@ import VideoGrid from '@components/VideoGrid';
 import { useFavorites } from '@providers/Favorites';
 
 function FavoritesPage(props) {
-  let [ favorites ] = useFavorites();
-  
+  let [favorites] = useFavorites();
+
   return (
     <section data-testid={props['data-testid']} className="favorites">
       <h1 className="favorites__title">Your favorite videos</h1>
-      { favorites.length > 0 ? (
+      {favorites.length > 0 ? (
         <VideoGrid items={favorites.map((item) => item[1])} />
       ) : (
         <div className="favorites__empty-message">

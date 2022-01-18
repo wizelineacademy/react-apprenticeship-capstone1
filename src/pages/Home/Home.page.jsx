@@ -20,8 +20,7 @@ function HomePage(props) {
           setVideos(response.items);
         } else {
           let items = response.items.filter(
-            (item) =>
-              !videos.find((video) => video.id === item.id)
+            (item) => !videos.find((video) => video.id === item.id)
           );
           setVideos((prevState) => prevState.concat(items));
         }

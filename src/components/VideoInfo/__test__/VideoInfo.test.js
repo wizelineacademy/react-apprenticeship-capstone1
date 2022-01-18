@@ -9,7 +9,6 @@ describe('VideoInfo...', () => {
       <FavoritesProvider>
         <VideoInfo data-testid="video-info-component" />
       </FavoritesProvider>
-
     );
   });
 

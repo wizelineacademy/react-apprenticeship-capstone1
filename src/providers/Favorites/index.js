@@ -1,1 +1,1 @@
-export { FavoritesProvider, useFavorites} from './Favorites.provider';
+export { FavoritesProvider, useFavorites } from './Favorites.provider';

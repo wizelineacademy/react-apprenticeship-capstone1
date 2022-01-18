@@ -18,8 +18,7 @@ function VideoDetails(props) {
   useEffect(() => {
     if (relatedResponse) {
       let items = relatedResponse.items.filter(
-        (item) =>
-          !relatedVideos.find((video) => video.id === item.id)
+        (item) => !relatedVideos.find((video) => video.id === item.id)
       );
       setRelatedVideos((prevState) => prevState.concat(items));
     }

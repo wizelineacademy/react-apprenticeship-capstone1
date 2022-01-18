@@ -7,7 +7,7 @@ import './VideoInfo.styles.scss';
 import { useFavorites } from '@providers/Favorites';
 
 function VideoInfo(props) {
-  let [ favorites, dispatch ] = useFavorites();
+  let [favorites, dispatch] = useFavorites();
   let favoritesMap = new Map(favorites);
 
   return (
@@ -22,9 +22,9 @@ function VideoInfo(props) {
           size="2x"
           className="video-info__liked-icon"
           onClick={() => {
-            favoritesMap.has(props.video.id) ? 
-              dispatch({ type: 'REMOVE_FAVORITE', value: props.video }) :
-              dispatch({ type: 'ADD_FAVORITE', value: props.video });
+            favoritesMap.has(props.video.id)
+              ? dispatch({ type: 'REMOVE_FAVORITE', value: props.video })
+              : dispatch({ type: 'ADD_FAVORITE', value: props.video });
           }}
         />
       </div>
