@@ -12,7 +12,15 @@ const useSearch = () => {
   const { state, dispatch } = useContext(Context);
   const { fetchData, response } = useFetch();
   let controller = new AbortController();
- 
+
+  //   useEffect(() => {
+  //     const params = new URLSearchParams();
+  //     if (history.location.pathname !== '/') {
+  //       params.append('name', 'newSearch');
+  //     }
+  //     history.push({ search: params.toString() });
+  //   }, [history]);
+
   const handleReponse = (responseStatus) => {
     try {
       if (responseStatus === 'updating') {
@@ -26,6 +34,11 @@ const useSearch = () => {
               serchedValue,
             },
           });
+          const params = new URLSearchParams();
+          if (history.location.pathname !== '/') {
+            params.append('name', 'newSearch');
+          }
+          history.push({ search: params.toString() });
         } else {
           setSearchedData([]);
         }
