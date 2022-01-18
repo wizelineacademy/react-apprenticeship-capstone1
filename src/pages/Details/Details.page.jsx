@@ -161,15 +161,17 @@ const DetailsPage = () => {
             </VideoContainer>
             <ListVideosContainer>
               {relatedVideos.items.map((item) => (
-                <RecomendedCard
-                  handleRelatedVideo={() =>
-                    handleRelatedVideo(item.id.videoId, item)
-                  }
-                  key={item.id.videoId}
-                  title={item.snippet.title}
-                  videoContent={item.snippet.thumbnails.high.url}
-                  description={item.snippet.description}
-                />
+               !item.snippet ? null : (
+                  <RecomendedCard
+                    handleRelatedVideo={() =>
+                      handleRelatedVideo(item.id.videoId, item)
+                    }
+                    key={item.id.videoId}
+                    title={item.snippet.title}
+                    videoContent={item.snippet.thumbnails.high.url}
+                    description={item.snippet.description}
+                  />
+                )
               ))}
               {selectedVideoFromState.id.videoId !== id ? (
                 <RecomendedCard
