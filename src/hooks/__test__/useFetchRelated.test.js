@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import useFetchRelated from '@src/hooks/useFetchRelated.hook';
 import searchMockedJson from '@src/assets/mocks/googleapis-search-mock.json';
+import searchReorganizedMockedJson from '@src/assets/mocks/googleapis-reorganized-search-mock.json';
 
 describe('useFetchRelated', () => {
   beforeEach(() => {
@@ -18,7 +19,7 @@ describe('useFetchRelated', () => {
 
       const [response] = result.current;
       expect(fetch).toBeCalled();
-      expect(response).toEqual(searchMockedJson);
+      expect(response).toEqual(searchReorganizedMockedJson);
     });
   });
 });

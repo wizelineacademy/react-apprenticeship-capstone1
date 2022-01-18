@@ -13,6 +13,8 @@ function SearchProvider({ children }) {
           ...state,
           searchTerm: action.value,
         };
+      default:
+        return state;
     }
   }, INITIAL_SEARCH);
 

@@ -10,7 +10,7 @@ function VideoGrid(props) {
     <div data-testid={props['data-testid']} className="video-grid__container">
       <div className={'video-grid ' + props.className}>
         {props.items.map((item) => (
-          <VideoCard key={item.id.videoId} item={item} />
+          <VideoCard key={item.id} item={item} />
         ))}
       </div>
       <div className="video-grid__load-more-row">

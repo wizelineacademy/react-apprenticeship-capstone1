@@ -6,16 +6,19 @@ import he from 'he';
 
 import './VideoCard.styles.scss';
 import { useAuth } from '@providers/Auth';
+import { useFavorites } from '@providers/Favorites';
 
 function VideoCard(props) {
   let navigate = useNavigate();
-  let { authenticated, isFavorite } = useAuth();
+  let { authenticated } = useAuth();
+  let [ favorites ] = useFavorites();
+  let favoritesMap = new Map(favorites);
 
   return (
     <div
       data-testid={props.testId}
       className={'video-card ' + props.className}
-      onClick={() => navigate(`/details/${props.item.id.videoId}`)}
+      onClick={() => navigate(`/details/${props.item.id}`)}
     >
       <img
         src={
@@ -35,7 +38,7 @@ function VideoCard(props) {
         </div>
         {authenticated ? (
           <FontAwesomeIcon
-            icon={[isFavorite(props.item) ? 'fas' : 'far', 'heart']}
+            icon={[favoritesMap.has(props.item.id) ? 'fas' : 'far', 'heart']}
             className="video-card__like-icon"
           />
         ) : null}
@@ -48,7 +51,7 @@ VideoCard.defaultProps = {
   testId: '',
   className: '',
   item: {
-    id: { videoId: '' },
+    id: '',
     snippet: {
       thumbnails: { medium: { url: '' } },
       publishTime: new Date(0, 0, 0, 0, 0, 0, 0),

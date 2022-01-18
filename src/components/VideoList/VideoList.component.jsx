@@ -4,6 +4,7 @@ import moment from 'moment';
 import he from 'he';
 
 import './VideoList.styles.scss';
+import { useFavorites } from '@providers/Favorites';
 import BreadCrumb from '@components/BreadCrumb';
 import Button from '@components/Button';
 import Loader from '@components/Loader';
@@ -11,6 +12,13 @@ import Loader from '@components/Loader';
 function VideoList(props) {
   const navigate = useNavigate();
   let [filter, setFilter] = useState('related');
+  let [ favorites ] = useFavorites();
+
+  let videos = [];
+  if (filter === 'related')
+    videos = props.items;
+  else
+    videos = favorites.map((item) => item[1]);
 
   return (
     <div
@@ -22,11 +30,11 @@ function VideoList(props) {
         onSelectedChange={setFilter}
         className="video-list__breadcrumb"
       />
-      {props.items.map((item) => (
+      {videos.map((item) => (
         <div
-          key={item.id.videoId}
+          key={item.id}
           className="video-item"
-          onClick={() => navigate(`/details/${item.id.videoId}`)}
+          onClick={() => navigate(`/details/${item.id}`)}
         >
           <img
             src={item ? item.snippet.thumbnails.default.url : null}
@@ -44,7 +52,7 @@ function VideoList(props) {
       <div className="video-list__load-more-row">
         {props.loading ? (
           <Loader />
-        ) : props.loadMore ? (
+        ) : props.loadMore && filter === 'related' ? (
           <Button text="Load more" onClick={props.loadMore} />
         ) : null}
       </div>

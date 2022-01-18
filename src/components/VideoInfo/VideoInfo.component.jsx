@@ -4,8 +4,12 @@ import moment from 'moment';
 import he from 'he';
 
 import './VideoInfo.styles.scss';
+import { useFavorites } from '@providers/Favorites';
 
 function VideoInfo(props) {
+  let [ favorites, dispatch ] = useFavorites();
+  let favoritesMap = new Map(favorites);
+
   return (
     <div
       data-testid={props['data-testid']}
@@ -14,9 +18,14 @@ function VideoInfo(props) {
       <div className="video-info__title-row">
         <h2>{he.decode(props.video.snippet.title)}</h2>
         <FontAwesomeIcon
-          icon={[props ? 'fas' : 'far', 'heart']}
+          icon={[favoritesMap.has(props.video.id) ? 'fas' : 'far', 'heart']}
           size="2x"
           className="video-info__liked-icon"
+          onClick={() => {
+            favoritesMap.has(props.video.id) ? 
+              dispatch({ type: 'REMOVE_FAVORITE', value: props.video }) :
+              dispatch({ type: 'ADD_FAVORITE', value: props.video });
+          }}
         />
       </div>
       <h5>{moment(new Date(props.video.snippet.publishTime)).fromNow()}</h5>
@@ -31,6 +40,7 @@ VideoInfo.defaultProps = {
   'data-testid': '',
   className: '',
   video: {
+    id: '',
     snippet: {
       title: '',
       publishTime: new Date(),

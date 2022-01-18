@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
 import { AuthProvider } from '@providers/Auth';
+import { FavoritesProvider } from '@providers/Favorites';
 import VideoList from '@components/VideoList';
 
 const mockedLoadMore = jest.fn();
@@ -15,33 +16,35 @@ describe('VideoList...', () => {
     render(
       <BrowserRouter>
         <AuthProvider defaultAuthenticated={{ authenticated: true }}>
-          <VideoList
-            data-testid="video-list-component"
-            loadMore={mockedLoadMore}
-            items={[
-              {
-                id: { videoId: 'id-test-1' },
-                snippet: {
-                  title: 'title-test-1',
-                  thumbnails: { default: { url: 'image-test-2' } },
-                  publishTime: date,
+          <FavoritesProvider>
+            <VideoList
+              data-testid="video-list-component"
+              loadMore={mockedLoadMore}
+              items={[
+                {
+                  id: 'id-test-1',
+                  snippet: {
+                    title: 'title-test-1',
+                    thumbnails: { default: { url: 'image-test-2' } },
+                    publishTime: date,
+                  },
                 },
-              },
-              {
-                id: { videoId: 'id-test-2' },
-                snippet: {
-                  title: 'title-test-2',
-                  thumbnails: { default: { url: 'image-test-2' } },
-                  publishTime: date,
+                {
+                  id: 'id-test-2',
+                  snippet: {
+                    title: 'title-test-2',
+                    thumbnails: { default: { url: 'image-test-2' } },
+                    publishTime: date,
+                  },
                 },
-              },
-            ]}
-          />
+              ]}
+            />
 
-          <Routes>
-            <Route exact path="/" element={<i>Home view</i>} />
-            <Route exact path="/details/:id" element={<i>Details view</i>} />
-          </Routes>
+            <Routes>
+              <Route exact path="/" element={<i>Home view</i>} />
+              <Route exact path="/details/:id" element={<i>Details view</i>} />
+            </Routes>
+          </FavoritesProvider>
         </AuthProvider>
       </BrowserRouter>
     );

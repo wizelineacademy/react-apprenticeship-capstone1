@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
 import { AuthProvider } from '@providers/Auth';
+import { FavoritesProvider } from '@providers/Favorites';
 import VideoCard from '@components/VideoCard';
 
 describe('VideoCard...', () => {
@@ -13,22 +14,24 @@ describe('VideoCard...', () => {
     render(
       <BrowserRouter>
         <AuthProvider defaultAuthenticated={{ authenticated: true }}>
-          <VideoCard
-            testId="video-card-component"
-            item={{
-              id: { videoId: 'id-test' },
-              snippet: {
-                title: 'title-test',
-                thumbnails: { medium: { url: 'image-test' } },
-                publishTime: date,
-              },
-            }}
-          />
+          <FavoritesProvider>
+            <VideoCard
+              testId="video-card-component"
+              item={{
+                id: 'id-test',
+                snippet: {
+                  title: 'title-test',
+                  thumbnails: { medium: { url: 'image-test' } },
+                  publishTime: date,
+                },
+              }}
+            />
 
-          <Routes>
-            <Route exact path="/" element={<i>Home view</i>} />
-            <Route exact path="/details/:id" element={<i>Details view</i>} />
-          </Routes>
+            <Routes>
+              <Route exact path="/" element={<i>Home view</i>} />
+              <Route exact path="/details/:id" element={<i>Details view</i>} />
+            </Routes>
+          </FavoritesProvider>
         </AuthProvider>
       </BrowserRouter>
     );

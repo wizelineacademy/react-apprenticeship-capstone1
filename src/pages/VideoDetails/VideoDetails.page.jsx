@@ -19,7 +19,7 @@ function VideoDetails(props) {
     if (relatedResponse) {
       let items = relatedResponse.items.filter(
         (item) =>
-          !relatedVideos.find((video) => video.id.videoId === item.id.videoId)
+          !relatedVideos.find((video) => video.id === item.id)
       );
       setRelatedVideos((prevState) => prevState.concat(items));
     }
@@ -28,10 +28,10 @@ function VideoDetails(props) {
   let videoInfo;
   if (videoInfoResponse && videoInfoResponse.items.length > 0)
     videoInfo = videoInfoResponse.items[0];
-  else
-    videoInfo = {
-      snippet: { title: '', publishTime: new Date(), description: '' },
-    };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   return (
     <section data-testid={props['data-testid']} className="video-details">

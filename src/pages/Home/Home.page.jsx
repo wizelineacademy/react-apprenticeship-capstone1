@@ -21,7 +21,7 @@ function HomePage(props) {
         } else {
           let items = response.items.filter(
             (item) =>
-              !videos.find((video) => video.id.videoId === item.id.videoId)
+              !videos.find((video) => video.id === item.id)
           );
           setVideos((prevState) => prevState.concat(items));
         }

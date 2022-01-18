@@ -14,6 +14,8 @@ function ThemeProvider({ children }) {
           ...state,
           darkMode: action.value,
         };
+      default:
+        return state;
     }
   }, themeStorage.get() || INITIAL_THEME);
 

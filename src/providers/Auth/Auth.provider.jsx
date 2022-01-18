@@ -37,12 +37,8 @@ function AuthProvider({
   children,
   defaultAuthenticated,
   defaultUserInfo,
-  defaultFavorites,
 }) {
   const [authenticated, setAuthenticated] = useState(!!defaultAuthenticated);
-  const [favorites, setFavorites] = useState(
-    defaultFavorites ? defaultFavorites : []
-  );
   const [userInfo, setUserInfo] = useState(
     defaultUserInfo
       ? defaultUserInfo
@@ -57,7 +53,6 @@ function AuthProvider({
     if (lastAuthState !== null && !!lastAuthState.authenticated) {
       setAuthenticated(lastAuthState.authenticated);
       setUserInfo(lastAuthState.userInfo);
-      setFavorites(lastAuthState.favorites);
     }
   }, []);
 
@@ -68,8 +63,7 @@ function AuthProvider({
         userInfo: {
           ...userInfo,
           username: username,
-        },
-        favorites,
+        }
       })
     ) {
       setAuthenticated(true);
@@ -80,54 +74,18 @@ function AuthProvider({
   }, []);
 
   const onLogout = useCallback(() => {
-    logout({ authenticated, userInfo, favorites });
+    logout({ authenticated, userInfo });
     setAuthenticated(false);
     setUserInfo((prevState) => ({ ...prevState, username: 'Guest' }));
   }, []);
-
-  const addFavorites = useCallback((favorites) => {
-    favorites = favorites.filter(
-      (item) =>
-        Object.prototype.hasOwnProperty.call(item, 'id') &&
-        Object.prototype.hasOwnProperty.call(item, 'videoId')
-    );
-    setFavorites(favorites);
-  });
-
-  const addFavorite = useCallback((favorite) => {
-    setFavorites((prevState) => {
-      return prevState.find((item) => item.id.videoId === favorite.id.videoId)
-        ? prevState.push(favorite)
-        : prevState;
-    });
-  });
-
-  const isFavorite = useCallback((favorite) => {
-    return Boolean(
-      favorites.find((item) => item.id.videoId === favorite.id.videoId)
-    );
-  });
-
-  const removeFavorite = useCallback((favorite) => {
-    setFavorites((prevState) => {
-      return prevState.filter(
-        (item) => item.id.videoId !== favorite.id.videoId
-      );
-    });
-  });
 
   return (
     <AuthContext.Provider
       value={{
         login: onLogin,
         logout: onLogout,
-        addFavorite,
-        removeFavorite,
-        addFavorites,
-        isFavorite,
         authenticated,
         userInfo,
-        favorites,
       }}
     >
       {children}
