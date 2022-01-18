@@ -18,7 +18,6 @@ function Container({ url }) {
         setVideos(result.data.items);
       } catch (error) {
         setIsError(true);
-        console.log('is Error', isError);
       }
       setIsLoading(false);
     };
@@ -37,7 +36,7 @@ function Container({ url }) {
           setVideos(result.data.items);
           setIsLoading(false);
         } catch (error) {
-          //console.log(error);
+          setIsError(true);
         }
       };
       fecthVideosSearched();

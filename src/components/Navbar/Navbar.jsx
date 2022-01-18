@@ -16,8 +16,10 @@ function Navbar() {
         </h1>
       </div>
       <div>
-        <Button text="Dark Mode"></Button>
-        <img src="../../profile.svg" alt="profile img" />
+        <Button></Button>
+        <a href={'/login'}>
+          <img src="../../profile.svg" alt="profile img" />
+        </a>
       </div>
     </StyledNavbar>
   );

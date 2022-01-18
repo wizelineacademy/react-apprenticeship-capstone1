@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 
 import { useAuth } from '../../providers/Auth';
-import './Login.styles.css';
+import { StyledLogin } from './Login.styled';
 
 function LoginPage() {
   const { login } = useAuth();
@@ -15,8 +15,8 @@ function LoginPage() {
   }
 
   return (
-    <section className="login">
-      <h1>Welcome back!</h1>
+    <StyledLogin className="login">
+      <h1>Login to WizeTube!</h1>
       <form onSubmit={authenticate} className="login-form">
         <div className="form-group">
           <label htmlFor="username">
@@ -32,7 +32,7 @@ function LoginPage() {
         </div>
         <button type="submit">login</button>
       </form>
-    </section>
+    </StyledLogin>
   );
 }
 

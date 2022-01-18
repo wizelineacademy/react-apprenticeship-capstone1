@@ -4,7 +4,6 @@ import { AppContext } from '../Context/AppContext';
 
 function Layout({ children }) {
   const { toggleTheme } = useContext(AppContext);
-  console.log(toggleTheme);
   const component = toggleTheme ? (
     <DarkMode>{children}</DarkMode>
   ) : (

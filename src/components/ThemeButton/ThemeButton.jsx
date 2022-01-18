@@ -3,8 +3,8 @@ import { AppContext } from '../Context/AppContext';
 
 import { StyledButton } from './ThemeButton.styled';
 
-function Button(props) {
-  const { setToggleTheme } = useContext(AppContext);
+function Button() {
+  const { toggleTheme, setToggleTheme } = useContext(AppContext);
   return (
     <StyledButton
       data-testid="button"
@@ -12,7 +12,7 @@ function Button(props) {
         setToggleTheme();
       }}
     >
-      {props.text}
+      {toggleTheme ? 'Ligth Mode' : 'Dark Mode'}
     </StyledButton>
   );
 }
