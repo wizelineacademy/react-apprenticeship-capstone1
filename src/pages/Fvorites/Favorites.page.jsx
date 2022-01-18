@@ -1,16 +1,18 @@
-import React, { useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../providers/Auth';
-import CardsContainer from '../../components/CardsContainer/CardContainer.component';
 import Card from '../../components/Card/Card.component';
 import { Context } from '../../context';
 import useFavorites from '../../utils/hooks/useFavorites';
-import { FavoriteButton, FavoriteContainer } from './Favorites.styles';
+import {
+  FavoriteButton,
+  FavoriteContainer,
+  Container,
+} from './Favorites.styles';
 import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
 
 function FavoritesPage() {
-  const sectionRef = useRef(null);
   const { authenticated } = useAuth();
   const { state, dispatch } = useContext(Context);
   const { favorites, response } = state;
@@ -36,9 +38,9 @@ function FavoritesPage() {
       {search === '?name=newSearch' ? (
         <SearchDashboard serchedData={response ? response.items : []} />
       ) : (
-        <section className="homepage" ref={sectionRef}>
+        <Container>
           {authenticated ? (
-            <CardsContainer>
+            <>
               {favorites.map((item) => {
                 const { title, thumbnails, description } = item.snippet;
                 return (
@@ -57,11 +59,11 @@ function FavoritesPage() {
                   </FavoriteContainer>
                 );
               })}
-            </CardsContainer>
+            </>
           ) : (
             <Link to="/login">log to save favorites videos</Link>
           )}
-        </section>
+        </Container>
       )}
     </div>
   );

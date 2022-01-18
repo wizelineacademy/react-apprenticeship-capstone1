@@ -16,7 +16,7 @@ const useFetch = () => {
       url = `${url}&maxResults=${resultsPerPage}`;
     }
     if (relatedVideos) {
-      url = `${base}&key=${API_KEY}&relatedToVideoId=${relatedVideos}&type=video&part=snippet`;
+      url = `${base}&key=${API_KEY}&relatedToVideoId=${relatedVideos}&type=video&part=snippet&maxResults=${resultsPerPage}`;
     }
     try {
       const res = await fetch(url);

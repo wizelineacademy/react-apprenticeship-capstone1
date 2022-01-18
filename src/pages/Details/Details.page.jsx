@@ -4,7 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 import { Context } from '../../context';
 import useFetch from '../../utils/hooks/useFetch';
-import initialData from '../../utils/mocks';
+import { initialData } from '../../utils/mocks';
 import useFavorites from '../../utils/hooks/useFavorites';
 import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
 import RecomendedCard from '../../components/RecommendedCard/Recommendedcard.component';
@@ -38,9 +38,10 @@ const DetailsPage = () => {
   const { selectFavorites, deleteFavorites, isfavorited } = useFavorites();
 
   const handleRandomVideos = () => {
-    setTimeout(() => {
-      fetchData(state.serchedValue, 10, id);
-    }, 2000);
+    // setTimeout(() => {
+    //   fetchData(state.serchedValue, 10, id);
+    // }, 2000);
+    fetchData(state.serchedValue, 10, id);
   };
   useEffect(() => {
     let favorite;

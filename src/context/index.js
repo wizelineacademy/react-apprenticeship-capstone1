@@ -1,7 +1,12 @@
 import React, { useReducer, createContext } from 'react';
+import { initialData, video } from '../utils/mocks';
 
 const initialState = {
   favorites: [],
+  relatedVideos: initialData,
+  response: initialData,
+  selectedVideo: video,
+  recomendedVideoSelected: video,
 };
 
 const Context = createContext();

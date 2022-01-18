@@ -19,4 +19,20 @@ const initialData = {
   ],
 };
 
-export default initialData;
+const video = {
+  etag: '',
+  id: {
+    kind: '',
+    videoId: 'f14AzBuazx4',
+  },
+  snippet: {
+    title: '',
+    description: '',
+    thumbnails: {
+      high: {
+        url: '',
+      },
+    },
+  },
+};
+export { initialData, video };

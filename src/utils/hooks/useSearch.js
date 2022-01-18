@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import initialData from '../mocks';
+import { initialData } from '../mocks';
 import { Context } from '../../context';
 import useFetch from './useFetch';
 

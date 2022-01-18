@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`;
+
 const FavoriteContainer = styled.div`
   display: flex;
   width: 100%;
@@ -8,6 +16,11 @@ const FavoriteContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   height: auto;
+  margin: 8px;
+  width: calc(100% / 4);
+  div {
+    width: 100%;
+  }
 `;
 
 const FavoriteButton = styled.button`
@@ -31,4 +44,4 @@ const FavoriteButton = styled.button`
   color: white;
 `;
 
-export { FavoriteButton, FavoriteContainer };
+export { FavoriteButton, FavoriteContainer, Container };
