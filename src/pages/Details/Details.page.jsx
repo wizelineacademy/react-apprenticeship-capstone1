@@ -25,7 +25,7 @@ const DetailsPage = () => {
   let controller = new AbortController();
 
   const [relatedVideos, setRelatedVideos] = useState(initialData);
-  const { fetchData, response, isLoading, error } = useFetch();
+  const { fetchData, isLoading, error } = useFetch();
   const [favorited, setFavorited] = useState(false);
   const { state, dispatch } = useContext(Context);
   const {
@@ -56,8 +56,8 @@ const DetailsPage = () => {
 
   useEffect(() => {
     try {
-      if (response) {
-        setRelatedVideos(response);
+      if (responseState) {
+        setRelatedVideos(responseState);
       } else {
         setRelatedVideos(initialData);
       }
@@ -67,7 +67,7 @@ const DetailsPage = () => {
     return () => {
       controller.abort();
     };
-  }, [response]);
+  }, [responseState]);
 
   const handleRelatedVideo = (id, item) => {
     dispatch({
