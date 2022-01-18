@@ -1,13 +1,3 @@
-// import React from 'react';
-
-// import './Layout.styles.css';
-
-// function Layout({ children }) {
-//   return <main className="container">{children}</main>;
-// }
-
-// export default Layout;
-
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -27,7 +17,6 @@ function Layout({ children }) {
   const handleOpenMenu = () => {
     setSidebarState(!sidebarState);
   };
-
   const deAuthenticate = (event) => {
     event.preventDefault();
     logout();
@@ -44,7 +33,7 @@ function Layout({ children }) {
         handleSearch={handleSearch}
         inputValue={serchedValue}
       />
-      {sidebarState ? <Sidebar /> : null}
+      {sidebarState ? <Sidebar open={sidebarState} /> : null}
       <main className="container">{children}</main>
     </>
   );

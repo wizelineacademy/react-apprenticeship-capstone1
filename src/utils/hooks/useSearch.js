@@ -13,14 +13,6 @@ const useSearch = () => {
   const { fetchData, response } = useFetch();
   let controller = new AbortController();
 
-  //   useEffect(() => {
-  //     const params = new URLSearchParams();
-  //     if (history.location.pathname !== '/') {
-  //       params.append('name', 'newSearch');
-  //     }
-  //     history.push({ search: params.toString() });
-  //   }, [history]);
-
   const handleReponse = (responseStatus) => {
     try {
       if (responseStatus === 'updating') {
