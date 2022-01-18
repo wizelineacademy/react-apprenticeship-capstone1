@@ -1,12 +1,6 @@
 import React from 'react'
 import VideoDetails from '../VideoDetails'
-import {
-  render,
-  waitFor,
-  screen,
-  act,
-  computeHeadingLevel,
-} from '@testing-library/react'
+import { render, waitFor, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Route, Router, Switch } from 'react-router-dom'
 import { createMemoryHistory } from 'history'

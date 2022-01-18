@@ -1,10 +1,7 @@
 import React from 'react'
 import { screen, render, fireEvent } from '@testing-library/react'
 import NavBar from '../NavBar.component'
-import {
-  GlobalContext,
-  GlobalProvider,
-} from '../../../providers/Global/Global.provider'
+import { GlobalProvider } from '../../../providers/Global/Global.provider'
 import { BrowserRouter } from 'react-router-dom'
 
 describe('Testing NavBar component', () => {
