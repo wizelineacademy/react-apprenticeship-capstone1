@@ -35,7 +35,7 @@ const DetailsPage = () => {
     response: responseState,
   } = state;
   const { search } = history.location;
-  const { selectFavorites, deleteFavorites, isfavorited } = useFavorites();
+  const { addFavorites, deleteFavorites, isfavorited } = useFavorites();
 
   const handleRandomVideos = () => {
     // setTimeout(() => {
@@ -112,7 +112,7 @@ const DetailsPage = () => {
                       </h3>
                       <FavoriteButton
                         onClick={() =>
-                          favorited ? deleteFavorites(id) : selectFavorites(id)
+                          favorited ? deleteFavorites(id) : addFavorites(id)
                         }
                       >
                         <ReactSVG

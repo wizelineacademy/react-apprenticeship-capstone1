@@ -10,7 +10,7 @@ const useFavorites = () => {
     favorites,
   } = state;
 
-  const selectFavorites = (id) => {
+  const addFavorites = (id) => {
     if (selectedVideoFromState.id.videoId === id) {
       dispatch({
         type: 'SAVE_FAVORITES',
@@ -41,7 +41,7 @@ const useFavorites = () => {
   };
   const isfavorited = (video) => favorites.includes(video);
 
-  return { selectFavorites, deleteFavorites, isfavorited };
+  return { addFavorites, deleteFavorites, isfavorited };
 };
 
 export default useFavorites;
