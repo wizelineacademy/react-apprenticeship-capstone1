@@ -19,11 +19,11 @@ function ItemList({ items }) {
           <img
             className="cover-image"
             alt="preview"
-            src={item.snippet.thumbnails.high.url}
+            src={item?.snippet?.thumbnails?.high?.url}
           />
           <div className="infose-ction">
-            <h3 className="card-title">{item.snippet.title}</h3>
-            <p className="card-paragraph">{item.snippet.description}</p>
+            <h3 className="card-title">{item?.snippet?.title}</h3>
+            <p className="card-paragraph">{item?.snippet?.description}</p>
           </div>
         </Card>
       ))}

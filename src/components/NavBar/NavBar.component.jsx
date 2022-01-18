@@ -48,7 +48,11 @@ function NavBar() {
                   e.key === 'Enter' && e.preventDefault()
                 }}
               />
-              <Button onClick={onSubmit} variant="outline-success">
+              <Button
+                role={'search'}
+                onClick={onSubmit}
+                variant="outline-success"
+              >
                 Search
               </Button>
             </Form>

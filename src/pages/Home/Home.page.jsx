@@ -20,10 +20,12 @@ function HomePage() {
     const fecthAPI = async () => {
       try {
         setLoading(true)
-        const response = await axiosClient.get(`/search?q=${searchParam}`, {
+        const {
+          data: { items },
+        } = await axiosClient.get(`/search?q=${searchParam}`, {
           signal: controller.signal,
         })
-        setYoutubeItems(response.data.items)
+        setYoutubeItems(items)
         setLoading(false)
       } catch (error) {
         console.log(error)
