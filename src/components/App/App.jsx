@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import DetailPage from '../../pages/Detail/Detail.page';
+import Private from '../../pages/Private';
+import SecretPage from '../../pages/Secret';
 import NotFound from '../../pages/NotFound';
 import Layout from '../Layout';
 import LoginPage from '../../pages/Login';
@@ -28,6 +30,9 @@ function App() {
                 <Route exact path="/login">
                   <LoginPage />
                 </Route>
+                <Private exact path="/secret">
+                  <SecretPage />
+                </Private>
                 <Route exact path="/:videoId">
                   <DetailPage />
                 </Route>
