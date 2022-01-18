@@ -39,7 +39,15 @@ const useFavorites = () => {
       },
     });
   };
-  const isfavorited = (video) => favorites.includes(video);
+  const isfavorited = (video) => {
+    // filter saved in const
+    // comparar dentro de filter
+    const favrited = favorites.filter((item) => {
+      if (item.id.videoId === video.id.videoId) return true;
+      return false;
+    });
+    return !!favrited.length;
+  };
 
   return { addFavorites, deleteFavorites, isfavorited };
 };

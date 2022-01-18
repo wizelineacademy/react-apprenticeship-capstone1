@@ -38,11 +38,13 @@ const DetailsPage = () => {
   const { addFavorites, deleteFavorites, isfavorited } = useFavorites();
 
   const handleRandomVideos = () => {
-    // setTimeout(() => {
-    //   fetchData(state.serchedValue, 10, id);
-    // }, 2000);
     fetchData(state.serchedValue, 10, id);
   };
+
+  useEffect(() => {
+    handleRandomVideos();
+  }, []);
+
   useEffect(() => {
     let favorite;
     if (id === selectedVideoFromState.id.videoId)
@@ -51,10 +53,6 @@ const DetailsPage = () => {
       favorite = isfavorited(recomendedVideoSelected);
     setFavorited(favorite);
   }, [favorites, isfavorited]);
-
-  useEffect(() => {
-    handleRandomVideos();
-  }, []);
 
   useEffect(() => {
     try {

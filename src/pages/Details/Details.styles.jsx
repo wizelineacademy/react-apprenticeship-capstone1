@@ -82,6 +82,7 @@ const Information = styled.div`
   margin: 12px;
   border-radius: 10px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color: white;
 `;
 
 export {
