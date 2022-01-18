@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { StyledContainer } from './VideosContainer.styled';
 import SearchBar from '../SearchBar/SearchBar';
+import useVideos from '../../utils/hooks/useVideos';
 import Card from '../Card/Card';
 import axios from 'axios';
 
 function Container({ url }) {
-  const [videos, setVideos] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
-      try {
-        const result = await axios(url);
-        setVideos(result.data.items);
-      } catch (error) {
-        setIsError(true);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
-
+  const { videos, isLoading, isError, setVideos, setIsLoading, setIsError } =
+    useVideos(url);
   const handleSearch = (e) => {
     if (e.target.value.length) {
       let query = e.target.value;
