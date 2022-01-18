@@ -1,7 +1,7 @@
 @import '@style/mixins';
 
 .login-modal {
-    position: absolute;
+    position: fixed;
     left: calc(calc(100vw - 300px) / 2);
     top: 200px;
     z-index: 9;

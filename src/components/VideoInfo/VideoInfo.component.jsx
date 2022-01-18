@@ -4,9 +4,11 @@ import moment from 'moment';
 import he from 'he';
 
 import './VideoInfo.styles.scss';
+import { useAuth } from '@providers/Auth';
 import { useFavorites } from '@providers/Favorites';
 
 function VideoInfo(props) {
+  let { authenticated } = useAuth();
   let [favorites, dispatch] = useFavorites();
   let favoritesMap = new Map(favorites);
 
@@ -17,16 +19,18 @@ function VideoInfo(props) {
     >
       <div className="video-info__title-row">
         <h2>{he.decode(props.video.snippet.title)}</h2>
-        <FontAwesomeIcon
-          icon={[favoritesMap.has(props.video.id) ? 'fas' : 'far', 'heart']}
-          size="2x"
-          className="video-info__liked-icon"
-          onClick={() => {
-            favoritesMap.has(props.video.id)
-              ? dispatch({ type: 'REMOVE_FAVORITE', value: props.video })
-              : dispatch({ type: 'ADD_FAVORITE', value: props.video });
-          }}
-        />
+        {authenticated ? (
+          <FontAwesomeIcon
+            icon={[favoritesMap.has(props.video.id) ? 'fas' : 'far', 'heart']}
+            size="2x"
+            className="video-info__liked-icon"
+            onClick={() => {
+              favoritesMap.has(props.video.id)
+                ? dispatch({ type: 'REMOVE_FAVORITE', value: props.video })
+                : dispatch({ type: 'ADD_FAVORITE', value: props.video });
+            }}
+          />
+        ) : null}
       </div>
       <h5>{moment(new Date(props.video.snippet.publishTime)).fromNow()}</h5>
       <p className="video-info__description">

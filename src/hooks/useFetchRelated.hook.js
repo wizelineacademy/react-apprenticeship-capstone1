@@ -24,6 +24,10 @@ function useFetchRelated(videoId, pageToken) {
         item.id = item.id.videoId;
         return item;
       });
+
+      draft.items = draft.items.filter((item) =>
+        Object.prototype.hasOwnProperty.call(item, 'snippet')
+      );
     }
   });
   return [reorganizedResponse, loading, error];

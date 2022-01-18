@@ -1,0 +1,1066 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YQowkALuqoYZ7ICHQpGlDQDHJbw",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "MX",
+  "pageInfo": {
+    "totalResults": 89,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "c_d3jS0jn8pLXENZl-m5OyJbZf4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UTsBkhu-UGw"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-16T17:02:32Z",
+        "channelId": "UCvaUAVzIIGsRNlUDWkQFCeA",
+        "title": "AWS Wizeline Founders Campaign - Capítulo 1 - Emprendedor",
+        "description": "https://aws.amazon.com/es/campaigns/founders/\n\nQuieres saber más? Contáctenos: https://bit.ly/2G3ZbTE",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UTsBkhu-UGw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UTsBkhu-UGw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UTsBkhu-UGw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/UTsBkhu-UGw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/UTsBkhu-UGw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Amazon Web Services Latin America",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-11-16T17:02:32Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SMfYlNtGknhSVEshrh-2qGFwapA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pC_kTjYUxIk"
+      },
+      "snippet": {
+        "publishedAt": "2021-07-03T13:29:31Z",
+        "channelId": "UCLOzkJ9W9fntCGyYfUwMPew",
+        "title": "Account Manager - Day in the Life as an Account Manager",
+        "description": "Learn what the day in the life as an account manager looks like and what skills you need to succeed on the job. Enroll in Sales Legacy the ultimate online sales masterclass or watch our free 1-hour training: https://www.saleslegacy.com/\n\nSUBSCRIBE to Patrick Dang: https://www.youtube.com/channel/UCLOzkJ9W9fntCGyYfUwMPew?sub_confirmation=1\n\nTop Trending Playlist:\n1) Sales Prospecting & Lead Generation - https://www.youtube.com/watch?v=1hpqcvTvUTI&list=PLYZWx0YhMskOSn6dw-aWD_5xaPgqElraw\n\n2) Business Development Playlist - https://www.youtube.com/playlist?list=PLYZWx0YhMskO-9MmyoczuH01xHM2jKVmg\n\n3) Sales Tips To Close More Deals - https://www.youtube.com/watch?v=BRWkKPURdYM&list=PLYZWx0YhMskNqFNY3BqAljaQychv5MGqE\n\n00:00 Account Manager - Day in the Life as an Account Manager\nWhat Is An Account Manager\n00:38 Keeping Customers Happy\n04:32 Generate More Revenue With Current Customers\n08:25 Characteristics of an Account Manager\n\nAccount Manager: A performance-based sales role that retains and increases current customers' revenue, including renewals, upselling, and cross-selling. Your primary responsibility as an account manager is to increase revenue, keep customers happy, prevent customers from churning. We'll also cover key skills you need as an account manager, account management tips to succeed in the job, and become a strategic and good account manager.\n\n#accountmamager\n\nPatrick Dang is an international sales trainer who started his career at Oracle in Silicon Valley and quickly became one of the top performers in North America in just one year.\n\nAfter gaining experience in both the enterprise and startup world, Patrick began sharing his knowledge of modern sales students worldwide. \n\nSince then, Patrick has trained over 100,000 students across 150 countries on topics on how to start a career in sales, business development, lead generation, cold email, LinkedIn, cold calling, and sales skills. \n\nPatrick's vision is to inspire others to pursue their dreams and provide the knowledge and tools to make those dreams a reality. \n\n🔔 SUBSCRIBE to Patrick's YouTube Channel - https://www.youtube.com/channel/UCLOzkJ9W9fntCGyYfUwMPew?sub_confirmation=1\n\nConnect With Patrick Dang\nSales Legacy Masterclass: https://www.saleslegacy.com/\nYouTube: https://www.youtube.com/c/patrickdangofficial\nLinkedIn: https://www.linkedin.com/in/patrickdangofficial/\nTik Tok: https://www.tiktok.com/@patrickdang\nInstagram: https://www.instagram.com/patrickdangofficial/\nWebsite: https://patrickdang.com/\nFacebook Sales Community: https://www.facebook.com/groups/patrickdang\nFacebook Page: https://www.facebook.com/PatrickDangOfficial",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pC_kTjYUxIk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pC_kTjYUxIk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pC_kTjYUxIk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/pC_kTjYUxIk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/pC_kTjYUxIk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Patrick Dang",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-07-03T13:29:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "pZNTbuLZi9Jb3nUu42rYNjAd3PQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PmsET4fSyj0"
+      },
+      "snippet": {
+        "publishedAt": "2021-07-03T13:29:20Z",
+        "channelId": "UCLOzkJ9W9fntCGyYfUwMPew",
+        "title": "Top 5 Sales Interview Advice & Sales Interview Prep To Pass Your Sales Interview",
+        "description": "Learn the top 5 sales interview advice and sales interview prep tips to pass your sales interview. Enroll in Sales Legacy the ultimate online sales masterclass or watch our free 1-hour training: https://www.saleslegacy.com/\n\nSUBSCRIBE to Patrick Dang: https://www.youtube.com/channel/UCLOzkJ9W9fntCGyYfUwMPew?sub_confirmation=1\n\nTop Trending Playlist:\n1) Sales Prospecting & Lead Generation - https://www.youtube.com/watch?v=1hpqcvTvUTI&list=PLYZWx0YhMskOSn6dw-aWD_5xaPgqElraw\n\n2) Business Development Playlist - https://www.youtube.com/playlist?list=PLYZWx0YhMskO-9MmyoczuH01xHM2jKVmg\n\n3) Sales Tips To Close More Deals - https://www.youtube.com/watch?v=BRWkKPURdYM&list=PLYZWx0YhMskNqFNY3BqAljaQychv5MGqE\n\n00:00 Top 5 Sales Interview Advice & Sales Interview Prep To Pass Your Sales Interview\n00:39 Don't Be Desperate\n02:19 Be Prepared To Sell Their Products and Services\n04:00 Have Outbound Prospecting Examples\n05:27 Ready Have Conviction On Why You Want The Job\n06:49 Don't Be Afraid To Ask Why They Wouldn't Hire You\n\nIn this video, we're going to be covering some of the top interview advice and sales interview prep tips I've collected over the years working in tech sales in Silicon Valley. These sales interview tips will be helpful for anyone interested in software sales, tesh sales, saas sales, and startup sales.\n\n#salesinterview #salesinterviewquestionsandanswers #salesinterviewquestions\n\nPatrick Dang is an international sales trainer who started his career at Oracle in Silicon Valley and quickly became one of the top performers in North America in just one year.\n\nAfter gaining experience in both the enterprise and startup world, Patrick began sharing his knowledge of modern sales students worldwide. \n\nSince then, Patrick has trained over 100,000 students across 150 countries on topics on how to start a career in sales, business development, lead generation, cold email, LinkedIn, cold calling, and sales skills. \n\nPatrick's vision is to inspire others to pursue their dreams and provide the knowledge and tools to make those dreams a reality. \n\n🔔 SUBSCRIBE to Patrick's YouTube Channel - https://www.youtube.com/channel/UCLOzkJ9W9fntCGyYfUwMPew?sub_confirmation=1\n\nConnect With Patrick Dang\nSales Legacy Masterclass: https://www.saleslegacy.com/\nYouTube: https://www.youtube.com/c/patrickdangofficial\nLinkedIn: https://www.linkedin.com/in/patrickdangofficial/\nTik Tok: https://www.tiktok.com/@patrickdang\nInstagram: https://www.instagram.com/patrickdangofficial/\nWebsite: https://patrickdang.com/\nFacebook Sales Community: https://www.facebook.com/groups/patrickdang\nFacebook Page: https://www.facebook.com/PatrickDangOfficial",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PmsET4fSyj0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PmsET4fSyj0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PmsET4fSyj0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/PmsET4fSyj0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/PmsET4fSyj0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Patrick Dang",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-07-03T13:29:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "5jH25ScWQnMADk4wL1ZD2LfLphs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YSCUGDJp2Fs"
+      },
+      "snippet": {
+        "publishedAt": "2019-10-26T19:52:52Z",
+        "channelId": "UCFfr0oZjhfeoRXSPiAKuNiQ",
+        "title": "Bismarck Lepe, fundador de Wizeline: Cómo llevar Silicon Valley a México",
+        "description": "Bismarck Lepe lo rechazó cuando se lo preguntamos. Pero nosotros queremos nominarlo igual: desde nuestro punto de vista, es el padrino de los emprendedores mexicanos en Silicon Valley.\n\nY eso que él nació en California, ya que sus papás eran trabajadores rurales que seguían las cosechas de frutas por todo el estado y más allá. Pero esos inviernos que pasaba en Jalisco cuando niño le dieron un amor por México que lo impulsa hasta hoy. Por eso, ayuda a los mexicanos que vienen a Silicon Valley y apuesta, con su dinero y sus decisiones de negocio, a crecer y explotar el talento tecnológico en Guadalajara (Jalisco).\n\nY, además, empuja a otras empresas del Valle a imitarlo. Los astronómicos costos de vida en San Francisco y el Área de la Bahía, explica, le dan una ventaja importante a los que se animen a abrir operaciones en el país de sus padres. Algunos de sus ejecutivos estadounidenses ya se mudaron de Silicon Valley a GDL.\n\n«Yo pienso que el American Dream está en México», dice Bismarck, en la entrevista con los Tercos\n\nGracias a sus padres, Bismarck llegó a estudiar en Stanford, donde se pagó gran parte de los estudios trabajando dobles turnos al mismo tiempo. Luego, entró a Google antes de que llegara a tener 300 empleados y se hizo famoso como el empleado que nunca dormía (no te pierdas esa anécdota imperdible en la entrevista).\n\nEstuvo cuatro años en Google, cuya salida a Bolsa le dio mucho valor a las acciones que Bismarck recibió como empleado. Y se fue de allí para lanzar la plataforma de video Ooyala, con su hermano Belsasar y Sean Knapp, que tras recaudar más de 100 millones de inversiones se vendió a la telecom australiana Telstra por 410 millones de dólares en 2014.\n\nSu siguiente aventura es Wizeline, una startup de inteligencia artificial, chatbots y software de manejo de proyectos. Ya tiene más de 250 empleados y oficinas en San Francisco, en Ciudad Ho Chi Minh, Vietnam, y, la más grande, en Guadalajara. Y allí Bismarck impulsa nuevas empresas dándole inversiones de su propio fondo, Wizefund, de 5 millones de dólares a los empleados que generan buenas ideas de negocio.\n\n\u200bComo dice Fernando en este capítulo, Bismarck Lepe es un verdadero ‘champion’ de México en el mundo tecnológico.\n\nVISITANOS EN NUESTRO SITIO WEB\nhttps://www.elvalledelostercos.com\n\nSIGUENOS EN REDES SOCIALES\nInstagram: @silicontercos\nTwitter:  @silicontercos\nFacebook:  El Valle de los Tercos",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YSCUGDJp2Fs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YSCUGDJp2Fs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YSCUGDJp2Fs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/YSCUGDJp2Fs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "El Valle de los Tercos Podcast en español",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-10-26T19:52:52Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "uKQpLmT8lIqeYUTa3dRI6kw9w6A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "F6Krwu6lUc8"
+      },
+      "snippet": {
+        "publishedAt": "2020-10-23T03:35:49Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Miriam Godinez | Women in Leadership at Wizeline",
+        "description": "Science and technology always caught Miriam's attention. One of her ultimate goals as a Senior Engineer Manager and Lead from the Mobile Team at Wizeline is to help people become the best version of themselves. Watch Miriam's story and uncover her advice for women and young girls who want to pursue a career in technology.  \n\nWe're hiring and looking for hardworking and inspirational leaders like Miriam to join our team. We also have remote positions available. Visit www.wizeline.com/careers and search our open roles!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F6Krwu6lUc8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F6Krwu6lUc8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F6Krwu6lUc8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/F6Krwu6lUc8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/F6Krwu6lUc8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-10-23T03:35:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "aSFObpRPjt0E5mxAO4VBVTn__ss",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "XJaBJuRxEac"
+      },
+      "snippet": {
+        "publishedAt": "2017-11-27T23:15:45Z",
+        "channelId": "UCVUJ8lAOuN-U7wWhNZvrLLA",
+        "title": "Bismarck Lepe en Día del Empresario 2017",
+        "description": "Transforma con tecnología tu negocio, escucha como Bismarck Lepe convirtió Ooyala en un éxito y como evolucionó a su siguiente empresa Wizeline",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XJaBJuRxEac/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XJaBJuRxEac/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XJaBJuRxEac/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/XJaBJuRxEac/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/XJaBJuRxEac/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Coparmex Jalisco",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-11-27T23:15:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "FDDxsd6zGE-eue34b0f0j2--EYk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "WDtNW4vjBfg"
+      },
+      "snippet": {
+        "publishedAt": "2021-06-02T19:40:36Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "A Day in the Life of a Senior Software Engineer at Wizeline",
+        "description": "Meet Jakob Renpening, Senior Software Engineer at Wizeline. Jakob shares with us some of his passions and his day-to-day activities. He also explains why he decided to join the Wizeline team and tells us what he enjoys most about working here. \n \nWatch and join Jakob on a typical day as a software engineer!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WDtNW4vjBfg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WDtNW4vjBfg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WDtNW4vjBfg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/WDtNW4vjBfg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/WDtNW4vjBfg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-06-02T19:40:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3FBNMxw7b0NR8GUDTRkTh4n-WEY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "nmXMgqjQzls"
+      },
+      "snippet": {
+        "publishedAt": "2019-09-30T23:25:15Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Video Tour | Welcome to Wizeline Guadalajara",
+        "description": "Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office.\n\nIn 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, Mexico, home to over 400 employees. Wizeline has drawn attention for designing an office and culture focused on employee wellness and cultivating talent, earning a Super Espacios award by WeWork, Expansion Mexico, and Top Companies.\n\nRead more about the office here: https://www.wizeline.com/creating-first-class-facilities/\n\nIf you're interested in working with Wizeline and want to experience the culture and tour our offices live, contact us at www.wizeline.com/contact/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/nmXMgqjQzls/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/nmXMgqjQzls/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/nmXMgqjQzls/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/nmXMgqjQzls/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/nmXMgqjQzls/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-09-30T23:25:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "aIW1KOFxMKUDBpnBsevl3cOiOt0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "HYyRZiwBWc8"
+      },
+      "snippet": {
+        "publishedAt": "2019-04-18T18:38:31Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Wizeline Guadalajara | Bringing Silicon Valley to Mexico",
+        "description": "Wizeline continues to offer a Silicon Valley culture in burgeoning innovation hubs like Mexico and Vietnam. In 2018, our Guadalajara team moved into a contemporary new home: a people-centric office where our team can learn, grow and do its best work.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/HYyRZiwBWc8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/HYyRZiwBWc8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/HYyRZiwBWc8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/HYyRZiwBWc8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/HYyRZiwBWc8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-04-18T18:38:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-10-TqocAaBM5ymaN71evcQ7fzI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iZlRX1reJLw"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-07T03:49:55Z",
+        "channelId": "UC_oiU-tpgtjSqcndNoLYRUQ",
+        "title": "6 consejos para evitar que tus empleados te roben ✅✅✅",
+        "description": "Únete a HagaNegocios suscríbete al canal en este enlace: https://www.youtube.com/c/haganegocios?sub_confirmation=1\n ---\n\nEste vídeo trata de: 6 consejos para evitar que tus empleados te roben\n---\nPuedes visitar también nuestra web http://www.haganegocios.com/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iZlRX1reJLw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iZlRX1reJLw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iZlRX1reJLw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/iZlRX1reJLw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/iZlRX1reJLw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Haga Negocios",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-11-07T03:49:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "mVw3mt1myg_BfRMnI0E9ke93W2c",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "kZOa9RWEGoo"
+      },
+      "snippet": {
+        "publishedAt": "2018-01-06T23:35:08Z",
+        "channelId": "UCpMSfnlbvJiZzlVb9wYlvfw",
+        "title": "El MEJOR proyecto MEXICANO de TECNOLOGÍA, SILICON BORDER",
+        "description": "Hubo una época, hace poco más de 10 años en la que México no sólo soñó con tener su propio \"Silicon Valley\", sino que también trabajó duro para conseguirlo, el sueño se mantuvo vivo hasta hace relativamente poco tiempo, cuando de manera extraoficial y debido a múltiples problemas, fue decretado muerto. \nMain Watchers intentó comunicarse con los encargados de este proyecto a través de su página oficial http://www.siliconborder.com/ resultando infructífero. \n\nSuscríbete para ver más de nuestros trabajos: http://goo.gl/MOjguc\n\nApóyanos con un like en facebook!\nhttps://goo.gl/UqTamA\n\nNo olvides dar un like si te gustó el vídeo.\n\nFuentes: http://www.siliconborder.com/, https://goo.gl/Rh3gUL\n\nKevin MacLeod está autorizado la licencia Creative Commons Attribution (https://creativecommons.org/licenses/by/4.0/)\nFuente: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200058\nArtista: http://incompetech.com/\n\nHasta la próxima!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kZOa9RWEGoo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kZOa9RWEGoo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kZOa9RWEGoo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/kZOa9RWEGoo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/kZOa9RWEGoo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Main Watchers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-01-06T23:35:08Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "2eXK3wEW4lEZImCDAfV26I2T5CU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hJc7Hjp6gWQ"
+      },
+      "snippet": {
+        "publishedAt": "2017-01-03T17:17:07Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Wizeline Team Values: Culture & Projects",
+        "description": "Employees at Wizeline make an impact, work on goal-oriented teams with project ownership and enjoy work-life balance. Watch the full video to learn more about why Wizeliners feel at home here!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hJc7Hjp6gWQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hJc7Hjp6gWQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hJc7Hjp6gWQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/hJc7Hjp6gWQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/hJc7Hjp6gWQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-01-03T17:17:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "xR9Mjk6f8pupcO1xOpkdtdA_uBE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "0ALr3zQ2-GU"
+      },
+      "snippet": {
+        "publishedAt": "2020-09-02T05:04:23Z",
+        "channelId": "UCLOzkJ9W9fntCGyYfUwMPew",
+        "title": "What Is Inside Sales?",
+        "description": "Learn what Inside Sales is and how you can take advantage of this opportunity to work and sell remotely during this chaotic environment. 📚Sign up for our free sales training on how to sell anything to anyone: https://patrickdang.com/sales-legacy-go-training\n\n🔔 SUBSCRIBE to Patrick Dang NOW: https://www.youtube.com/channel/UCLOzkJ9W9fntCGyYfUwMPew?sub_confirmation=1\n\n0:00 Intro to What is Inside Sales\n00:47 Defining Inside Sales\n02:20 Difference Between Inside Sales & Outside Sales\n04:15 Different Types of Inside Sales\n\n\nTop Trending Playlist:\n1) Sales Prospecting & Lead Generation - https://www.youtube.com/watch?v=1hpqcvTvUTI&list=PLYZWx0YhMskOSn6dw-aWD_5xaPgqElraw\n\n2) Sales Tips To Close More Deals - https://www.youtube.com/watch?v=BRWkKPURdYM&list=PLYZWx0YhMskNqFNY3BqAljaQychv5MGqE\n\n3) Sales Strategy for B2B Sales & Business Development - https://www.youtube.com/playlist?list=PLYZWx0YhMskOO7t6FJgGyDkk_OlZUQ0KA \n\n--\n\nWith everything going on in the world right now, the future of sales is shifting BIG TIME.\n\nCompanies are starting to realize that it's not always necessary to have people come into the office to work every day.\n\nMany people who work from home can be much more productive compared to working in their typical cubicles!\n\nAnd with this dramatic shift in the working environment, the inside sales role has become increasingly popular.\n\nSo in my latest YouTube video, I'll be walking you through what inside sales is and how you can be taking advantage of this major opportunity.\n\nThis will be especially valuable for anyone who wants to learn how to sell from the comfort of their own home.\n\nDEFINING INSIDE SALES\nInside sales is a sales role where a salesperson is working in an office or working remotely from their home. The primary functions are either business development or sales development work or being on the phones as an account executive or account manager. You'll have to be proficient with cold emailing, cold calling, and LinkedIn to succeed in inside sales.\n\nDIFFERENCE BETWEEN INSIDE SALES AND OUTSIDE SALES\nFor outside sales or field sales, you'll spend a lot of time outside meeting with clients face to face before closing a deal. This could also include door to door selling as well. Whereas inside sales, you'll be mostly working indoors online using your computer or phone.\n\nDIFFERENT TYPES OF INSIDE SALES\nThere are many different types of inside sales roles: sales prospecting, closing deals, or even account management. Common roles include SDR, BDR, Account executive, customer success, and account manager. You might be an inside sales rep working in an office or you can work from home. In both cases, you're selling remotely without ever meeting your prospects or clients face to face.\n\n--\n\nPatrick Dang is an international sales trainer who started his career at Oracle in Silicon Valley and quickly became on the top performers in North America in just one year.\n\nAfter gaining experience in both the enterprise and startup world, Patrick began sharing his knowledge of modern sales students worldwide. \n\nSince then, Patrick has trained over 70,000 students across 150 countries on topics on how to start a career in sales, business development, lead generation, cold email, LinkedIn, cold calling, and sales skills. \n\nPatrick's vision is to inspire others to pursue their dreams and provide the knowledge and tools to make those dreams a reality. \n\nCONNECT WITH PATRICK DANG\nYouTube: https://www.youtube.com/c/patrickdangofficial\nWebsite: https://patrickdang.com/\nFacebook Sales Community: https://www.facebook.com/groups/patrickdang\nFacebook Page: https://www.facebook.com/PatrickDangOfficial\nLinkedIn: https://www.linkedin.com/in/patrickdangofficial/\nInstagram: https://www.instagram.com/patrickdangofficial/\n\n🔔 SUBSCRIBE to Patrick's YouTube Channel - https://www.youtube.com/channel/UCLOzkJ9W9fntCGyYfUwMPew?sub_confirmation=1\n\n#insidesales #sales #b2bsales",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/0ALr3zQ2-GU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/0ALr3zQ2-GU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/0ALr3zQ2-GU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/0ALr3zQ2-GU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/0ALr3zQ2-GU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Patrick Dang",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-09-02T05:04:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "LborD8u_6ZdaFCKkd49xAAK_8zs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JsMaIJ3nxic"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-22T18:18:21Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Wizeline's 2021 Year in Review",
+        "description": "A lot can happen in a year! For us, it’s been an incredible journey full of extraordinary achievements.\n\nThanks to everyone who made 2021 possible, and stay tuned — 2022 will be our biggest year yet!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JsMaIJ3nxic/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JsMaIJ3nxic/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JsMaIJ3nxic/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/JsMaIJ3nxic/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/JsMaIJ3nxic/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-22T18:18:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "CwLuqXHd39OmqyZSxrTwpShP47I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JjdIpXyxjfA"
+      },
+      "snippet": {
+        "publishedAt": "2017-04-05T21:35:43Z",
+        "channelId": "UCHEZcUuC5ulaAFDq1LDqdTw",
+        "title": "Jalisco quiere ser el Silicon Valley mexicano",
+        "description": "Jalisco quiere ser el Silicon Valley mexicano. CEO's de diversas startups mexicanas del sector tecnológico nos cuentan sus expectativas",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JjdIpXyxjfA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JjdIpXyxjfA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JjdIpXyxjfA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/JjdIpXyxjfA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/JjdIpXyxjfA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "El Financiero Bloomberg",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-04-05T21:35:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Sqd2JjKs7dLAs652wetbUDU9bwc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "I2fAKTv_xic"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ggrvRhrO75jlRdiZE59W07YefgY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6SwD2J6iv9s"
+      },
+      "snippet": {
+        "publishedAt": "2019-09-19T23:46:44Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Working in Wizeline Vietnam | Edith Rojas | Lead Recruiter",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6SwD2J6iv9s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6SwD2J6iv9s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6SwD2J6iv9s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/6SwD2J6iv9s/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/6SwD2J6iv9s/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-09-19T23:46:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "lrY5yAX6F4XOIHh7PkSwXAAKxe4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PrZHBTv3fjw"
+      },
+      "snippet": {
+        "publishedAt": "2019-10-30T20:51:57Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Wizeline's Got Talent 2019 | Life at Wizeline",
+        "description": "This year we hosted the 2nd annual Wizeline's Got Talent to give our team the chance to show off their after-hours skills and passions. If you want to work at a tech company with a great culture, join our team! www.wizeline.com/careers",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PrZHBTv3fjw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PrZHBTv3fjw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PrZHBTv3fjw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/PrZHBTv3fjw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/PrZHBTv3fjw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-10-30T20:51:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "bYiXUFMJRjCai-iKRpsL40srkxw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xFnk0ZxIrIE"
+      },
+      "snippet": {
+        "publishedAt": "2017-01-04T23:06:19Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Learn UX Design Fundamentals with Wizeline UX Academy",
+        "description": "Wizeline UX Academy is a 6 week course that develops select students into UX Designers via a thorough foundation in UX principles and tools. Students have weekly project deliverables, culminating in the completion of the full product life-cycle for their projects. Through these projects, students learn by doing and apply the skills and tools needed to enable them to build great products.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xFnk0ZxIrIE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xFnk0ZxIrIE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xFnk0ZxIrIE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/xFnk0ZxIrIE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/xFnk0ZxIrIE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-01-04T23:06:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Zup6CFgiNXT4QHN4HdxwpSUWkEo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7PtYNO6g7eI"
+      },
+      "snippet": {
+        "publishedAt": "2019-04-12T19:53:45Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "We Are Wizeline",
+        "description": "Engineering a better tomorrow. Wizeline is a global software development company that helps its clients solve their biggest challenges with design and technology. Visit us at www.wizeline.com",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7PtYNO6g7eI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7PtYNO6g7eI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7PtYNO6g7eI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/7PtYNO6g7eI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/7PtYNO6g7eI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-04-12T19:53:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "i2PaVCx0HDeUID8z6qDXthR-hjU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "8bz9R61oY5o"
+      },
+      "snippet": {
+        "publishedAt": "2019-09-26T15:27:39Z",
+        "channelId": "UCUP6qv-_EIL0hwTsJaKYnvw",
+        "title": "Silicon Valley en México",
+        "description": "Empresas de Silicon Valley buscan establecerse en México por el gran talento que hay en nuestro país. Es una investigación de Roberto Domínguez.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8bz9R61oY5o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8bz9R61oY5o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8bz9R61oY5o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/8bz9R61oY5o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/8bz9R61oY5o/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Azteca Noticias",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-09-26T15:27:39Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QO2r_FZJxrSOFEPmg3PAx8unTXo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iszLGKZeFsk"
+      },
+      "snippet": {
+        "publishedAt": "2019-03-05T18:07:31Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Wizeline's Guadalajara Campus",
+        "description": "Wizeline’s state-of-the-art campus in Guadalajara, Mexico, has the capacity for 700 employees. The facility is designed to foster collaboration with remote teams, featuring 60 meeting rooms and 25 private phone booths. The wellness-centered facility features a childcare center, gym, a nurse’s office, wellness & meditation room, and an interactive game room.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iszLGKZeFsk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iszLGKZeFsk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iszLGKZeFsk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/iszLGKZeFsk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/iszLGKZeFsk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-03-05T18:07:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "R7tEQppWTSan2sBHEaA3h7GX9Pk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "elEAnqU8KuY"
+      },
+      "snippet": {
+        "publishedAt": "2020-08-31T19:14:29Z",
+        "channelId": "UCPGzT4wecuWM0BH9mPiulXg",
+        "title": "Build your Future with Wizeline's Apprenticeship Programs",
+        "description": "We believe that tech education has the power to change anyone’s future. \n\nWizeline Academy runs apprenticeship programs that are based on a learning-by-doing model. These programs provide you with access to mentorship from senior engineers at Wizeline and give you the opportunity to contribute to real-world projects since your first weeks. \n\nCheck out our open opportunities for these programs in our careers site and boost your career in technology! www.wizeline.com/careeers",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/elEAnqU8KuY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/elEAnqU8KuY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/elEAnqU8KuY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/elEAnqU8KuY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/elEAnqU8KuY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Wizeline",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-08-31T19:14:29Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-sqbRanqduVZs_3qHgMVa4CM2NI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "t8J7C1EtEm8"
+      },
+      "snippet": {
+        "publishedAt": "2019-03-20T21:02:55Z",
+        "channelId": "UC7k--FhnJzhPTrbtldMSoQQ",
+        "title": "Wizeline, software para mejorar a las empresas",
+        "description": "Vidal González, presidente de Tecnología de Wizeline habla de las soluciones en software que ofrecen para que las empresas mejoren sus servicios. \n\nhttp://www.adn40.mx\n\nSíguenos:\n\nFacebook.com/adn40mx\nTwitter: @adn40",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/t8J7C1EtEm8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/t8J7C1EtEm8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/t8J7C1EtEm8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/t8J7C1EtEm8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/t8J7C1EtEm8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "adn40Mx",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-03-20T21:02:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "dkyM2E5WBu8GdH7CBNrm2P4x07M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tG5xXznC58s"
+      },
+      "snippet": {
+        "publishedAt": "2020-06-04T11:50:06Z",
+        "channelId": "UCJTlv_bnr9wkCNYdzD4cBEA",
+        "title": "After Work Day in Wizeline Vietnam",
+        "description": "This video shows how a normal after work hours looks like in my company: Wizeline Vietnam\n\n#wizeline #apac #softwareEngineer #coding #developer #workLife",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tG5xXznC58s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tG5xXznC58s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tG5xXznC58s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/tG5xXznC58s/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Jan Tampos",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-06-04T11:50:06Z"
+      }
+    }
+  ]
+}
