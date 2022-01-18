@@ -1,7 +1,7 @@
 async function getVideosFetch(category){
-
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCrSoy7RbcW2fEfna7ipATtTs4qyjloW2I&q=${category}&part=snippet&maxResults=25`,
-    //const response = await fetch('./data/youtube-videos-mock.json',
+    //const API_KEY = 'AIzaSyCQhbDVvYHjX3aeZ8Ue6vNlIVwVvC6Jm-g';
+    //const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${category}&part=snippet&maxResults=25`,
+    const response = await fetch('./data/youtube-videos-mock.json',
         {
         headers : { 
                 'Content-Type': 'application/json',
@@ -11,6 +11,7 @@ async function getVideosFetch(category){
     );
 
     let {items} = await response.json();
+    
     items = items.filter( (item) => item.id.kind === "youtube#video" )
 
     const data = items.map( (item) => {
