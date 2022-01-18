@@ -4,7 +4,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import Card from '../Card/Card';
 import axios from 'axios';
 
-function Container() {
+function Container({ url }) {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -13,13 +13,9 @@ function Container() {
     const fetchData = async () => {
       setIsError(false);
       setIsLoading(true);
-
       try {
-        let devRoute = 'http://localhost:3000/items';
-        //let realRoute = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&maxResults=15`
-        const result = await axios(devRoute);
-        setVideos(result.data);
-        //setVideos(result.data.items);
+        const result = await axios(url);
+        setVideos(result.data.items);
       } catch (error) {
         setIsError(true);
         console.log('is Error', isError);
@@ -31,21 +27,17 @@ function Container() {
 
   const handleSearch = (e) => {
     if (e.target.value.length) {
-      //let query = e.target.value;
+      let query = e.target.value;
       setIsLoading(true);
 
       const fecthVideosSearched = async () => {
-        let devRoute = 'http://localhost:3000/items';
-        //let realRoute = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
-
+        let url = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg`;
         try {
-          const result = await axios(devRoute);
-          //setVideos(result.data.items);
-          setVideos(result.data);
-
+          const result = await axios(url);
+          setVideos(result.data.items);
           setIsLoading(false);
         } catch (error) {
-          console.log(error);
+          //console.log(error);
         }
       };
       fecthVideosSearched();
@@ -58,10 +50,9 @@ function Container() {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div className="video-container">
+        <div className="video-container" data-testid="test-div-container">
           {videos.map((video, index) => (
             <Card
-              data-testid={video.id.videoId}
               video={video}
               key={index}
               snippet={video.snippet}

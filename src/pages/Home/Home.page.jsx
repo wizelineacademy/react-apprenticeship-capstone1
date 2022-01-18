@@ -7,7 +7,11 @@ function HomePage() {
   return (
     <StyledHome>
       <Navbar />
-      <Container />
+      <Container
+        url={
+          'https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg'
+        }
+      />
     </StyledHome>
   );
 }

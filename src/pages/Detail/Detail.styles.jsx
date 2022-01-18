@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledDetail = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   section > div {
     display: flex;
   }

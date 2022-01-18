@@ -2,13 +2,17 @@
 export default (state, action) => {
   switch (action.type) {
     case 'ADD_VIDEO_TO_FAVORITESLIST':
-      const favoriteVideo = state.favoritesList.find(
+      console.log('favorite list', state.favoritesList, action.payload);
+      const favorite = [...state.favoritesList];
+
+      const index = state.favoritesList.findIndex(
         (video) => video.id === action.payload.id
       );
-      const favorite = favoriteVideo
-        ? [...state.favoritesList]
-        : [...state.favoritesList, action.payload];
-
+      if (index !== -1) {
+        favorite.splice(index, 1);
+      } else {
+        favorite.push(action.payload);
+      }
       return {
         ...state,
         favoritesList: favorite,
@@ -18,10 +22,10 @@ export default (state, action) => {
         ...state,
         detailVideo: [action.payload, ...state.detailVideo],
       };
-    case 'TOGGLE_MODE':
+    case 'TOGGLE_WEB_THEME':
       return {
         ...state,
-        toggleMode: !state.toggleMode,
+        toggleTheme: !state.toggleTheme,
       };
     default:
       return state;

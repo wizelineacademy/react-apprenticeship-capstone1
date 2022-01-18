@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledNavbar } from './Navbar.styled';
-import Button from '../Button/Button';
+import Button from '../ThemeButton/ThemeButton';
 
 function Navbar() {
   return (

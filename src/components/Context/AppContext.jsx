@@ -5,7 +5,7 @@ import AppReducer from './AppReducer';
 const initialState = {
   favoritesList: [],
   detailVideo: [],
-  toggleMode: false,
+  toggleTheme: false,
 };
 
 export const AppContext = createContext(initialState);
@@ -22,8 +22,9 @@ export const AppProvider = (props) => {
   const getVideoDetails = (video) => {
     dispatch({ type: 'GET_VIDEO_DETAILS', payload: video });
   };
-  const setToggleMode = () => {
-    dispatch({ type: 'TOGGLE_MODE' });
+
+  const setToggleTheme = () => {
+    dispatch({ type: 'TOGGLE_WEB_THEME' });
   };
 
   return (
@@ -31,11 +32,11 @@ export const AppProvider = (props) => {
       value={{
         detailVideo: state.detailVideo,
         favoritesList: state.favoritesList,
-        toggleMode: state.toggleMode,
-        setToggleMode,
+        toggleTheme: state.toggleTheme,
         getVideosList,
         addVideoToFavorite,
         getVideoDetails,
+        setToggleTheme,
       }}
     >
       {props.children}

@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../Context/AppContext';
 
-import { StyledButton } from './Button.styled';
+import { StyledButton } from './ThemeButton.styled';
 
 function Button(props) {
-  const { setToggleMode } = useContext(AppContext);
-
+  const { setToggleTheme } = useContext(AppContext);
   return (
     <StyledButton
       data-testid="button"
       onClick={() => {
-        setToggleMode();
+        setToggleTheme();
       }}
     >
       {props.text}

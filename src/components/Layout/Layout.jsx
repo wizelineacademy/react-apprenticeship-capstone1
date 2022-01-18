@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkMode, LigthMode } from './Layout.styles.jsx';
+import { AppContext } from '../Context/AppContext';
 
-import { StyledLayout } from './Layout.styles.jsx';
-
-// eslint-disable-next-line react/prop-types
 function Layout({ children }) {
-  return <StyledLayout>{children}</StyledLayout>;
+  const { toggleTheme } = useContext(AppContext);
+  console.log(toggleTheme);
+  const component = toggleTheme ? (
+    <DarkMode>{children}</DarkMode>
+  ) : (
+    <LigthMode>{children}</LigthMode>
+  );
+  return component;
 }
 
 export default Layout;
