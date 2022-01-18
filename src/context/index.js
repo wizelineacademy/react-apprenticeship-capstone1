@@ -6,7 +6,6 @@ const initialState = {
   relatedVideos: initialData,
   response: initialData,
   selectedVideo: video,
-  recomendedVideoSelected: video,
 };
 
 const Context = createContext();

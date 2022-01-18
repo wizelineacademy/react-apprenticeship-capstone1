@@ -23,23 +23,21 @@ const DetailsPage = () => {
   const history = useHistory();
   const videoSrc = `https://www.youtube.com/embed/${id}`;
   let controller = new AbortController();
-
   const [relatedVideos, setRelatedVideos] = useState(initialData);
   const { fetchData, isLoading, error } = useFetch();
   const [favorited, setFavorited] = useState(false);
   const { state, dispatch } = useContext(Context);
   const {
     selectedVideo: selectedVideoFromState = { snippet: [] },
-    recomendedVideoSelected = { id: { videoId: '' } },
     favorites,
     response: responseState,
   } = state;
   const { search } = history.location;
   const { addFavorites, deleteFavorites, isfavorited } = useFavorites();
-
   const handleRandomVideos = () => {
     fetchData(state.serchedValue, 10, id);
   };
+
 
   useEffect(() => {
     handleRandomVideos();
@@ -49,8 +47,6 @@ const DetailsPage = () => {
     let favorite;
     if (id === selectedVideoFromState.id.videoId)
       favorite = isfavorited(selectedVideoFromState);
-    if (id === recomendedVideoSelected.id.videoId)
-      favorite = isfavorited(recomendedVideoSelected);
     setFavorited(favorite);
   }, [favorites, isfavorited]);
 
@@ -74,9 +70,8 @@ const DetailsPage = () => {
       type: 'SAVE_RECOMENDED_VIDEO',
       payload: {
         ...state,
-        recomendedVideoSelected: {
+        selectedVideo: {
           ...item,
-          favorited: false,
         },
       },
     });
@@ -104,9 +99,9 @@ const DetailsPage = () => {
                   <>
                     <TitleContainer>
                       <h3>
-                        {recomendedVideoSelected.id.videoId === id
-                          ? recomendedVideoSelected.snippet.title
-                          : selectedVideoFromState.snippet.title}
+                        {selectedVideoFromState.id.videoId === id
+                          ? selectedVideoFromState.snippet.title
+                          : 'No title in this video'}
                       </h3>
                       <FavoriteButton
                         onClick={() =>
@@ -122,9 +117,9 @@ const DetailsPage = () => {
                       </FavoriteButton>
                     </TitleContainer>
                     <p>
-                      {recomendedVideoSelected.id.videoId === id
-                        ? recomendedVideoSelected.snippet.description
-                        : selectedVideoFromState.snippet.description}
+                      {selectedVideoFromState.id.videoId === id
+                        ? selectedVideoFromState.snippet.description
+                        : 'No description in this video'}
                     </p>
                   </>
                 }
