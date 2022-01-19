@@ -12,23 +12,19 @@ function HomePage(props) {
   let [response, loading] = useFetchSearch(searchContext.searchTerm, pageToken);
 
   const lastSearchTerm = useRef(0);
-  useEffect(
-    () => {
-      if (response) {
-        if (lastSearchTerm.current !== searchContext.searchTerm) {
-          lastSearchTerm.current = searchContext.searchTerm;
-          setVideos(response.items);
-        } else {
-          let items = response.items.filter(
-            (item) => !videos.find((video) => video.id === item.id)
-          );
-          setVideos((prevState) => prevState.concat(items));
-        }
+  useEffect(() => {
+    if (response) {
+      if (lastSearchTerm.current !== searchContext.searchTerm) {
+        lastSearchTerm.current = searchContext.searchTerm;
+        setVideos(response.items);
+      } else {
+        let items = response.items.filter(
+          (item) => !videos.find((video) => video.id === item.id)
+        );
+        setVideos((prevState) => prevState.concat(items));
       }
-    },
-    [response ? response.etag : ''],
-    searchContext.searchTerm
-  );
+    }
+  }, [response ? response.etag : '', searchContext.searchTerm]);
 
   return (
     <section data-testid={props['data-testid']} className="home">

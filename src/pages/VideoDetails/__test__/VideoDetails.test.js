@@ -2,6 +2,7 @@ import { render, screen, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { AuthProvider } from '@providers/Auth';
+import { ErrorMessageProvider } from '@providers/ErrorMessage';
 import { FavoritesProvider } from '@providers/Favorites';
 import VideoDetails from '@pages/VideoDetails';
 
@@ -14,7 +15,9 @@ describe('VideoDetails...', () => {
         <BrowserRouter>
           <AuthProvider defaultAuthenticated={true}>
             <FavoritesProvider>
-              <VideoDetails data-testid="video-details-page" />
+              <ErrorMessageProvider>
+                <VideoDetails data-testid="video-details-page" />
+              </ErrorMessageProvider>
             </FavoritesProvider>
           </AuthProvider>
         </BrowserRouter>

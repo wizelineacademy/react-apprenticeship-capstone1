@@ -1,0 +1,29 @@
+@import '@style/mixins';
+
+.error-message-modal {
+    position: fixed;
+    left: calc(calc(100vw - 300px) / 2);
+    top: 200px;
+    z-index: 9;
+
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 12px;
+    background-color: var(--base);
+    border: 1px solid var(--light-border);
+    text-align: left;
+    border-radius: 6px;
+    box-shadow: 0px 0px 2px 4px var(--primary);
+
+    &__buttons-row {
+        min-width: calc(300px - 12px);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+}

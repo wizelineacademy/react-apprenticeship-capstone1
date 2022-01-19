@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useErrorMessage } from '@providers/ErrorMessage';
 import useSafeState from '@src/hooks/useSafeState';
 import debounce from '@utils/debounce';
 
@@ -16,6 +17,7 @@ function useFetch(url, options, dependencies) {
   const [response, setResponse] = useSafeState(null);
   const [loading, setLoading] = useSafeState(false);
   const [error, setError] = useSafeState(null);
+  const { showErrorMessage } = useErrorMessage();
 
   useEffect(
     debounce(() => {
@@ -29,7 +31,8 @@ function useFetch(url, options, dependencies) {
             Object.assign(DEFAULT_OPTIONS, options)
           );
           const json = await response.json();
-          setResponse(json);
+          if (response.ok) setResponse(json);
+          else showErrorMessage(json.error.message);
         } catch (error) {
           setError(error);
         }

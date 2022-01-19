@@ -2,6 +2,7 @@ import { render, screen, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { SearchProvider } from '@providers/Search';
 
+import { ErrorMessageProvider } from '@providers/ErrorMessage';
 import { AuthProvider } from '@providers/Auth';
 import HomePage from '@pages/Home';
 
@@ -12,7 +13,10 @@ describe('HomePage...', () => {
         <SearchProvider>
           <BrowserRouter>
             <AuthProvider defaultAuthenticated={true}>
-              <HomePage data-testid="home-page" />
+              <ErrorMessageProvider>
+                <HomePage data-testid="home-page" />
+                <div id="modal-root"></div>
+              </ErrorMessageProvider>
             </AuthProvider>
           </BrowserRouter>
         </SearchProvider>

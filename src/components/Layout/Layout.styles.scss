@@ -10,4 +10,8 @@
     width: 100%;
     padding: 5vw 0px;
     background-color: var(--base);
+
+    &--open {
+        width: calc(100% - 250px);
+    }
 }

@@ -19,6 +19,7 @@ function useFetchSearch(searchTerm, pageToken) {
     { method: 'GET' },
     arguments
   );
+
   let reorganizedResponse = produce(response, (draft) => {
     if (response) {
       draft.items = draft.items.map((item) => {
@@ -31,7 +32,12 @@ function useFetchSearch(searchTerm, pageToken) {
       );
     }
   });
-  return [reorganizedResponse, loading, error];
+
+  let errorMessage = produce(error, (draft) => {
+    if (draft) return draft.error.message;
+  });
+
+  return [reorganizedResponse, loading, errorMessage];
 }
 
 export default useFetchSearch;
