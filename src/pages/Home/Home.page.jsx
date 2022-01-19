@@ -1,5 +1,6 @@
 import React, { useRef, useContext } from 'react';
 
+import Layout from '../../components/Layout/Layout.component';
 import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
 import { Context } from '../../context';
 import useFetch from '../../utils/hooks/useFetch';
@@ -13,11 +14,13 @@ function HomePage() {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <div style={{ position: 'relative' }}>
-      <section className="homepage" ref={sectionRef}>
-        <SearchDashboard serchedData={response ? response.items : []} />
-      </section>
-    </div>
+    <Layout>
+      <div style={{ position: 'relative' }}>
+        <section className="homepage" ref={sectionRef}>
+          <SearchDashboard serchedData={response ? response.items : []} />
+        </section>
+      </div>
+    </Layout>
   );
 }
 

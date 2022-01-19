@@ -36,7 +36,7 @@ const useSearch = () => {
         }
       }
       if (responseStatus === 'firstLoad') {
-        fetchData('', 15);
+        // fetchData('', 15);
         if (response && response.items) setSearchedData(response.items);
         else {
           setSearchedData([]);

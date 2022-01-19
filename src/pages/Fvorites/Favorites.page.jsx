@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import Layout from '../../components/Layout/Layout.component';
 import { useAuth } from '../../providers/Auth';
 import Card from '../../components/Card/Card.component';
 import { Context } from '../../context';
@@ -34,38 +35,42 @@ function FavoritesPage() {
     history.push(`/details/${id}`);
   };
   return (
-    <div style={{ position: 'relative' }}>
-      {search === '?name=newSearch' ? (
-        <SearchDashboard serchedData={response ? response.items : []} />
-      ) : (
-        <Container>
-          {authenticated ? (
-            <>
-              {favorites.map((item) => {
-                const { title, thumbnails, description } = item.snippet;
-                return (
-                  <FavoriteContainer key={item.id.videoId}>
-                    <Card
-                      handleDetails={() => handleDetails(item.id.videoId, item)}
-                      title={title}
-                      videoImage={thumbnails.high.url}
-                      subtitle={description}
-                    />
-                    <FavoriteButton
-                      onClick={() => deleteFavorites(item.id.videoId)}
-                    >
-                      Remove from favorites
-                    </FavoriteButton>
-                  </FavoriteContainer>
-                );
-              })}
-            </>
-          ) : (
-            <Link to="/login">log to save favorites videos</Link>
-          )}
-        </Container>
-      )}
-    </div>
+    <Layout>
+      <div style={{ position: 'relative' }}>
+        {search === '?name=newSearch' ? (
+          <SearchDashboard serchedData={response ? response.items : []} />
+        ) : (
+          <Container>
+            {authenticated ? (
+              <>
+                {favorites.map((item) => {
+                  const { title, thumbnails, description } = item.snippet;
+                  return (
+                    <FavoriteContainer key={item.id.videoId}>
+                      <Card
+                        handleDetails={() =>
+                          handleDetails(item.id.videoId, item)
+                        }
+                        title={title}
+                        videoImage={thumbnails.high.url}
+                        subtitle={description}
+                      />
+                      <FavoriteButton
+                        onClick={() => deleteFavorites(item.id.videoId)}
+                      >
+                        Remove from favorites
+                      </FavoriteButton>
+                    </FavoriteContainer>
+                  );
+                })}
+              </>
+            ) : (
+              <Link to="/login">log to save favorites videos</Link>
+            )}
+          </Container>
+        )}
+      </div>
+    </Layout>
   );
 }
 
