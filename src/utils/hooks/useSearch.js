@@ -52,6 +52,7 @@ const useSearch = () => {
     return () => {
       controller.abort();
     };
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const useSearch = () => {
     return () => {
       controller.abort();
     };
+    // eslint-disable-next-line
   }, [response]);
 
   const handleSearch = (event) => {

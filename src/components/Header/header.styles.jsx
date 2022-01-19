@@ -10,6 +10,11 @@ const Container = styled.div`
   justify-content: space-between;
   position: relative;
   top: 0;
+  @media only screen and (max-width: 1024px) {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   a {
     font-family: 'Quicksand', sans-serif;
   }
@@ -18,6 +23,9 @@ const Title = styled.p`
   font-family: 'Julius Sans One', sans-serif;
   font-size: 24px;
   color: #e64398;
+  @media only screen and (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 export { Container, Title };

@@ -5,6 +5,9 @@ const DetailsContainer = styled.div`
   display: flex;
   height: auto;
   min-height: 100vh;
+  @media only screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
 `;
 const VideoContainer = styled.div`
   width: 70%;
@@ -12,6 +15,9 @@ const VideoContainer = styled.div`
   height: auto;
   min-height: 100vh;
   flex-direction: column;
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 const Video = styled.div`
   width: calc(100% - 32px);
@@ -72,6 +78,9 @@ const ListVideosContainer = styled.ul`
   padding: 24px;
   margin: 12px;
   border-radius: 10px;
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 const Information = styled.div`
   width: calc(100% - 32px);
