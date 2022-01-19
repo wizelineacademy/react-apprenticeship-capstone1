@@ -28,7 +28,7 @@ const DetailsPage = () => {
   const videoSrc = `https://www.youtube.com/embed/${id}`;
   let controller = new AbortController();
   const [relatedVideos, setRelatedVideos] = useState(initialData);
-  const { fetchData, isLoading, error } = useFetch();
+  const { fetchData, isLoading, error, response: relatedRespose } = useFetch();
   const [favorited, setFavorited] = useState(false);
   const { state, dispatch } = useContext(Context);
   const {
@@ -39,7 +39,7 @@ const DetailsPage = () => {
   const { search } = history.location;
   const { addFavorites, deleteFavorites, isfavorited } = useFavorites();
   const handleRandomVideos = () => {
-    fetchData(state.serchedValue, 10, id);
+    fetchData(state.serchedValue, 6, id);
   };
 
   useEffect(() => {
@@ -57,8 +57,8 @@ const DetailsPage = () => {
 
   useEffect(() => {
     try {
-      if (responseState) {
-        setRelatedVideos(responseState);
+      if (relatedRespose) {
+        setRelatedVideos(relatedRespose);
       } else {
         setRelatedVideos(initialData);
       }
@@ -69,14 +69,14 @@ const DetailsPage = () => {
       controller.abort();
     };
     // eslint-disable-next-line
-  }, [responseState]);
+  }, [relatedRespose]);
 
   const handleRelatedVideo = (id, item) => {
     dispatch({
       type: 'SAVE_RECOMENDED_VIDEO',
       payload: {
         ...state,
-        selectedVideo: {
+        response: {
           ...item,
         },
       },
@@ -155,22 +155,6 @@ const DetailsPage = () => {
                     />
                   )
                 )}
-                {selectedVideoFromState.id.videoId !== id ? (
-                  <RecomendedCard
-                    handleRelatedVideo={() =>
-                      handleRelatedVideo(
-                        selectedVideoFromState.id.videoId,
-                        selectedVideoFromState
-                      )
-                    }
-                    key={selectedVideoFromState.id.videoId}
-                    title={selectedVideoFromState.snippet.title}
-                    videoContent={
-                      selectedVideoFromState.snippet.thumbnails.high.url
-                    }
-                    description={selectedVideoFromState.snippet.description}
-                  />
-                ) : null}
               </ListVideosContainer>
             </DetailsContainer>
           </section>
