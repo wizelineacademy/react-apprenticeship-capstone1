@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1642534969428" clover="3.2.0">
-  <project timestamp="1642534969428" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1642557708908" clover="3.2.0">
+  <project timestamp="1642557708908" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+    <file name="Card.component.jsx" path="/Users/suemartinez/Documents/capstones-projects/react-apprenticeship-capstone1/src/components/Card/Card.component.jsx">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="5" type="stmt"/>
+    </file>
   </project>
 </coverage>
