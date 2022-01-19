@@ -10,7 +10,7 @@
 .login h1 {
   text-align: center;
   letter-spacing: -1px;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   color: white;
 }
 
@@ -37,11 +37,11 @@
 
 .form-group input {
   font-size: 12px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: " Quicksand", sans-serif;
   letter-spacing: 1.5px;
   padding: 10px;
   margin: 10px;
-  background: #333333;
+  background: #333;
   border: none;
   width: 300px;
   border-radius: 20px;
@@ -68,10 +68,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: "0px 8px 15px rgba(0, 0, 0, 50%)";
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
   color: white;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
 }
