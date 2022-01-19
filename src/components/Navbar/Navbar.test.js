@@ -8,7 +8,7 @@ describe('Navbar Component', () => {
   });
   test('Home menu has attribute', () => {
     render(<Navbar />);
-    const linkElement = screen.getByTestId('menu-link');
+    const linkElement = screen.getByTestId('home-link');
     expect(linkElement).toHaveAttribute('href', '/');
   });
   test('Theme Button exists in navbar', () => {

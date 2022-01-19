@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyledContainer } from './VideosContainer.styled';
 import SearchBar from '../SearchBar/SearchBar';
-import useVideos from '../../utils/hooks/useVideos';
+import { useVideos } from '../../utils/hooks/useVideos';
 import Card from '../Card/Card';
 import axios from 'axios';
 
 function Container({ url }) {
-  const { videos, isLoading, isError, setVideos, setIsLoading, setIsError } =
+  // const { videos, isLoading, isError, setVideos, setIsLoading, setIsError } =
+  const [videos, isLoading, isError, setVideos, setIsLoading, setIsError] =
     useVideos(url);
   const handleSearch = (e) => {
     if (e.target.value.length) {
@@ -14,7 +15,7 @@ function Container({ url }) {
       setIsLoading(true);
 
       const fecthVideosSearched = async () => {
-        let url = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyBuaBEPAdATLau7mysPe-Nms-hLCo8Ufis`;
+        let url = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg`;
         try {
           const result = await axios(url);
           setVideos(result.data.items);

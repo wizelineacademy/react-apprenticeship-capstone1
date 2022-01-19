@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <StyledNavbar>
       <div>
-        <a href="/">
+        <a href="/" data-testid="home-link">
           <h1>
             Wize<span>Tube</span>
           </h1>

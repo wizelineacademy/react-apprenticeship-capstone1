@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export const useVideos = (
-  url = 'https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg'
-) => {
+const useVideos = (url) => {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -21,8 +19,15 @@ export const useVideos = (
       setIsLoading(false);
     };
     fetchData();
-  }, [url]);
-
-  return [videos, isLoading, isError, setVideos, setIsLoading, setIsError];
-  //   return { videos, isLoading, isError, setVideos, setIsLoading, setIsError };
+  }, []);
+  return {
+    videos,
+    isLoading,
+    isError,
+    setVideos,
+    setIsLoading,
+    setIsError,
+  };
 };
+
+export default useVideos;
