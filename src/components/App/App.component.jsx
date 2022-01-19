@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';

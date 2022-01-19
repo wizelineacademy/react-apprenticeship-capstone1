@@ -41,6 +41,14 @@ body {
   padding: 0.4rem;
 }
 
+.loading-container {
+  width: 100%;
+  height: 10vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
   color: #e64398;

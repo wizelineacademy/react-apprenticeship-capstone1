@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
+import { BallTriangle } from 'react-loader-spinner';
 
 import Layout from '../../components/Layout/Layout.component';
 import { Context } from '../../context';
@@ -80,7 +81,12 @@ const DetailsPage = () => {
     history.push(`/details/${id}`);
   };
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <DetailsContainer>
+        <BallTriangle color="#e64398" height={100} width={100} />
+      </DetailsContainer>
+    );
   if (error) return <p>No search found, try again please</p>;
 
   return (

@@ -1,5 +1,5 @@
 const initialData = {
-  etag: '',
+  etag: ' ',
   items: [
     {
       id: {
@@ -23,7 +23,7 @@ const video = {
   etag: '',
   id: {
     kind: '',
-    videoId: 'f14AzBuazx4',
+    videoId: '',
   },
   snippet: {
     title: '',
