@@ -6,7 +6,7 @@ import { Input, Container, IconContainer } from './SearchBar.styles';
 const SeachBar = ({ placeholder, handleSearch, inputValue }) => (
   <Container>
     <IconContainer>
-      <ReactSVG src="./search.svg" />
+      <ReactSVG src="./search.svg" wrapper="svg" />
     </IconContainer>
     <Input
       value={inputValue}
