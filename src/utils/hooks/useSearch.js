@@ -36,7 +36,7 @@ const useSearch = () => {
         }
       }
       if (responseStatus === 'firstLoad') {
-        // fetchData('', 15);
+        fetchData('', 15);
         if (response && response.items) setSearchedData(response.items);
         else {
           setSearchedData([]);
@@ -52,6 +52,7 @@ const useSearch = () => {
     return () => {
       controller.abort();
     };
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const useSearch = () => {
     return () => {
       controller.abort();
     };
+    // eslint-disable-next-line
   }, [response]);
 
   const handleSearch = (event) => {

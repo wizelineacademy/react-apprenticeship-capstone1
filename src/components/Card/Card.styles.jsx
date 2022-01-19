@@ -14,6 +14,9 @@ const CardContainer = styled.div`
   margin: 16px 8px;
   overflow: scroll;
   background: #333333;
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 const VideoContainer = styled.div`
   width: 100%;

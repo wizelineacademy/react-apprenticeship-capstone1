@@ -44,6 +44,7 @@ const DetailsPage = () => {
 
   useEffect(() => {
     handleRandomVideos();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -51,6 +52,7 @@ const DetailsPage = () => {
     if (id === selectedVideoFromState.id.videoId)
       favorite = isfavorited(selectedVideoFromState);
     setFavorited(favorite);
+    // eslint-disable-next-line
   }, [favorites, isfavorited]);
 
   useEffect(() => {
@@ -66,6 +68,7 @@ const DetailsPage = () => {
     return () => {
       controller.abort();
     };
+    // eslint-disable-next-line
   }, [responseState]);
 
   const handleRelatedVideo = (id, item) => {

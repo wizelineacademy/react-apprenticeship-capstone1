@@ -6,6 +6,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 const IconContainer = styled.div`
   width: 20px;
