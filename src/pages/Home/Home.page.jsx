@@ -22,10 +22,14 @@ function HomePage() {
 
   return (
     <Layout>
-      <div style={{ position: 'relative' }}>
+      <div className="container">
         <section className="homepage" ref={sectionRef}>
           {response.etag === ' ' ? (
-            <div className="loading-container">No videos yet</div>
+            <div className="loading-container">
+              <p className="message-text">
+                No videos yet, please look for some in the search bar above.
+              </p>
+            </div>
           ) : (
             <SearchDashboard serchedData={response ? response.items : []} />
           )}
