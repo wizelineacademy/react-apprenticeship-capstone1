@@ -6,10 +6,18 @@ export const StyledNavbar = styled.nav`
   align-items: center;
   justify-content: space-between;
   background-color: #1b9aaa;
+  padding: 8px;
 
+  .user-name {
+    p {
+      margin-right: 15px;
+      color: #fff;
+    }
+  }
   div {
     display: flex;
     align-items: center;
+
     img {
       margin: 0px 30px 0px 10px;
       width: 40px;

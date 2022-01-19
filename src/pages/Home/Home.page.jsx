@@ -9,7 +9,7 @@ function HomePage() {
       <Navbar />
       <Container
         url={
-          'https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg'
+          'https://content.googleapis.com/youtube/v3/search?part=snippet&q=react&key=AIzaSyBuaBEPAdATLau7mysPe-Nms-hLCo8Ufis'
         }
       />
     </StyledHome>

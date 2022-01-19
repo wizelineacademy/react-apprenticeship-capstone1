@@ -1,9 +1,11 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 
 //initial state
 const initialState = {
-  favoritesList: [],
+  favoritesList: localStorage.getItem('favoritesList')
+    ? JSON.parse(localStorage.getItem('favoritesList'))
+    : [],
   detailVideo: [],
   toggleTheme: false,
 };
@@ -27,6 +29,9 @@ export const AppProvider = (props) => {
     dispatch({ type: 'TOGGLE_WEB_THEME' });
   };
 
+  useEffect(() => {
+    localStorage.setItem('favoritesList', JSON.stringify(state.favoritesList));
+  }, [state]);
   return (
     <AppContext.Provider
       value={{

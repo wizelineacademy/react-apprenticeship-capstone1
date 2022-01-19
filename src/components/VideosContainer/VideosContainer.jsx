@@ -14,7 +14,7 @@ function Container({ url }) {
       setIsLoading(true);
 
       const fecthVideosSearched = async () => {
-        let url = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg`;
+        let url = `https://content.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyBuaBEPAdATLau7mysPe-Nms-hLCo8Ufis`;
         try {
           const result = await axios(url);
           setVideos(result.data.items);

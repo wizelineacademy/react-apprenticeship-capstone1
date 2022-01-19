@@ -1,27 +1,18 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { AppContext } from '../../components/Context/AppContext';
 import { FaStar } from 'react-icons/fa';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { StyledDetail } from './Detail.styles';
 import VideoFrame from '../../components/VideoFrame/VideoFrame';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 import Navbar from '../../components/Navbar/Navbar';
+import { useAuth0 } from '@auth0/auth0-react';
+import useDetailVideos from '../../utils/hooks/useDetailVideo';
 
 function Detail() {
   const { addVideoToFavorite, favoritesList } = useContext(AppContext);
-  const [detailVideo, setDetailVideo] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-  const params = useParams();
-
-  useEffect(() => {
-    let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${params.videoId}&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg`;
-    const fetchVideoById = async () => {
-      const response = await axios.get(url);
-      setDetailVideo(response.data.items[0]);
-    };
-    fetchVideoById();
-  }, [params]);
+  const { isAuthenticated } = useAuth0();
+  const { detailVideo } = useDetailVideos();
 
   useEffect(() => {
     if (favoritesList.length) {
@@ -47,13 +38,15 @@ function Detail() {
               <VideoFrame id={detailVideo && detailVideo.id} />
               <div className="video-data">
                 <h3>{detailVideo.snippet && detailVideo.snippet.title}</h3>
-                <FaStar
-                  className={isFavorite ? 'on favorite' : 'favorite'}
-                  onClick={() => onFavoriteClick(detailVideo)}
-                />
+                {isAuthenticated ? (
+                  <FaStar
+                    className={isFavorite ? 'on favorite' : 'favorite'}
+                    onClick={() => onFavoriteClick(detailVideo)}
+                  />
+                ) : null}
                 <div>
                   {detailVideo.snippet &&
-                    detailVideo.snippet.description.substring(0, 2000)}
+                    detailVideo.snippet.description.substr(0, 1000)}
                   ...
                 </div>
               </div>

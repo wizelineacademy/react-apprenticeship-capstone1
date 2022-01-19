@@ -9,7 +9,7 @@ function RelatedVideos() {
   const params = useParams();
   useEffect(() => {
     const fetctRelatedVideos = async () => {
-      let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${params.videoId}&type=video&key=AIzaSyDwsRUO25ZI25bzx-K7L8QKsRG39bIBiDg`;
+      let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${params.videoId}&type=video&key=AIzaSyBuaBEPAdATLau7mysPe-Nms-hLCo8Ufis`;
       try {
         const response = await axios.get(url);
         let relatedList = response.data.items;

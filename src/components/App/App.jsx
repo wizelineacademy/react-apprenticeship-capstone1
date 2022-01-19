@@ -1,15 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 import { ThemeProvider } from 'styled-components';
-import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import DetailPage from '../../pages/Detail/Detail.page';
-import Private from '../../pages/Private';
-import SecretPage from '../../pages/Secret';
+import Favorites from '../../pages/Favorites/Favorites';
 import NotFound from '../../pages/NotFound';
 import Layout from '../Layout';
-import LoginPage from '../../pages/Login';
-
 import { AppProvider } from '../Context/AppContext';
 
 function App() {
@@ -17,22 +14,25 @@ function App() {
     tablet: '768px',
     mobile: '414px',
   };
+
   return (
-    <AppProvider>
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <AuthProvider>
+    <Auth0Provider
+      domain="dev-1yh8vsh8.us.auth0.com"
+      clientId="Kw9Uofc1BiE6knH7ekcxq02OPpP4D4yA"
+      redirectUri={window.location.origin}
+      cacheLocation={'localstorage'}
+    >
+      <AppProvider>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
             <Layout>
               <Switch>
                 <Route exact path="/">
                   <HomePage />
                 </Route>
-                <Route exact path="/login">
-                  <LoginPage />
+                <Route exact path="/favorites">
+                  <Favorites />
                 </Route>
-                <Private exact path="/secret">
-                  <SecretPage />
-                </Private>
                 <Route exact path="/:videoId">
                   <DetailPage />
                 </Route>
@@ -41,10 +41,10 @@ function App() {
                 </Route>
               </Switch>
             </Layout>
-          </AuthProvider>
-        </BrowserRouter>
-      </ThemeProvider>
-    </AppProvider>
+          </BrowserRouter>
+        </ThemeProvider>
+      </AppProvider>
+    </Auth0Provider>
   );
 }
 

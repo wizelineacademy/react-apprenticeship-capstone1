@@ -1,26 +1,39 @@
 import React from 'react';
 import { StyledNavbar } from './Navbar.styled';
 import Button from '../ThemeButton/ThemeButton';
+import LoginButton from '../LoginButton/LoginButton';
+import LogoutButton from '../LogoutButton/LogoutButtton';
+import { FaStar } from 'react-icons/fa';
+
+import { useAuth0 } from '@auth0/auth0-react';
 
 function Navbar() {
+  const { user, isAuthenticated } = useAuth0();
+
   return (
     <StyledNavbar>
-      <a href={'/'} data-testid="menu-link">
-        <div>
-          <img src="../../hamburger.svg" alt="menu" />
-        </div>
-      </a>
       <div>
-        <h1>
-          Wize<span>Tube</span>
-        </h1>
-      </div>
-      <div>
-        <Button></Button>
-        <a href={'/login'}>
-          <img src="../../profile.svg" alt="profile img" />
+        <a href="/">
+          <h1>
+            Wize<span>Tube</span>
+          </h1>
         </a>
       </div>
+      <div className="user-name">
+        {isAuthenticated ? (
+          <>
+            <a href="/favorites">
+              <FaStar />
+            </a>
+            <p>Hello, {user.name.split(' ')[0]}!</p>
+          </>
+        ) : (
+          <p>Hello, Stranger!</p>
+        )}
+        <div>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</div>
+      </div>
+
+      <Button></Button>
     </StyledNavbar>
   );
 }
