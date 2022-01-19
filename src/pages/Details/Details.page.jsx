@@ -38,7 +38,6 @@ const DetailsPage = () => {
     fetchData(state.serchedValue, 10, id);
   };
 
-
   useEffect(() => {
     handleRandomVideos();
   }, []);

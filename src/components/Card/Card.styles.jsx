@@ -42,5 +42,4 @@ const Subtitle = styled.p`
   padding: 4px;
 `;
 
-
 export { CardContainer, Subtitle, Title, VideoContainer, VideoImage };
