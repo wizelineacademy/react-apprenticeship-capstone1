@@ -10,6 +10,9 @@ const Container = styled.div`
   justify-content: space-between;
   position: relative;
   top: 0;
+  a {
+    font-family: 'Quicksand', sans-serif;
+  }
 `;
 const Title = styled.p`
   font-family: 'Julius Sans One', sans-serif;

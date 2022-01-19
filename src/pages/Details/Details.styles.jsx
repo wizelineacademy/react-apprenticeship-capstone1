@@ -51,7 +51,7 @@ const TitleContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   h3 {
-    color: dodgerblue;
+    color: #7c6ec5;
   }
 `;
 const ListVideosContainer = styled.ul`
@@ -83,6 +83,9 @@ const Information = styled.div`
   border-radius: 10px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   color: white;
+  h3 {
+    font-family: 'Julius Sans One', sans-serif;
+  }
 `;
 
 export {

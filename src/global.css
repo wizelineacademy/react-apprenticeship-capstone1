@@ -28,6 +28,7 @@ body {
       #7ac5d8 100%
     );
   background-size: 400% 400%;
+  font-family: " Quicksand", sans-serif;
   background-position: var(--bg-position);
   transition: background-position 2s ease;
   -webkit-font-smoothing: antialiased;
