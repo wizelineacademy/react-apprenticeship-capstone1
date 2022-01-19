@@ -22,6 +22,25 @@ const FavoriteContainer = styled.div`
     width: 100%;
   }
 `;
+const ContainerText = styled(Container)`
+  justify-content: center;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  p {
+    font-size: 20px;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: 600;
+    color: #e64398;
+  }
+  a {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+  }
+`;
 
 const FavoriteButton = styled.button`
   border: none;
@@ -45,4 +64,4 @@ const FavoriteButton = styled.button`
   color: #e64398;
 `;
 
-export { FavoriteButton, FavoriteContainer, Container };
+export { FavoriteButton, FavoriteContainer, Container, ContainerText };

@@ -10,6 +10,7 @@ import {
   FavoriteButton,
   FavoriteContainer,
   Container,
+  ContainerText,
 } from './Favorites.styles';
 import SearchDashboard from '../../components/SearchDashboard/SearchDashboard.component';
 
@@ -65,7 +66,12 @@ function FavoritesPage() {
                 })}
               </>
             ) : (
-              <Link to="/login">log to save favorites videos</Link>
+              <ContainerText>
+                <div>
+                  <p>Log in and save favorites videos</p>
+                  <Link to="/">click here to back home</Link>
+                </div>
+              </ContainerText>
             )}
           </Container>
         )}
