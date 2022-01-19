@@ -13,10 +13,12 @@ function HomePage() {
   const { response } = state;
   const { isLoading } = useFetch();
 
-  if (isLoading) return;
-  <div className="loading-container">
-    <BallTriangle color="#e64398" height={100} width={100} />;
-  </div>;
+  if (isLoading)
+    return (
+      <div className="loading-container">
+        <BallTriangle color="#e64398" height={100} width={100} />;
+      </div>
+    );
 
   return (
     <Layout>
