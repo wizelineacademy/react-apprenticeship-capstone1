@@ -68,15 +68,13 @@ const DetailsPage = () => {
   useEffect(() => {
     try {
       if (relatedvideosResponse) {
-        if (relatedvideosResponse) {
-          dispatch({
-            type: 'RELATED_VIDEOS',
-            payload: {
-              ...state,
-              relatedVideos: relatedvideosResponse,
-            },
-          });
-        }
+        dispatch({
+          type: 'RELATED_VIDEOS',
+          payload: {
+            ...state,
+            relatedVideos: relatedvideosResponse,
+          },
+        });
         setRelatedVideos(relatedvideosResponse);
       } else {
         setRelatedVideos(initialData);
@@ -90,12 +88,24 @@ const DetailsPage = () => {
     // eslint-disable-next-line
   }, [relatedvideosResponse]);
 
+  // const handleRelatedVideo = (id, item) => {
+  //   dispatch({
+  //     type: 'SAVE_RECOMENDED_VIDEO',
+  //     payload: {
+  //       ...state,
+  //       response: {
+  //         ...item,
+  //       },
+  //     },
+  //   });
+  //   history.push(`/details/${id}`);
+  // };
   const handleRelatedVideo = (id, item) => {
     dispatch({
       type: 'SAVE_RECOMENDED_VIDEO',
       payload: {
         ...state,
-        response: {
+        selectedVideo: {
           ...item,
         },
       },
