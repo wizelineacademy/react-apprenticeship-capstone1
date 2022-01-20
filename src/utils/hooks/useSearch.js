@@ -36,10 +36,9 @@ const useSearch = () => {
         }
       }
     } catch (error) {
-      console.log(error);
+      console.log('error', error);
     }
   };
-
   useEffect(() => {
     handleReponse('firstLoad');
     return () => {
