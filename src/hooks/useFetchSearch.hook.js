@@ -33,11 +33,7 @@ function useFetchSearch(searchTerm, pageToken) {
     }
   });
 
-  let errorMessage = produce(error, (draft) => {
-    if (draft) return draft.error.message;
-  });
-
-  return [reorganizedResponse, loading, errorMessage];
+  return [reorganizedResponse, loading, error];
 }
 
 export default useFetchSearch;

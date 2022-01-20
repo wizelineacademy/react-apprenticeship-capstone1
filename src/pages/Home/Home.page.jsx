@@ -11,11 +11,16 @@ function HomePage(props) {
   let [searchContext] = useSearch();
   let [response, loading] = useFetchSearch(searchContext.searchTerm, pageToken);
 
-  const lastSearchTerm = useRef(0);
+  const lastSearchTerm = useRef();
+  const lastEtag = useRef();
   useEffect(() => {
     if (response) {
-      if (lastSearchTerm.current !== searchContext.searchTerm) {
+      if (
+        lastSearchTerm.current !== searchContext.searchTerm &&
+        lastEtag.current !== response.etag
+      ) {
         lastSearchTerm.current = searchContext.searchTerm;
+        lastEtag.current = response.etag;
         setVideos(response.items);
       } else {
         let items = response.items.filter(

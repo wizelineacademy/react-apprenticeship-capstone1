@@ -17,7 +17,7 @@ function SearchBar(props) {
       dispatchSearch({ type: 'SET_SEARCH_TERM', value: searchTerm });
       navigate('/');
     },
-    [searchTerm]
+    [searchTerm, dispatchSearch, navigate]
   );
 
   return (
