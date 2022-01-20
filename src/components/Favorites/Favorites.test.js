@@ -1,13 +1,13 @@
-import React from "react";
-import { screen, render } from "@testing-library/react";
+import React from 'react';
+import { screen, render } from '@testing-library/react';
 
-import Favorites from "./Favorites.component";
+import Favorites from './Favorites.component';
 
-beforeEach(()=> {
-    render(<Favorites/>);
-})
+beforeEach(() => {
+  render(<Favorites />);
+});
 
 test('There should be a title Favorites and a button', () => {
-    expect(screen.getByText(/Favorites/i)).toBeInTheDocument();
-    expect(screen.getByRole('button')).toBeInTheDocument();
-})
+  expect(screen.getByText(/Favorites/i)).toBeInTheDocument();
+  expect(screen.getByRole('button')).toBeInTheDocument();
+});
