@@ -26,7 +26,7 @@ const Header = (props) => {
           Dark<span>Beat</span>
         </Link>
 
-        <div className={classes.header__utilities}>
+        <div className={classes['header-utilities']}>
           <button
             className={classes['favorites-button']}
             onClick={props.onFavoritesToggle}

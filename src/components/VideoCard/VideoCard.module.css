@@ -1,7 +1,7 @@
 .video-card {
   width: 23%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0 0 0 / 50%);
   border-radius: 10px;
   margin-bottom: 10px;
   cursor: pointer;
@@ -12,17 +12,17 @@
   transform: scale(1.05);
 }
 
-.video-card__image {
+.video-card-image {
   width: 100%;
 }
 
-.video-card__title {
+.video-card-title {
   margin: 5px 0;
   font-size: 16px;
   line-height: 1;
 }
 
-.video-card__description {
+.video-card-description {
   font-size: 12px;
   margin: 5px 0;
 }

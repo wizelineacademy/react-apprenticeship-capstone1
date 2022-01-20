@@ -2,7 +2,7 @@
   height: calc(100vh - 53px);
   width: 300px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0 0 0 / 90%);
   position: absolute;
   top: 53px;
   right: 0;
