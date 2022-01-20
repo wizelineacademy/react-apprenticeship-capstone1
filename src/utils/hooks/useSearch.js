@@ -35,14 +35,6 @@ const useSearch = () => {
           setSearchedData([]);
         }
       }
-      if (responseStatus === 'firstLoad') {
-        console.log('show some random videos');
-        // fetchData('', 15);
-        if (response && response.items) setSearchedData(response.items);
-        else {
-          setSearchedData([]);
-        }
-      }
     } catch (error) {
       console.log(error);
     }
