@@ -1,1 +1,1 @@
-export {defaul} from './HomeVideoGrid.component';
+export { default } from './HomeVideoGrid.component';

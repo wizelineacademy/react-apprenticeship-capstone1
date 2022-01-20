@@ -1,1 +1,1 @@
-export {default} from './Favorites.component';
+export { default } from './Favorites.component';
