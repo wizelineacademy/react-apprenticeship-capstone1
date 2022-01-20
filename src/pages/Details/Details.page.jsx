@@ -28,7 +28,12 @@ const DetailsPage = () => {
   const videoSrc = `https://www.youtube.com/embed/${id}`;
   let controller = new AbortController();
   const [relatedVideos, setRelatedVideos] = useState(initialData);
-  const { fetchData, isLoading, error, response: relatedRespose } = useFetch();
+  const {
+    fetchData,
+    isLoading,
+    error,
+    response: relatedvideosResponse,
+  } = useFetch();
   const [favorited, setFavorited] = useState(false);
   const { state, dispatch } = useContext(Context);
   const {
@@ -38,14 +43,19 @@ const DetailsPage = () => {
   } = state;
   const { search } = history.location;
   const { addFavorites, deleteFavorites, isfavorited } = useFavorites();
+
   const handleRandomVideos = () => {
     fetchData(state.serchedValue, 6, id);
   };
-
   useEffect(() => {
     handleRandomVideos();
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    fetchData(state.serchedValue, 10, selectedVideoFromState.id.videoId);
+    // eslint-disable-next-line
+  }, [selectedVideoFromState]);
 
   useEffect(() => {
     let favorite;
@@ -57,8 +67,17 @@ const DetailsPage = () => {
 
   useEffect(() => {
     try {
-      if (relatedRespose) {
-        setRelatedVideos(relatedRespose);
+      if (relatedvideosResponse) {
+        if (relatedvideosResponse) {
+          dispatch({
+            type: 'RELATED_VIDEOS',
+            payload: {
+              ...state,
+              relatedVideos: relatedvideosResponse,
+            },
+          });
+        }
+        setRelatedVideos(relatedvideosResponse);
       } else {
         setRelatedVideos(initialData);
       }
@@ -69,7 +88,7 @@ const DetailsPage = () => {
       controller.abort();
     };
     // eslint-disable-next-line
-  }, [relatedRespose]);
+  }, [relatedvideosResponse]);
 
   const handleRelatedVideo = (id, item) => {
     dispatch({
