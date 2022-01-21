@@ -1,0 +1,12 @@
+.header {
+  &BtnLogin {
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-color: #bdbdbd;
+    margin-left: 2em;
+  }
+}

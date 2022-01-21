@@ -1,0 +1,48 @@
+@use '../../styles/mixins';
+
+.homeContainer {
+  width: 90%;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.cardGrid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+@include mixins.for-tablet-up {
+  .homeContainer {
+    width: 95%;
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: -2px;
+    }
+  }
+}
+
+@include mixins.for-desktop-up {
+  .homeContainer {
+    width: 100%;
+    max-width: 1135px;
+  }
+}
+
+// @media (min-width: 600px) {
+//   .homeContainer {
+//     width: 90%;
+//   }
+// }
+
+// @media (min-width: 1135px) {
+//   .homeContainer {
+//     width: 100%;
+//     max-width: 1135px;
+//   }
+// }
