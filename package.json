@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src --ext .js,.jsx",
     "lint:fix": "eslint ./src --ext .js,.jsx --fix",
-    "stylelint": "stylelint src/*.css src/**/*.css",
+    "stylelint": "stylelint src/*.scss src/**/*.scss",
     "prepare": "husky install",
     "verify": "npm run lint && npm run stylelint "
   },
