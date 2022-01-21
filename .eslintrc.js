@@ -27,5 +27,16 @@ module.exports = {
         'react/prop-types': 'off',
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
         'prettier/prettier': ['error', { endOfLine: 'auto' }],
-    }
+    },
+    'overrides': [
+        {
+          "files": [
+            "**/*.test.js",
+            "**/*.test.jsx"
+          ],
+          "env": {
+            "jest": true
+          }
+        }
+      ]
 };

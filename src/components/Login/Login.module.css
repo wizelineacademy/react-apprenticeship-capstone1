@@ -1,0 +1,39 @@
+.login-form {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.login-form h4 {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.form-control {
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.form-actions button {
+  background: none;
+  color: inherit;
+  border: 1px solid orange;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: inherit;
+  width: auto;
+  line-height: 1;
+  margin: 0 5px;
+}

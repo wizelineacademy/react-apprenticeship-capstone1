@@ -1,39 +1,15 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import HomeVideoGrid from '../../components/HomeVideoGrid/HomeVideoGrid.component';
 
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import classes from './Home.module.css';
 
-function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
-
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
-
+const HomePage = (props) => {
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
+    <section className={classes['home-container']}>
+      <h1>Recommended for you</h1>
+      <HomeVideoGrid videoList={props.videoList} />
     </section>
   );
-}
+};
 
 export default HomePage;
