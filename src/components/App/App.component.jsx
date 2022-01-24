@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../Layout/Header/Header';
 import MainContainer from '../Layout/MainContainer/MainContainer';
@@ -8,11 +8,18 @@ import Favorites from '../Favorites/Favorites.component';
 import Login from '../Login/Login.component';
 
 import HomePage from '../../pages/Home';
+import VideoDetail from '../../pages/VideoDetail/VideoDetail.page';
+
+import { useGetVideos } from '../../utils/hooks/useGetVideos';
+import { StoreContext } from '../../utils/store/store-context';
 
 const App = () => {
   const [favsIsOpen, setFavsIsOpen] = useState(false);
   const [loginIsOpen, setLoginIsOpen] = useState(false);
-  const [videos, setVideos] = useState({});
+
+  const { isLoading, error, getVideos } = useGetVideos();
+
+  const { videoList, selectedVideoData } = useContext(StoreContext);
 
   const favoritesToggle = () => {
     setFavsIsOpen(!favsIsOpen);
@@ -23,31 +30,22 @@ const App = () => {
   };
 
   useEffect(() => {
-    const fetchVideos = async () => {
-      const response = await fetch('mockService.json');
-      const data = await response.json();
-      const transformedVideos = data.items.map((videoData) => {
-        return {
-          id: videoData.id.videoId
-            ? videoData.id.videoId
-            : videoData.id.channelId,
-          title: videoData.snippet.title,
-          description: videoData.snippet.description,
-          thumbnail: videoData.snippet.thumbnails.medium.url,
-        };
-      });
-
-      setVideos(transformedVideos);
-    };
-
-    fetchVideos();
+    //Get videos as son as the app start
+    getVideos('Classic Rock');
   }, []);
 
-  let homeContent = <p>Content not found</p>;
-
-  if (videos.length > 0) {
-    homeContent = <HomePage videoList={videos} />;
-  }
+  const printHomeContent = () => {
+    return (
+      <>
+        {!isLoading && videoList.length > 0 && <HomePage />}
+        {!isLoading && videoList.length === 0 && !error && (
+          <p>Content not found</p>
+        )}
+        {!isLoading && error && <p>{error}</p>}
+        {isLoading && <p>Loading...</p>}
+      </>
+    );
+  };
 
   return (
     <>
@@ -57,7 +55,10 @@ const App = () => {
       <MainContainer>
         <Switch>
           <Route exact path="/">
-            {homeContent}
+            {printHomeContent()}
+          </Route>
+          <Route path="/:videoId">
+            {selectedVideoData ? <VideoDetail /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </MainContainer>

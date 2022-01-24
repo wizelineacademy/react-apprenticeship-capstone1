@@ -3,14 +3,14 @@ import Modal from '../Layout/Modal';
 
 import classes from './Login.module.css';
 
-const Login = (props) => {
+const Login = ({ onClose }) => {
   const submitForm = (evt) => {
     evt.preventDefault();
     console.log('tomalo');
   };
 
   return (
-    <Modal onClose={props.onClose}>
+    <Modal onClose={onClose}>
       <form className={classes['login-form']} onSubmit={submitForm}>
         <h4>Login</h4>
         <div className={classes['form-control']}>
@@ -22,7 +22,7 @@ const Login = (props) => {
           <input type="password" name="password" />
         </div>
         <div className={classes['form-actions']}>
-          <button onClick={props.onClose}>Cancel</button>
+          <button onClick={onClose}>Cancel</button>
           <button type="submit">Login</button>
         </div>
       </form>

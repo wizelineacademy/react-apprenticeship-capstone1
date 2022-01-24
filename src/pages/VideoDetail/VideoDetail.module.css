@@ -1,0 +1,30 @@
+.detail-container {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.detail-left,
+.detail-right {
+  width: 100%;
+}
+
+.detail-left h1 {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .detail-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .detail-left {
+    width: 70%;
+    padding-right: 10px;
+  }
+
+  .detail-right {
+    width: 30%;
+    padding-left: 10px;
+  }
+}

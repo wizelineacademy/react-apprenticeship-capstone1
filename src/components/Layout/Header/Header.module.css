@@ -199,10 +199,12 @@
   background-color: orange;
 }
 
-.login-button:hover .button-text,
-.search-button:hover .button-text,
-.favorites-button:hover .button-text {
-  visibility: visible;
-  font-size: 13px;
-  margin-left: 5px;
+@media (min-width: 768px) {
+  .login-button:hover .button-text,
+  .search-button:hover .button-text,
+  .favorites-button:hover .button-text {
+    visibility: visible;
+    font-size: 13px;
+    margin-left: 5px;
+  }
 }
