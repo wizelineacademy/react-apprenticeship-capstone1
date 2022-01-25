@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import HomeVideoGrid from '../../components/HomeVideoGrid/HomeVideoGrid.component';
+import { StoreContext } from '../../utils/store/store-context';
 
 import classes from './Home.module.css';
 
-const HomePage = (props) => {
+const HomePage = () => {
+  const { searchParamTitle } = useContext(StoreContext);
+
   return (
     <section className={classes['home-container']}>
-      <h1>Recommended for you</h1>
-      <HomeVideoGrid videoList={props.videoList} />
+      <h1>{searchParamTitle}</h1>
+      <HomeVideoGrid />
     </section>
   );
 };

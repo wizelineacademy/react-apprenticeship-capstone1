@@ -1,5 +1,13 @@
 .video-grid {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .video-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }

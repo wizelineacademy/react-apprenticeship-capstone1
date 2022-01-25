@@ -1,5 +1,5 @@
 .login-form {
-  max-width: 60%;
+  max-width: 95%;
   margin: 0 auto;
 }
 
@@ -36,4 +36,11 @@
   width: auto;
   line-height: 1;
   margin: 0 5px;
+}
+
+@media (min-width: 768px) {
+  .login-form {
+    max-width: 60%;
+    margin: 0 auto;
+  }
 }

@@ -1,11 +1,13 @@
 .video-card {
-  width: 23%;
+  width: 100%;
   padding: 10px;
   background-color: rgba(0 0 0 / 50%);
   border-radius: 10px;
   margin-bottom: 10px;
   cursor: pointer;
   transition: all 100ms ease-in;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .video-card:hover {
@@ -25,4 +27,45 @@
 .video-card-description {
   font-size: 12px;
   margin: 5px 0;
+}
+
+.video-card .video-thumbnail,
+.video-card .video-info {
+  width: 100%;
+}
+
+.video-card.related-video {
+  width: 48%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.related-video .video-thumbnail,
+.related-video .video-info {
+  width: 100%;
+}
+
+.related-video .video-card-title {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .video-card {
+    width: 23%;
+  }
+
+  .video-card.related-video {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .related-video .video-thumbnail {
+    width: 30%;
+  }
+
+  .related-video .video-info {
+    width: 70%;
+    padding-left: 10px;
+  }
 }
