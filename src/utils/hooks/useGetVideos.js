@@ -1,20 +1,21 @@
-import { useState, useContext } from 'react';
-import { StoreContext } from '../store/store-context';
+import { useContext } from 'react';
+import { StoreContext } from '../store/StoreContext';
 
 const useGetVideos = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const { setVideoList, setRelatedVideoList, setSearchParamTitle } =
-    useContext(StoreContext);
-  const defaultSearchParam = 'Clasic Rock';
-  const API_KEY = process.env.REACT_APP_YOUTUBE_APIKEY;
-  const API_URL_TEST = 'mockService.json';
-  const BASE_API_URL =
-    'https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&videoDuration=medium&videoCategoryId=10&maxResults=20';
+  const { dispatch } = useContext(StoreContext);
 
-  const fetchVideos = async (URL, TYPE) => {
-    setIsLoading(true);
-    setError(null);
+  // const API_KEY = process.env.REACT_APP_YOUTUBE_APIKEY;
+  const API_KEY = 'AIzaSyDRKJLorYEYkVTc9kfMowzFCCSBaXMDAK8';
+  const API_URL_TEST = 'mockService.json';
+  const BASE_API_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&videoDuration=medium&videoCategoryId=10&maxResults=20&key=${API_KEY}`;
+  const testingAPI = true; //Only for testing purposes set "false" to test with youtube API
+
+  const fetchVideos = async (requestParam, type) => {
+    const API_URL = `${BASE_API_URL}${requestParam}`;
+    const URL = !testingAPI ? API_URL : API_URL_TEST;
+
+    dispatch({ type: 'setFetchIsLoading', payload: true });
+    dispatch({ type: 'setFetchError', payload: null });
 
     try {
       const response = await fetch(URL);
@@ -23,60 +24,54 @@ const useGetVideos = () => {
         throw new Error('Something went wrong with the videos service!');
       }
 
-      const data = await response.json();
+      response.json().then((data) => {
+        const transformedVideos = [];
 
-      //Create a new array with the needed info
+        data.items.forEach((videoData) => {
+          if ('snippet' in videoData && 'id' in videoData) {
+            transformedVideos.push({
+              id: videoData.id.videoId
+                ? videoData.id.videoId
+                : videoData.id.channelId,
+              title: videoData.snippet.title,
+              description: videoData.snippet.description,
+              thumbnail: videoData.snippet.thumbnails.medium.url,
+            });
+          }
+        });
 
-      const transformedVideos = data.items.map((videoData) => {
-        return {
-          id: videoData.id.videoId
-            ? videoData.id.videoId
-            : videoData.id.channelId,
-          title: videoData.snippet.title,
-          description: videoData.snippet.description,
-          thumbnail: videoData.snippet.thumbnails.medium.url,
-        };
+        if (type === 'USER_VIDEOS') {
+          dispatch({ type: 'setVideoList', payload: transformedVideos });
+        }
+        if (type === 'RELATED_VIDEOS') {
+          dispatch({ type: 'setRelatedVideoList', payload: transformedVideos });
+        }
       });
 
-      if (TYPE === 'USER_VIDEOS') {
-        setVideoList(transformedVideos);
-      }
-      if (TYPE === 'RELATED_VIDEOS') {
-        setRelatedVideoList(transformedVideos);
-      }
+      //Create a new array with the needed info
     } catch (error) {
-      setError(error.message);
+      dispatch({ type: 'setFetchError', payload: error.message });
     }
-    setIsLoading(false);
+
+    dispatch({ type: 'setFetchIsLoading', payload: false });
   };
 
   //Get User Videos by search component or the default loaded
 
-  const testingAPI = true; //Only for testing purposes set "false" to test with youtube API
-
   const getVideos = (searchParam) => {
-    const API_URL = testingAPI
-      ? API_URL_TEST
-      : `${BASE_API_URL}&q=${
-          searchParam ? searchParam : defaultSearchParam
-        }musica/music&key=${API_KEY}`;
-
-    setSearchParamTitle(searchParam ? searchParam : defaultSearchParam);
-
-    fetchVideos(API_URL, 'USER_VIDEOS');
+    const requestParam = `&q=${searchParam}musica/music`;
+    dispatch({ type: 'setSearchParamTitle', payload: searchParam });
+    fetchVideos(requestParam, 'USER_VIDEOS');
   };
 
   //Get Related Videos
 
   const getRelatedVideos = (videoId) => {
-    const API_URL = testingAPI
-      ? API_URL_TEST
-      : `${BASE_API_URL}&relatedToVideoId=${videoId}&key=${API_KEY}`;
-
-    fetchVideos(API_URL, 'RELATED_VIDEOS');
+    const requestParam = `&relatedToVideoId=${videoId}`;
+    fetchVideos(requestParam, 'RELATED_VIDEOS');
   };
 
-  return { isLoading, error, getVideos, getRelatedVideos };
+  return { getVideos, getRelatedVideos };
 };
 
 export { useGetVideos };

@@ -1,66 +1,40 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
+import React, { useEffect, useContext } from 'react';
+import { StoreContext } from '../../utils/store/StoreContext';
+import { useGetVideos } from '../../utils/hooks/useGetVideos';
 import Header from '../Layout/Header/Header';
 import MainContainer from '../Layout/MainContainer/MainContainer';
-
-import Favorites from '../Favorites/Favorites.component';
 import Login from '../Login/Login.component';
-
-import HomePage from '../../pages/Home';
-import VideoDetail from '../../pages/VideoDetail/VideoDetail.page';
-
-import { useGetVideos } from '../../utils/hooks/useGetVideos';
-import { StoreContext } from '../../utils/store/store-context';
+import Router from '../Router/Router.component';
 
 const App = () => {
-  const [favsIsOpen, setFavsIsOpen] = useState(false);
-  const [loginIsOpen, setLoginIsOpen] = useState(false);
-
-  const { isLoading, error, getVideos } = useGetVideos();
-
-  const { videoList, selectedVideoData } = useContext(StoreContext);
-
-  const favoritesToggle = () => {
-    setFavsIsOpen(!favsIsOpen);
-  };
-
-  const loginToggle = () => {
-    setLoginIsOpen(!loginIsOpen);
-  };
+  const { getVideos } = useGetVideos();
+  const { store, dispatch } = useContext(StoreContext);
+  const { loginModalIsOpen } = store;
 
   useEffect(() => {
-    //Get videos as son as the app start
-    getVideos('Classic Rock');
-  }, []);
-
-  const printHomeContent = () => {
-    return (
-      <>
-        {!isLoading && videoList.length > 0 && <HomePage />}
-        {!isLoading && videoList.length === 0 && !error && (
-          <p>Content not found</p>
-        )}
-        {!isLoading && error && <p>{error}</p>}
-        {isLoading && <p>Loading...</p>}
-      </>
+    const storageIsLogedIn = JSON.parse(
+      window.localStorage.getItem('isLogedIn')
     );
-  };
+    if (storageIsLogedIn) {
+      dispatch({ type: 'setIsLogedIn', payload: storageIsLogedIn });
+    }
+
+    const storageLogedUserData = JSON.parse(
+      window.localStorage.getItem('logedUserData')
+    );
+    if (storageLogedUserData) {
+      dispatch({ type: 'setLogedUserData', payload: storageLogedUserData });
+    }
+
+    getVideos('Classic Rock');
+  }, [dispatch]);
 
   return (
     <>
-      <Header onFavoritesToggle={favoritesToggle} onLoginToggle={loginToggle} />
-      <Favorites isOpen={favsIsOpen} onClose={favoritesToggle} />
-      {loginIsOpen && <Login onClose={loginToggle} />}
+      <Header />
+      {loginModalIsOpen && <Login />}
       <MainContainer>
-        <Switch>
-          <Route exact path="/">
-            {printHomeContent()}
-          </Route>
-          <Route path="/:videoId">
-            {selectedVideoData ? <VideoDetail /> : <Redirect to="/" />}
-          </Route>
-        </Switch>
+        <Router />
       </MainContainer>
     </>
   );

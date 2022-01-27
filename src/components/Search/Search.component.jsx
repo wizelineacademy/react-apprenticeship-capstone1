@@ -1,16 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-
-import classes from './Search.module.css';
+import { StoreContext } from '../../utils/store/StoreContext';
 import { useGetVideos } from '../../utils/hooks/useGetVideos';
+import classes from './Search.module.css';
 
-const Search = ({ onClose, isOpen }) => {
+const Search = () => {
   const searchInputRef = useRef();
-
   const { getVideos } = useGetVideos();
   const history = useHistory();
+  const { store, dispatch } = useContext(StoreContext);
+  const { searchIsOpen } = store;
 
-  const getData = (evt) => {
+  const onSearchClose = () => {
+    dispatch({ type: 'setSearchIsOpen', payload: !searchIsOpen });
+  };
+
+  const getSearchData = (evt) => {
     evt.preventDefault();
 
     const searchInputValue = searchInputRef.current.value;
@@ -22,7 +27,7 @@ const Search = ({ onClose, isOpen }) => {
 
       history.push('/');
 
-      onClose();
+      onSearchClose();
     } else {
       alert('Please complete the search field');
     }
@@ -30,15 +35,29 @@ const Search = ({ onClose, isOpen }) => {
 
   return (
     <div
-      className={`${classes['search-container']} ${isOpen && classes.active}`}
+      className={`${classes['search-container']} ${
+        searchIsOpen && classes.active
+      }`}
     >
       <form className={classes['search-form']}>
-        <input type="text" name="searchInput" ref={searchInputRef} />
-        <button type="submit" className={classes['send-btn']} onClick={getData}>
+        <input
+          type="text"
+          name="searchInput"
+          ref={searchInputRef}
+          placeholder="Type something awesome!"
+        />
+        <button
+          type="submit"
+          className={classes['send-btn']}
+          onClick={getSearchData}
+        >
           Send
         </button>
       </form>
-      <button onClick={onClose} className={classes['close-btn']}>
+      <button
+        onClick={onSearchClose}
+        className={`${classes['search-close-btn']} close-btn`}
+      >
         Close
       </button>
     </div>
