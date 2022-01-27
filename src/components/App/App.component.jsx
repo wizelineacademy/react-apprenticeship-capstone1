@@ -27,7 +27,7 @@ const App = () => {
     }
 
     getVideos('Classic Rock');
-  }, [dispatch]);
+  }, [dispatch, getVideos]);
 
   return (
     <>
