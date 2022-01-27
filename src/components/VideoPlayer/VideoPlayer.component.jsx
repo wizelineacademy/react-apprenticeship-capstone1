@@ -1,8 +1,15 @@
 import React from 'react';
-import YouTube from 'react-youtube';
 
 const VideoPlayer = ({ videoId }) => {
-  return <YouTube videoId={videoId} />;
+  return (
+    <iframe
+      width="420"
+      height="315"
+      name={videoId}
+      title={videoId}
+      src={`https://www.youtube.com/embed/${videoId}`}
+    ></iframe>
+  );
 };
 
 export default VideoPlayer;

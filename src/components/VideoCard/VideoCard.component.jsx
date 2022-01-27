@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-
-import { StoreContext } from '../../utils/store/store-context';
-
+import { StoreContext } from '../../utils/store/StoreContext';
+import { useGetVideos } from '../../utils/hooks/useGetVideos';
 import classes from './VideoCard.module.css';
 
 const VideoCard = ({ videoData, isRelatedVideo }) => {
-  const { setSelectedVideoData } = useContext(StoreContext);
-
+  const { getRelatedVideos } = useGetVideos();
   const history = useHistory();
+  const { dispatch } = useContext(StoreContext);
 
   const updateCurrentVideoData = () => {
     //This action set the current video data in a new object in the global context
-    setSelectedVideoData(videoData);
-    history.push(`/${videoData.id}`);
+    dispatch({ type: 'setSelectedVideoData', payload: videoData });
+    getRelatedVideos(videoData.id);
+    history.push(`/video-detail/${videoData.id}`);
   };
 
   return (
@@ -33,10 +33,11 @@ const VideoCard = ({ videoData, isRelatedVideo }) => {
       </div>
       <div className={classes['video-info']}>
         <h3 className={classes['video-card-title']}>{videoData.title}</h3>
+
         {!isRelatedVideo && (
-          <p className={classes['video-card-description']}>
-            {videoData.description}
-          </p>
+          <div className={classes['video-card-description']}>
+            <p>{videoData.description}</p>
+          </div>
         )}
       </div>
     </div>

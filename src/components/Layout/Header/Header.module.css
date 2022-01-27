@@ -1,12 +1,16 @@
 .header-container {
   width: 100%;
-  background-color: black;
-  border-bottom: 1px solid orange;
-  padding: 15px;
+  background-color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-primary);
+  height: 55px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
 }
 
 .header-logo {
@@ -69,7 +73,7 @@
 .search-button i.icon::before {
   content: "";
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid var(--color-white);
   position: relative;
   width: 18px;
   height: 18px;
@@ -83,7 +87,7 @@
   position: absolute;
   width: 6px;
   height: 3px;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 2px;
   bottom: -3px;
   left: -3px;
@@ -110,15 +114,15 @@
   height: 22px;
   display: inline-block;
   position: relative;
-  border: 3px solid white;
+  border: 3px solid var(--color-white);
   transition: all 100ms ease-in;
 }
 
 .login-button i.icon::after {
   content: "";
   border-radius: 2px;
-  background-color: white;
-  outline: 3px solid black;
+  background-color: var(--color-white);
+  outline: 3px solid var(--color-secondary);
   width: 3px;
   height: 12px;
   display: block;
@@ -141,7 +145,7 @@
   height: 14px;
   display: inline-block;
   line-height: 22px;
-  background-color: white;
+  background-color: var(--color-white);
   vertical-align: top;
   transform: rotate(-45deg);
   margin-top: 5px;
@@ -156,7 +160,7 @@
   width: 14px;
   height: 14px;
   display: block;
-  background-color: white;
+  background-color: var(--color-white);
   position: absolute;
   transition: all 100ms ease-in;
 }
@@ -173,30 +177,108 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  position: absolute;
+  right: 15px;
+}
+
+.user-utilities {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.user-utilities img {
+  width: 30px;
+}
+
+.user-utilities p {
+  margin: 0 10px;
 }
 
 /* Hover states */
 
 .search-button:hover i.icon::before {
-  border: 3px solid orange;
+  border: 3px solid var(--color-primary);
 }
 
 .search-button:hover i.icon::after {
-  background-color: orange;
+  background-color: var(--color-primary);
 }
 
 .login-button:hover i.icon::before {
-  border: 3px solid orange;
+  border: 3px solid var(--color-primary);
 }
 
 .login-button:hover i.icon::after {
-  background-color: orange;
+  background-color: var(--color-primary);
 }
 
 .favorites-button:hover i.icon,
 .favorites-button:hover i.icon::before,
 .favorites-button:hover i.icon::after {
-  background-color: orange;
+  background-color: var(--color-primary);
+}
+
+/* Active states */
+
+.login-button.active i.icon::before {
+  border: 3px solid greenyellow;
+}
+
+.login-button.active i.icon::after {
+  background-color: greenyellow;
+}
+
+/* Active states */
+
+.light-mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.light-mode-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.light-mode-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.light-mode-slider::before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  transition: 0.4s;
+}
+
+input:checked + .light-mode-slider {
+  background-color: var(--color-primary);
+}
+
+input:focus + .light-mode-slider {
+  box-shadow: 0 0 1px var(--color-primary);
+}
+
+input:checked + .light-mode-slider::before {
+  transform: translateX(13px);
 }
 
 @media (min-width: 768px) {

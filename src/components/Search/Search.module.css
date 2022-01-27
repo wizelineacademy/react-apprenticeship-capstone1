@@ -1,8 +1,8 @@
 .search-container {
   width: 100%;
-  background-color: rgba(0 0 0 / 90%);
+  background-color: var(--color-secondary-50);
   position: absolute;
-  top: 56px;
+  top: 55px;
   left: 0;
   text-align: center;
   height: 0;
@@ -34,8 +34,7 @@
   width: calc(100% - 40px);
 }
 
-.send-btn,
-.close-btn {
+.send-btn {
   background: none;
   color: inherit;
   border: none;
@@ -45,44 +44,19 @@
   outline: inherit;
   position: relative;
   line-height: 22px;
-  width: 22px;
-  height: 22px;
   font-size: 0;
+  width: 0;
+  height: 0;
+  border-left: 22px solid var(--color-white);
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
 }
 
-.close-btn {
+.search-close-btn {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.close-btn::after,
-.close-btn::before {
-  content: "";
-  width: 100%;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.close-btn::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.close-btn::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.send-btn {
-  width: 0;
-  height: 0;
-  border-left: 22px solid white;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
 }
 
 @media (min-width: 768px) {
